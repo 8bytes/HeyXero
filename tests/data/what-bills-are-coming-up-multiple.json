@@ -1,0 +1,209 @@
+{
+	"Id": "2444c991-2af9-47b6-9c99-8d87acfb0c28",
+	"Status": "OK",
+	"ProviderName": "Xeno-Dev",
+	"DateTimeUTC": "2016-05-12T21:27:12.7558294Z",
+	"Invoices": {
+		"Invoice": [{
+			"Contact": {
+				"ContactID": "4640f073-9f0f-4cea-820c-0af35df42068",
+				"Name": "Zulu Company Limited"
+			},
+			"Date": "2015-07-28T00:00:00",
+			"DueDate": "2015-07-28T00:00:00",
+			"Status": "AUTHORISED",
+			"LineAmountTypes": "Exclusive",
+			"LineItems": {
+				"LineItem": {
+					"ItemCode": "10930175",
+					"Description": "Chocolate",
+					"UnitAmount": "15.00",
+					"TaxType": "INPUT2",
+					"TaxAmount": "33.75",
+					"LineAmount": "225.00",
+					"AccountCode": "098",
+					"Quantity": "15.0000",
+					"LineItemID": "9f9a5758-5245-4ecf-a854-85f3e8049857"
+				}
+			},
+			"SubTotal": "225.00",
+			"TotalTax": "33.75",
+			"Total": "258.75",
+			"UpdatedDateUTC": "2015-07-28T04:34:52.49",
+			"CurrencyCode": "NZD",
+			"Type": "ACCPAY",
+			"InvoiceID": "61f8e82e-ac32-408e-8139-4759b1c019a3",
+			"AmountDue": "258.75",
+			"AmountPaid": "0.00",
+			"AmountCredited": "0.00",
+			"CurrencyRate": "1.000000",
+			"HasAttachments": "false"
+		}, {
+			"Contact": {
+				"ContactID": "4640f073-9f0f-4cea-820c-0af35df42068",
+				"Name": "Zulu Company Limited"
+			},
+			"Date": "2015-07-08T00:00:00",
+			"DueDate": "2015-07-08T00:00:00",
+			"Status": "AUTHORISED",
+			"LineAmountTypes": "Exclusive",
+			"LineItems": {
+				"LineItem": {
+					"ItemCode": "09876",
+					"Description": "Test inventory Item",
+					"UnitAmount": "15.00",
+					"TaxType": "INPUT2",
+					"TaxAmount": "33.75",
+					"LineAmount": "225.00",
+					"AccountCode": "100",
+					"Quantity": "15.0000",
+					"LineItemID": "f88eb93c-f4b0-4624-a5be-f9ad7b64ebc5"
+				}
+			},
+			"SubTotal": "225.00",
+			"TotalTax": "33.75",
+			"Total": "258.75",
+			"UpdatedDateUTC": "2015-07-07T23:07:37.133",
+			"CurrencyCode": "NZD",
+			"Type": "ACCPAY",
+			"InvoiceID": "49bf9d6b-c1df-434c-8e4a-7ff9b8abd8a1",
+			"AmountDue": "258.75",
+			"AmountPaid": "0.00",
+			"AmountCredited": "0.00",
+			"CurrencyRate": "1.000000",
+			"HasAttachments": "false"
+		}, {
+			"Contact": {
+				"ContactID": "4640f073-9f0f-4cea-820c-0af35df42068",
+				"Name": "Zulu Company Limited"
+			},
+			"Date": "2015-07-08T00:00:00",
+			"DueDate": "2015-07-08T00:00:00",
+			"Status": "AUTHORISED",
+			"LineAmountTypes": "Exclusive",
+			"LineItems": {
+				"LineItem": {
+					"ItemCode": "09876",
+					"Description": "Test inventory Item",
+					"UnitAmount": "15.00",
+					"TaxType": "INPUT2",
+					"TaxAmount": "33.75",
+					"LineAmount": "225.00",
+					"AccountCode": "1039",
+					"Quantity": "15.0000",
+					"LineItemID": "0685b513-e39f-4ac3-88c8-e86cbaabc8b7"
+				}
+			},
+			"SubTotal": "225.00",
+			"TotalTax": "33.75",
+			"Total": "258.75",
+			"UpdatedDateUTC": "2015-07-08T02:28:50.967",
+			"CurrencyCode": "NZD",
+			"Type": "ACCPAY",
+			"InvoiceID": "3a713bd6-94a5-427f-87bd-fff9d7ed663a",
+			"AmountDue": "258.75",
+			"AmountPaid": "0.00",
+			"AmountCredited": "0.00",
+			"CurrencyRate": "1.000000",
+			"HasAttachments": "false"
+		}, {
+			"Contact": {
+				"ContactID": "3a990f8b-3b13-4c69-b2bb-8b10491df4b2",
+				"Name": "Whiskey Company Limited"
+			},
+			"Date": "2014-03-25T00:00:00",
+			"DueDate": "2014-04-01T00:00:00",
+			"Status": "AUTHORISED",
+			"LineAmountTypes": "Exclusive",
+			"LineItems": {
+				"LineItem": [{
+					"ItemCode": "69384912",
+					"Description": "Bags",
+					"UnitAmount": "35.00",
+					"TaxType": "INPUT2",
+					"TaxAmount": "5.25",
+					"LineAmount": "35.00",
+					"AccountCode": "100",
+					"Quantity": "1.0000",
+					"LineItemID": "5ed2031f-4b33-4583-97b6-a99de176a1f9"
+				}, {
+					"ItemCode": "33321091",
+					"Description": "Butter",
+					"UnitAmount": "5.00",
+					"TaxType": "INPUT2",
+					"TaxAmount": "3.75",
+					"LineAmount": "25.00",
+					"AccountCode": "100",
+					"Quantity": "5.0000",
+					"LineItemID": "440cd446-7caa-4932-bb91-b409f16457e2"
+				}, {
+					"ItemCode": "67837516",
+					"Description": "Flour",
+					"UnitAmount": "45.00",
+					"TaxType": "INPUT2",
+					"TaxAmount": "6.75",
+					"LineAmount": "45.00",
+					"AccountCode": "100",
+					"Quantity": "1.0000",
+					"LineItemID": "7b64893c-9c4d-430d-aca5-c5d456361043"
+				}, {
+					"ItemCode": "48423541",
+					"Description": "Nuts",
+					"UnitAmount": "25.00",
+					"TaxType": "INPUT2",
+					"TaxAmount": "3.75",
+					"LineAmount": "25.00",
+					"AccountCode": "100",
+					"Quantity": "1.0000",
+					"LineItemID": "fad065b5-78c0-48a4-8fb3-cefacc8f2f3f"
+				}]
+			},
+			"SubTotal": "130.00",
+			"TotalTax": "19.50",
+			"Total": "149.50",
+			"UpdatedDateUTC": "2015-04-01T21:50:16.897",
+			"CurrencyCode": "NZD",
+			"Type": "ACCPAY",
+			"InvoiceID": "5a34bcf9-4313-4dcd-a703-0d76c9a95a9e",
+			"InvoiceNumber": "15",
+			"AmountDue": "149.50",
+			"AmountPaid": "0.00",
+			"AmountCredited": "0.00",
+			"HasAttachments": "false"
+		}, {
+			"Contact": {
+				"ContactID": "40f22f3d-4220-4544-a237-b3b4d5c33a8a",
+				"Name": "November Company Limited"
+			},
+			"Date": "2014-03-21T00:00:00",
+			"DueDate": "2014-03-28T00:00:00",
+			"Status": "AUTHORISED",
+			"LineAmountTypes": "Exclusive",
+			"LineItems": {
+				"LineItem": {
+					"ItemCode": "10930175",
+					"Description": "Chocolate",
+					"UnitAmount": "15.00",
+					"TaxType": "INPUT2",
+					"TaxAmount": "2.25",
+					"LineAmount": "15.00",
+					"AccountCode": "100",
+					"Quantity": "1.0000",
+					"LineItemID": "8e6bf846-6e3b-48cb-b65a-2d0a5fe15dab"
+				}
+			},
+			"SubTotal": "15.00",
+			"TotalTax": "2.25",
+			"Total": "17.25",
+			"UpdatedDateUTC": "2015-04-01T21:50:17.877",
+			"CurrencyCode": "NZD",
+			"Type": "ACCPAY",
+			"InvoiceID": "14e44537-4cc7-4451-9b4c-34e943f338b2",
+			"InvoiceNumber": "26",
+			"AmountDue": "17.25",
+			"AmountPaid": "0.00",
+			"AmountCredited": "0.00",
+			"HasAttachments": "false"
+		}]
+	}
+}

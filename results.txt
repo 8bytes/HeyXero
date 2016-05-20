@@ -1,0 +1,39 @@
+
+
+  HowMuchMoneyDoIHave operation
+    parsing a json response
+Received: {"Response":{"Id":"d1c4b9ff-d46f-4702-bf01-53b9171f8e4b","Status":"OK","ProviderName":"Xeno-Dev","DateTimeUTC":"2016-05-12T07:44:27.2817423Z","Reports":{"Report":{"ReportID":"BankSummary","ReportName":"Bank Summary","ReportType":"BankSummary","ReportTitles":{"ReportTitle":["Bank Summary","BSP Design","From 1 May 2016 to 31 May 2016"]},"ReportDate":"12 May 2016","UpdatedDateUTC":"2016-05-12T07:44:27.2817423Z","Rows":{"Row":[{"RowType":"Header","Cells":{"Cell":[{"Value":"Bank Accounts"},{"Value":"Opening Balance"},{"Value":"Cash Received"},{"Value":"Cash Spent"},{"Value":"FX Gain"},{"Value":"Closing Balance"}]}},{"RowType":"Section","Rows":{"Row":[{"RowType":"Row","Cells":{"Cell":[{"Value":"Cheque Account","Attributes":{"Attribute":{"Value":"e27684fb-1fed-481e-b533-3a685ccec436","Id":"accountID"}}},{"Value":"28506.98"},{"Value":"0.00","Attributes":{"Attribute":{"Value":"e27684fb-1fed-481e-b533-3a685ccec436","Id":"account"}}},{"Value":"0.00","Attributes":{"Attribute":{"Value":"e27684fb-1fed-481e-b533-3a685ccec436","Id":"account"}}},{"Value":"0.00"},{"Value":"28506.98"}]}},{"RowType":"Row","Cells":{"Cell":[{"Value":"Citibank IB","Attributes":{"Attribute":{"Value":"fdaf9a80-5415-40f5-8d2f-35966aa89d77","Id":"accountID"}}},{"Value":"96214418091.43"},{"Value":"0.00","Attributes":{"Attribute":{"Value":"fdaf9a80-5415-40f5-8d2f-35966aa89d77","Id":"account"}}},{"Value":"0.00","Attributes":{"Attribute":{"Value":"fdaf9a80-5415-40f5-8d2f-35966aa89d77","Id":"account"}}},{"Value":"1867261659.76"},{"Value":"98081679751.19"}]}},{"RowType":"Row","Cells":{"Cell":[{"Value":"Mastercard","Attributes":{"Attribute":{"Value":"6a466f41-ec20-4acc-8944-78acf45b3f95","Id":"accountID"}}},{"Value":"22.25"},{"Value":"0.00","Attributes":{"Attribute":{"Value":"6a466f41-ec20-4acc-8944-78acf45b3f95","Id":"account"}}},{"Value":"0.00","Attributes":{"Attribute":{"Value":"6a466f41-ec20-4acc-8944-78acf45b3f95","Id":"account"}}},{"Value":"0.00"},{"Value":"22.25"}]}},{"RowType":"SummaryRow","Cells":{"Cell":[{"Value":"Total"},{"Value":"96214446620.66"},{"Value":"0.00"},{"Value":"0.00"},{"Value":"1867261659.76"},{"Value":"98081708280.42"}]}}]}}]}}}}}
+      √ should return accountName and closingBalance
+    formatting an answer
+      √ should format properly
+
+  InvoiceSomebody operation
+    parsing a json response
+Creating answer for: {"Response":{"Id":"47dde990-5167-48e5-922b-3c9d2ea9c304","Status":"OK","ProviderName":"Slackbot","DateTimeUTC":"2016-05-12T23:28:14.6731956Z","Invoices":{"Invoice":{"Contact":{"ContactID":"ef6afee4-fd74-4383-b8a7-1ea8ac6b82ee","ContactStatus":"ACTIVE","Name":"sally","Addresses":{"Address":[{"AddressType":"POBOX"},{"AddressType":"STREET"}]},"Phones":{"Phone":[{"PhoneType":"MOBILE"},{"PhoneType":"DEFAULT"},{"PhoneType":"DDI"},{"PhoneType":"FAX"}]},"UpdatedDateUTC":"2016-05-12T23:27:36.037","IsSupplier":"false","IsCustomer":"true"},"Date":"2016-05-13T00:00:00","Status":"DRAFT","LineAmountTypes":"Exclusive","LineItems":{"LineItem":{"Description":"stuff","UnitAmount":"20.00","LineAmount":"20.00","Quantity":"1.0000","LineItemID":"e7a9c1ae-7650-4a01-bfc2-5608454fcc40"}},"SubTotal":"20.00","TotalTax":"0.00","Total":"20.00","UpdatedDateUTC":"2016-05-12T23:28:14.61","CurrencyCode":"NZD","Type":"ACCREC","InvoiceID":"93be098b-6bd5-4010-b66a-03e80eb038bb","InvoiceNumber":"INV-0009","AmountDue":"20.00","AmountPaid":"0.00","SentToContact":"false","CurrencyRate":"1.000000"}}}}
+      √ should return invoice id
+    formatting an answer
+      √ should format properly
+
+  WhatBillsAreComingUp
+    #createAnswer()
+      √ should handle multiple invoices
+      √ should handle one invoices
+      √ should handle no invoices
+    #formatAnswer()
+      √ should handle multiple invoices
+      √ should handle one invoices
+      √ should handle no invoices
+
+  WhoOwesMoney
+    #createAnswer()
+      √ should handle multiple contacts
+      √ should handle one contacts
+      √ should handle no contacts
+    #formatAnswer()
+      √ should handle multiple contacts
+      √ should handle one contacts
+      √ should handle no contacts
+
+
+  16 passing (20ms)
+

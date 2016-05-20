@@ -1,0 +1,79 @@
+{
+  "Id": "a23ef396-9095-48ce-91a6-1717eb5da1bb",
+  "Status": "OK",
+  "ProviderName": "Xeno-Dev",
+  "DateTimeUTC": "2016-05-12T08:36:49.6474528Z",
+  "Contacts": {
+    "Contact": [{
+      "ContactID": "c7fae84d-0f98-4908-ad0c-597293b0faa7",
+      "AccountNumber": "ID40235",
+      "ContactStatus": "ACTIVE",
+      "Name": "Lone Wolf Limited",
+      "FirstName": "Andrea",
+      "LastName": "Angel",
+      "EmailAddress": "jpa1@test.xero.com",
+      "SkypeUserName": "My.Skype.Username",
+      "Addresses": {
+        "Address": [{
+          "AddressType": "POBOX",
+          "AddressLine1": "3 Homestead Pl",
+          "City": "Glenview2",
+          "Region": "Hamilton2",
+          "PostalCode": "A3206",
+          "Country": "New Zealand"
+        }, {
+          "AddressType": "STREET",
+          "AddressLine1": "3 Homestead Pl",
+          "City": "Glenview2",
+          "Region": "Hamilton2",
+          "PostalCode": "A3206",
+          "Country": "New Zealand"
+        }]
+      },
+      "Phones": {
+        "Phone": [{
+          "PhoneType": "DDI",
+          "PhoneNumber": "68782604",
+          "PhoneCountryCode": "64"
+        }, {
+          "PhoneType": "DEFAULT",
+          "PhoneNumber": "4A12163529"
+        }, {
+          "PhoneType": "FAX",
+          "PhoneNumber": "9A99999999A0"
+        }, {
+          "PhoneType": "MOBILE",
+          "PhoneNumber": "4A12163528"
+        }]
+      },
+      "UpdatedDateUTC": "2016-03-09T01:35:44.827",
+      "IsSupplier": "false",
+      "IsCustomer": "true",
+      "DefaultCurrency": "EUR",
+      "Discount": "50.00",
+      "BrandingTheme": {
+        "BrandingThemeID": "11698565-4f79-480f-93c5-f9245a26264d",
+        "Name": "Secondary Theme "
+      },
+      "SalesDefaultAccountCode": "260",
+      "Balances": {
+        "AccountsReceivable": {
+          "Outstanding": "100.00",
+          "Overdue": "10.00"
+        },
+        "AccountsPayable": {
+          "Outstanding": "0.00",
+          "Overdue": "0.00"
+        }
+      },
+      "PaymentTerms": {
+        "Sales": {
+          "Day": "30",
+          "Type": "OFFOLLOWINGMONTH"
+        }
+      },
+      "HasAttachments": "false"
+    }
+    ]
+  }
+}

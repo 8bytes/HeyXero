@@ -1,0 +1,214 @@
+{
+  "Response": {
+    "Id": "d1c4b9ff-d46f-4702-bf01-53b9171f8e4b",
+    "Status": "OK",
+    "ProviderName": "Xeno-Dev",
+    "DateTimeUTC": "2016-05-12T07:44:27.2817423Z",
+    "Reports": {
+      "Report": {
+        "ReportID": "BankSummary",
+        "ReportName": "Bank Summary",
+        "ReportType": "BankSummary",
+        "ReportTitles": {
+          "ReportTitle": [
+            "Bank Summary",
+            "BSP Design",
+            "From 1 May 2016 to 31 May 2016"
+          ]
+        },
+        "ReportDate": "12 May 2016",
+        "UpdatedDateUTC": "2016-05-12T07:44:27.2817423Z",
+        "Rows": {
+          "Row": [
+            {
+              "RowType": "Header",
+              "Cells": {
+                "Cell": [
+                  {
+                    "Value": "Bank Accounts"
+                  },
+                  {
+                    "Value": "Opening Balance"
+                  },
+                  {
+                    "Value": "Cash Received"
+                  },
+                  {
+                    "Value": "Cash Spent"
+                  },
+                  {
+                    "Value": "FX Gain"
+                  },
+                  {
+                    "Value": "Closing Balance"
+                  }
+                ]
+              }
+            },
+            {
+              "RowType": "Section",
+              "Rows": {
+                "Row": [
+                  {
+                    "RowType": "Row",
+                    "Cells": {
+                      "Cell": [
+                        {
+                          "Value": "Cheque Account",
+                          "Attributes": {
+                            "Attribute": {
+                              "Value": "e27684fb-1fed-481e-b533-3a685ccec436",
+                              "Id": "accountID"
+                            }
+                          }
+                        },
+                        {
+                          "Value": "28506.98"
+                        },
+                        {
+                          "Value": "0.00",
+                          "Attributes": {
+                            "Attribute": {
+                              "Value": "e27684fb-1fed-481e-b533-3a685ccec436",
+                              "Id": "account"
+                            }
+                          }
+                        },
+                        {
+                          "Value": "0.00",
+                          "Attributes": {
+                            "Attribute": {
+                              "Value": "e27684fb-1fed-481e-b533-3a685ccec436",
+                              "Id": "account"
+                            }
+                          }
+                        },
+                        {
+                          "Value": "0.00"
+                        },
+                        {
+                          "Value": "28506.98"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "RowType": "Row",
+                    "Cells": {
+                      "Cell": [
+                        {
+                          "Value": "Citibank IB",
+                          "Attributes": {
+                            "Attribute": {
+                              "Value": "fdaf9a80-5415-40f5-8d2f-35966aa89d77",
+                              "Id": "accountID"
+                            }
+                          }
+                        },
+                        {
+                          "Value": "96214418091.43"
+                        },
+                        {
+                          "Value": "0.00",
+                          "Attributes": {
+                            "Attribute": {
+                              "Value": "fdaf9a80-5415-40f5-8d2f-35966aa89d77",
+                              "Id": "account"
+                            }
+                          }
+                        },
+                        {
+                          "Value": "0.00",
+                          "Attributes": {
+                            "Attribute": {
+                              "Value": "fdaf9a80-5415-40f5-8d2f-35966aa89d77",
+                              "Id": "account"
+                            }
+                          }
+                        },
+                        {
+                          "Value": "1867261659.76"
+                        },
+                        {
+                          "Value": "98081679751.19"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "RowType": "Row",
+                    "Cells": {
+                      "Cell": [
+                        {
+                          "Value": "Mastercard",
+                          "Attributes": {
+                            "Attribute": {
+                              "Value": "6a466f41-ec20-4acc-8944-78acf45b3f95",
+                              "Id": "accountID"
+                            }
+                          }
+                        },
+                        {
+                          "Value": "22.25"
+                        },
+                        {
+                          "Value": "0.00",
+                          "Attributes": {
+                            "Attribute": {
+                              "Value": "6a466f41-ec20-4acc-8944-78acf45b3f95",
+                              "Id": "account"
+                            }
+                          }
+                        },
+                        {
+                          "Value": "0.00",
+                          "Attributes": {
+                            "Attribute": {
+                              "Value": "6a466f41-ec20-4acc-8944-78acf45b3f95",
+                              "Id": "account"
+                            }
+                          }
+                        },
+                        {
+                          "Value": "0.00"
+                        },
+                        {
+                          "Value": "22.25"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "RowType": "SummaryRow",
+                    "Cells": {
+                      "Cell": [
+                        {
+                          "Value": "Total"
+                        },
+                        {
+                          "Value": "96214446620.66"
+                        },
+                        {
+                          "Value": "0.00"
+                        },
+                        {
+                          "Value": "0.00"
+                        },
+                        {
+                          "Value": "1867261659.76"
+                        },
+                        {
+                          "Value": "98081708280.42"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}
