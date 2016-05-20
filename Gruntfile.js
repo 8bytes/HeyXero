@@ -16,7 +16,7 @@ grunt.initConfig({
 			src: ['tests/**/*.js']
 		}
 	},
-	
+
 	watch: {
 		js: {
 			options: {
@@ -37,8 +37,9 @@ grunt.initConfig({
       		'js/what-bills-are-overdue.js': 'scripts/what-bills-are-overdue.coffee',
       		'js/who-is.js': 'scripts/who-is.coffee',
       		'js/who-owes-money.js': 'scripts/who-owes-money.coffee',
-      		'js/xeno-reports.js': 'scripts/xeno-reports.coffee',
-      		'js/xero-connection.js': 'scripts/xero-connection.coffee',
+      		'js/xero-commands.js': 'scripts/xero-commands.coffee',
+      		'js/xero-queries.js': 'scripts/xero-queries.coffee',
+      		'js/xero-connection.js': 'scripts/xero-connection.coffee'
 			}
 		}
       }

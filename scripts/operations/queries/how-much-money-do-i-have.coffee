@@ -1,5 +1,5 @@
 Promise = require("bluebird");
-XeroConnection = require('./xero-connection');
+XeroConnection = require('./../../xero-connection');
 numeral = require('numeral');
 
 module.exports = {
