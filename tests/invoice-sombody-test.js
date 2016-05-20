@@ -1,5 +1,5 @@
 var assert = require('assert');
-var invoiceSomebody = require('../js/invoice-somebody');
+var invoiceSomebody = require('../js/operations/commands/invoice-somebody');
 var FS = require('fs');
 
 

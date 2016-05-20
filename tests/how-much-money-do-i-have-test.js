@@ -1,5 +1,5 @@
 var assert = require('assert');
-var howMuchMoneyDoIHave = require('../js/how-much-money-do-i-have');
+var howMuchMoneyDoIHave = require('../js/operations/queries/how-much-money-do-i-have');
 var FS = require('fs');
 
 

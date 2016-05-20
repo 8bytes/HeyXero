@@ -1,6 +1,6 @@
 ﻿var assert = require('assert');
 var FS = require('fs');
-var whoOwesMoney = require('../js/who-owes-money');
+var whoOwesMoney = require('../js/operations/queries/who-owes-money');
 
 
 describe('WhoOwesMoney', function () {
