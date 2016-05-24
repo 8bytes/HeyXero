@@ -1,2 +1,3 @@
+# Travis settings
 language: node_js
 node_js: "4.4.4"
