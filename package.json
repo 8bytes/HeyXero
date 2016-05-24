@@ -28,6 +28,10 @@
   "engines": {
     "node": "0.10.x"
   },
+  "scripts": {
+    "build": "npm install",
+    "test": "grunt coffee test"
+  },
   "devDependencies": {
     "chai": "^3.0.0",
     "grunt": "^0.4.5",
