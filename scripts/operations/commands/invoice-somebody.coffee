@@ -1,5 +1,5 @@
 Promise = require("bluebird");
-XeroConnection = require('./xero-connection');
+XeroConnection = require('./../../xero-connection');
 
 module.exports = {
 
@@ -46,10 +46,10 @@ module.exports = {
   createAnswer: (jsonResponse) ->
     console.log("Creating answer for: #{JSON.stringify(jsonResponse)}")
     {
-      Id: jsonResponse.Response.Id
+      InvoiceId: jsonResponse.Response.Invoices.Invoice.InvoiceID
     }
 
   formatAnswer: (answer) ->
-    "\nInvoice created, view it here: https://go.xero.com/AccountsReceivable/View.aspx?invoiceid=#{answer.Id}"
+    "\nInvoice created, view it here: https://go.xero.com/AccountsReceivable/View.aspx?invoiceid=#{answer.InvoiceId}"
 
 }

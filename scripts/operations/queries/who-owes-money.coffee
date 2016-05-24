@@ -1,5 +1,5 @@
 Promise = require("bluebird");
-XeroConnection = require('./xero-connection');
+XeroConnection = require('./../../xero-connection');
 _ = require('lodash');
 numeral = require('numeral');
 
@@ -14,6 +14,7 @@ module.exports = {
       console.log('sending...')
       XeroConnection().call('GET', GetContactsOwingMoney, null, (err, json) ->
         if(err)
+          console.log("error calling WhoOwesMoney: #{JSON.stringify(err)}")
           reject()
         else
           resolve(json.Response)

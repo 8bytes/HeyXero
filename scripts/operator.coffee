@@ -1,10 +1,10 @@
 Promise = require("bluebird");
 
 # All of the operators
-WhoOwesMoney = require('./who-owes-money');
-HowMuchMoneyDoIHave = require('./how-much-money-do-i-have');
-WhatBillsAreComingUp = require('./what-bills-are-coming-up');
-InvoiceSomebody = require('./invoice-somebody');
+WhoOwesMoney = require('./operations/queries/who-owes-money');
+HowMuchMoneyDoIHave = require('./operations/queries/how-much-money-do-i-have');
+WhatBillsAreComingUp = require('./operations/queries/what-bills-are-coming-up');
+InvoiceSomebody = require('./operations/commands/invoice-somebody');
 
 standardSingleQuery = (operation) ->
   new Promise((resolve, reject) ->

@@ -1,5 +1,4 @@
 Xero = require('xero');
-FS = require('fs');
 
 module.exports = () ->
-		new Xero("WCX8ZZUPBNEEMEYKCVQMSSBBZIQCUY", "AFJWIDDM7NZOW4L9UERXKB7HAGDUZA", FS.readFileSync('./privatekey-adams-pizza-emporium.pem'))
+		new Xero(process.env.XERO_API_CONSUMER_KEY, process.env.XERO_API_CONSUMER_SECRET, process.env.XERO_API_PRIVATE_KEY)

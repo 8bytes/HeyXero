@@ -1,5 +1,5 @@
 Promise = require("bluebird");
-XeroConnection = require('./xero-connection');
+XeroConnection = require('./../../xero-connection');
 _ = require('lodash');
 moment = require('moment');
 numeral = require('numeral');
@@ -10,10 +10,9 @@ module.exports = {
 	doRequest: () ->
 		console.log('WhatBillsAreComingUp.doRequest()')
 		promise = new Promise((resolve, reject) ->
-			#console.log("GET: #{GetBillsComingUp}")
 			XeroConnection().call('GET', GetBillsComingUp, null, (err, json) ->
-				#console.log("Received: #{JSON.stringify(json)}")
 				if(err)
+					console.log("Error making WhatBillAreComingUp call, error: #{ JSON.stringify(err) }")
 					reject()
 				else
 					resolve(json.Response)
@@ -49,6 +48,6 @@ module.exports = {
 					line += (' *' + invoice.invoiceNumber + '*')
 				line += (' ' + invoice.name + ': *' + numeral(invoice.amountDue).format('$0,0.00') + '*');
 				results.push(line);
-			)			
+			)
 		return results;
-  }
+}

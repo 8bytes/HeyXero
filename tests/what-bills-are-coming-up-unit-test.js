@@ -1,6 +1,6 @@
 var assert = require('assert');
 var FS = require('fs');
-var whatBillsAreComingUp = require('../js/what-bills-are-coming-up'); 
+var whatBillsAreComingUp = require('../js/operations/queries/what-bills-are-coming-up'); 
 var moment = require('moment');
 
 describe('WhatBillsAreComingUp', function () {
