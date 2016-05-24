@@ -5,12 +5,12 @@ It's basic and only has a few commands, but it's a start and we want to get it o
 
 ### Overview
 
-This is repo contains a fully working hubot with the slack adapter and custom scripts for making calls to Xero's Public API.
+This repo contains a fully working hubot with the slack adapter and custom scripts for making calls to Xero's Public API.
 It is based off of michikono's repo (https://github.com/michikono/slackbot-tutorial)
 It also uses a public node js client for the Xero API by thallium205 (https://github.com/thallium205/xero)
 
 
-### Connecting to Xero private application
+### Connecting to the Xero public API with a private application
 
 Set up a private application for the Xero Org you'd like to connect the bot to, following the steps here:
 https://developer.xero.com/documentation/getting-started/private-applications/
