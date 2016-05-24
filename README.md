@@ -22,7 +22,7 @@ Note the CONSUMER_KEY and CONSUMER_SECRET and private_key.pem created through th
 You can start hubot locally by running the following commands in the base directory of this project:
 
     % export XERO_API_CONSUMER_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-    % export XERO_API_CONSUMER_SECRET=NOTFW35P7RGG1KN96AWKPGWM6JIOUX
+    % export XERO_API_CONSUMER_SECRET=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
     % export XERO_API_PRIVATE_KEY="$(cat /path/to/private_key.pem)"
     % npm install
     % bin/hubot
