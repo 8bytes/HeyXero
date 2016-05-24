@@ -1,18 +1,29 @@
-# Slackbot Tutorial Bot
+# HeyXero - simple hubot with Slack and Xero integration
 
-This tutorial is geared toward writing a Slack hubot instance. It includes demos and examples that work in hubot + slack (but could work with another adapter).
+This bot is a result of an internal hackathon in Xero, by Adam Moore (adam.moore@xero.com), Nick Green (nick.green@xero.com), and Scott Potter (scott.potter@xero.com).
+It's basic and only has a few commands, but it's a start and we want to get it out there and do more!
 
 ### Overview
 
-* An accompanying blog post can be found here: http://www.michikono.com/2015/07/10/in-depth-tutorial-on-writing-a-slackbot/
-* This project contains a more thorough set of example scripts in [slackbot-examples.coffee](https://github.com/michikono/slackbot-tutorial/blob/master/scripts/slackbot-examples.coffee). 
+This is repo contains a fully working hubot with the slack adapter and custom scripts for making calls to Xero's Public API.
+It is based off of michikono's repo (https://github.com/michikono/slackbot-tutorial)
+It also uses a public node js client for the Xero API by thallium205 (https://github.com/thallium205/xero)
 
-### Running tutorial Locally
 
-You can test your hubot by running the following.
+### Connecting to Xero private application
 
-You can start hubot-tutorial locally by running:
+Set up a private application for the Xero Org you'd like to connect the bot to, following the steps here:
+https://developer.xero.com/documentation/getting-started/private-applications/
 
+Note the CONSUMER_KEY and CONSUMER_SECRET and private_key.pem created through this process, as they are necessary to set as environment variables for the bot.
+
+### Running the bot Locally
+
+You can start hubot locally by running the following commands in the base directory of this project:
+
+    % export XERO_API_CONSUMER_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    % export XERO_API_CONSUMER_SECRET=NOTFW35P7RGG1KN96AWKPGWM6JIOUX
+    % export XERO_API_PRIVATE_KEY="$(cat /path/to/private_key.pem)"
     % npm install
     % bin/hubot
 
@@ -24,7 +35,7 @@ prompt:
     [Sun, 04 Dec 2011 18:41:11 GMT] INFO Loading scripts from /home/tomb/Development/hubot/src/scripts
     Hubot>
 
-Then you can interact with hubot-tutorial by typing `hubot help`.
+Then you can interact with hubot by typing `hubot help`.
 
     hubot> hubot help
 
@@ -35,107 +46,41 @@ Then you can interact with hubot-tutorial by typing `hubot help`.
 
 You can test out custom commands by typing them in as if you were in a chat room with the bot:
 
-    hubot> hubot sleep it off
-    hubot> zzz...
+    Hubot> hubot who owes me money?
+    Hubot> about to ask operator, who owes money?
+    doRequest()
+    sending...
+    Shell: 
+    Kim Dot C: *$6,223.80* ($6,223.80 overdue)
+    xero: *$3,387.90* ($3,387.90 overdue)
+    TMNT: *$379.50* ($379.50 overdue)
+    Shazza's 21st: *$253.00* ($253.00 overdue)
+    Club Mate: *$100.00* ($100.00 overdue)
 
-### Steps to recreate this bot ###
- 
-If you have root permissions on your current user account:
- 
-    npm install -g hubot coffee-script yo generator-hubot
-    mkdir -p /path/to/hubot
-    cd /path/to/hubot
-    yo hubot
-    # choose "slack" as the adapter
-    
-Otherwise:
+## Testing the bot locally with slack:
 
-    npm config set prefix ~/.npm
-    export PATH="$PATH:$HOME/.npm/bin"
-    npm install hubot coffee-script yo generator-hubot
-    mkdir -p /path/to/hubot
-    cd /path/to/hubot
-    yo hubot
-    # choose "slack" as the adapter
-
-Install redis (the database that powers hubot):
-
-If you have brew, use this:
-
-    brew install redis
-        
-Otherwise, use this resource: http://redis.io/topics/quickstart
-
-Start redis:
-
-    redis-server
-
-### Scripting
-
-An example script is included at [`scripts/slackbot-examples.coffee`](https://github.com/michikono/slackbot-tutorial/blob/master/scripts/slackbot-examples.coffee), so check it out to
-get started, along with the [Scripting Guide](https://github.com/github/hubot/blob/master/docs/scripting.md).
-
-
-### hubot-scripts
-
-There will inevitably be functionality that everyone will want. Instead
-of writing it yourself, you can check
-[hubot-scripts][hubot-scripts] for existing scripts.
-
-To enable scripts from the hubot-scripts package, add the script name with
-extension as a double quoted string to the `hubot-scripts.json` file in this
-repo.
-
-[hubot-scripts]: https://github.com/github/hubot-scripts
-
-Once you write this, check out my [todo](https://github.com/michikono/how-tos/blob/master/publishing-hubot-scripts-with-npm.md) on how to publish it to NPM.
-
-### external-scripts
-
-Hubot is able to load scripts from third-party `npm` package. Check the package's documentation, but in general it is:
-
-1. Add the packages as dependencies into your `package.json`
-2. `npm install` to make sure those packages are installed
-3. Add the package name to `external-scripts.json` as a double quoted string
-
-You can review `external-scripts.json` to see what is included by default.
-
-##  Persistence
-
-If you are going to use the `hubot-redis-brain` package
-(strongly suggested), you will need to add the Redis to Go addon on Heroku which requires a verified
-account or you can create an account at [Redis to Go][redistogo] and manually
-set the `REDISTOGO_URL` variable.
-
-    % heroku config:add REDISTOGO_URL="..."
-
-If you don't require any persistence feel free to remove the
-`hubot-redis-brain` from `external-scripts.json` and you don't need to worry
-about redis at all.
-
-[redistogo]: https://redistogo.com/
-
-## Testing the bot locally:
-
-    HUBOT_SLACK_TOKEN=YOUR_TOKEN_HERE ./bin/hubot -a slack
+Add your slack token as an environment variable, and start hubot with the slack adapter. To find or generate a slack token for this bot, go to your slack team page -> Apps & integrations -> Manage -> And add a hubot configuration. 
+  
+    export HUBOT_SLACK_TOKEN=YOUR_TOKEN_HERE
+    ./bin/hubot -a slack
     
 ## Deployment
 
 This is a modified set of instructions based on the [instructions on the Hubot wiki](https://github.com/github/hubot/blob/master/docs/deploying/heroku.md).
 
-- Follow the instructions above to create a hubot locally
-- Edit your `Procfile`; it should look something like this:
-
-        web: bin/hubot --adapter slack
-
 - Install [heroku toolbelt](https://toolbelt.heroku.com/) if you haven't already.
-- `heroku create my-company-slackbot`
-- `heroku addons:add redistogo:nano`
+- `heroku create my-org-xerobot`
 - Activate the Hubot service on your ["Team Services"](http://my.slack.com/services/new/hubot) page inside Slack.
-- Add the [config variables](#adapter-configuration). For example:
+- Add the [slack config variables](#adapter-configuration). For example:
 
         % heroku config:add HUBOT_SLACK_TOKEN=xoxb-1234-5678-91011-00e4dd
-        % heroku config:add HEROKU_URL=http://my-company-slackbot.herokuapp.com
+        % heroku config:add HEROKU_URL=http://my-org-xerobot.herokuapp.com
+
+- Add the [xero config variables]. For example:
+
+        % heroku config:add XERO_API_CONSUMER_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+        % heroku config:add XERO_API_CONSUMER_SECRET=NOTFW35P7RGG1KN96AWKPGWM6JIOUX
+        % heroku config:add XERO_API_PRIVATE_KEY="$(cat /path/to/private_key.pem)"
 
 - Deploy and start the bot:
 
@@ -146,9 +91,12 @@ This is a modified set of instructions based on the [instructions on the Hubot w
 
 ## Configuration
 
-This adapter uses the following environment variables:
+This bot uses the following environment variables:
 
  - `HUBOT_SLACK_TOKEN` - this is the API token for the Slack user you would like to run Hubot under.
+ - `XERO_API_CONSUMER_KEY` - the consumer key for the private application registered with the Xero API
+ - `XERO_API_CONSUMER_SECRET` - the consumer secret for the private application registered with the Xero API
+ - `XERO_API_PRIVATE_KEY` - the private key created while generating the public key to provide to the Xero API for signing.
 
 To add or remove your bot from specific channels or private groups, you can use the /kick and /invite slash commands that are built into Slack.
 
