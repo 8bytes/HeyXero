@@ -1,0 +1,70 @@
+{
+  "Response": {
+    "Id": "47dde990-5167-48e5-922b-3c9d2ea9c304",
+    "Status": "OK",
+    "ProviderName": "Slackbot",
+    "DateTimeUTC": "2016-05-12T23:28:14.6731956Z",
+    "Invoices": {
+      "Invoice": {
+        "Contact": {
+          "ContactID": "ef6afee4-fd74-4383-b8a7-1ea8ac6b82ee",
+          "ContactStatus": "ACTIVE",
+          "Name": "sally",
+          "Addresses": {
+            "Address": [
+              {
+                "AddressType": "POBOX"
+              },
+              {
+                "AddressType": "STREET"
+              }
+            ]
+          },
+          "Phones": {
+            "Phone": [
+              {
+                "PhoneType": "MOBILE"
+              },
+              {
+                "PhoneType": "DEFAULT"
+              },
+              {
+                "PhoneType": "DDI"
+              },
+              {
+                "PhoneType": "FAX"
+              }
+            ]
+          },
+          "UpdatedDateUTC": "2016-05-12T23:27:36.037",
+          "IsSupplier": "false",
+          "IsCustomer": "true"
+        },
+        "Date": "2016-05-13T00:00:00",
+        "Status": "DRAFT",
+        "LineAmountTypes": "Exclusive",
+        "LineItems": {
+          "LineItem": {
+            "Description": "stuff",
+            "UnitAmount": "20.00",
+            "LineAmount": "20.00",
+            "Quantity": "1.0000",
+            "LineItemID": "e7a9c1ae-7650-4a01-bfc2-5608454fcc40"
+          }
+        },
+        "SubTotal": "20.00",
+        "TotalTax": "0.00",
+        "Total": "20.00",
+        "UpdatedDateUTC": "2016-05-12T23:28:14.61",
+        "CurrencyCode": "NZD",
+        "Type": "ACCREC",
+        "InvoiceID": "93be098b-6bd5-4010-b66a-03e80eb038bb",
+        "InvoiceNumber": "INV-0009",
+        "AmountDue": "20.00",
+        "AmountPaid": "0.00",
+        "SentToContact": "false",
+        "CurrencyRate": "1.000000"
+      }
+    }
+  }
+}

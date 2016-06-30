@@ -1,0 +1,73 @@
+{
+	"Id": "2444c991-2af9-47b6-9c99-8d87acfb0c28",
+	"Status": "OK",
+	"ProviderName": "Xeno-Dev",
+	"DateTimeUTC": "2016-05-12T21:27:12.7558294Z",
+	"Invoices": {
+		"Invoice": [{
+			"Contact": {
+				"ContactID": "3a990f8b-3b13-4c69-b2bb-8b10491df4b2",
+				"Name": "Whiskey Company Limited"
+			},
+			"Date": "2014-03-25T00:00:00",
+			"DueDate": "2014-04-01T00:00:00",
+			"Status": "AUTHORISED",
+			"LineAmountTypes": "Exclusive",
+			"LineItems": {
+				"LineItem": [{
+					"ItemCode": "69384912",
+					"Description": "Bags",
+					"UnitAmount": "35.00",
+					"TaxType": "INPUT2",
+					"TaxAmount": "5.25",
+					"LineAmount": "35.00",
+					"AccountCode": "100",
+					"Quantity": "1.0000",
+					"LineItemID": "5ed2031f-4b33-4583-97b6-a99de176a1f9"
+				}, {
+					"ItemCode": "33321091",
+					"Description": "Butter",
+					"UnitAmount": "5.00",
+					"TaxType": "INPUT2",
+					"TaxAmount": "3.75",
+					"LineAmount": "25.00",
+					"AccountCode": "100",
+					"Quantity": "5.0000",
+					"LineItemID": "440cd446-7caa-4932-bb91-b409f16457e2"
+				}, {
+					"ItemCode": "67837516",
+					"Description": "Flour",
+					"UnitAmount": "45.00",
+					"TaxType": "INPUT2",
+					"TaxAmount": "6.75",
+					"LineAmount": "45.00",
+					"AccountCode": "100",
+					"Quantity": "1.0000",
+					"LineItemID": "7b64893c-9c4d-430d-aca5-c5d456361043"
+				}, {
+					"ItemCode": "48423541",
+					"Description": "Nuts",
+					"UnitAmount": "25.00",
+					"TaxType": "INPUT2",
+					"TaxAmount": "3.75",
+					"LineAmount": "25.00",
+					"AccountCode": "100",
+					"Quantity": "1.0000",
+					"LineItemID": "fad065b5-78c0-48a4-8fb3-cefacc8f2f3f"
+				}]
+			},
+			"SubTotal": "130.00",
+			"TotalTax": "19.50",
+			"Total": "149.50",
+			"UpdatedDateUTC": "2015-04-01T21:50:16.897",
+			"CurrencyCode": "NZD",
+			"Type": "ACCPAY",
+			"InvoiceID": "5a34bcf9-4313-4dcd-a703-0d76c9a95a9e",
+			"InvoiceNumber": "15",
+			"AmountDue": "149.50",
+			"AmountPaid": "0.00",
+			"AmountCredited": "0.00",
+			"HasAttachments": "false"
+		}]
+	}
+}

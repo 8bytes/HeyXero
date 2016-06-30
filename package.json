@@ -1,0 +1,44 @@
+{
+  "name": "heyxero",
+  "version": "0.0.0",
+  "private": true,
+  "author": "Scott Potter <scott.potter@xero.com>",
+  "description": "A personal assitant for your small business, by Xero.",
+  "dependencies": {
+    "bluebird": "^3.3.5",
+    "hubot": "^2.10.0",
+    "hubot-diagnostics": "0.0.1",
+    "hubot-google-images": "^0.1.2",
+    "hubot-google-translate": "^0.1.0",
+    "hubot-help": "^0.1.1",
+    "hubot-heroku-keepalive": "0.0.4",
+    "hubot-maps": "0.0.1",
+    "hubot-pugme": "^0.1.0",
+    "hubot-redis-brain": "0.0.2",
+    "hubot-rules": "^0.1.0",
+    "hubot-scripts": "^2.5.16",
+    "hubot-shipit": "^0.1.1",
+    "hubot-slack": "^3.1.0",
+    "hubot-youtube": "^0.1.2",
+    "lodash": "^4.12.0",
+    "moment": "^2.13.0",
+    "numeral": "^1.5.3",
+    "xero": "0.0.8"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "scripts": {
+    "build": "npm install",
+    "test": "grunt coffee test"
+  },
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-mocha-test": "^0.12.7",
+    "mocha": "^2.2.5",
+    "grunt-contrib-coffee": "1.0.0"
+  }
+}

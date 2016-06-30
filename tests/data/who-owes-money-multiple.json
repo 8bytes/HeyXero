@@ -1,0 +1,1089 @@
+{
+  "Id": "a23ef396-9095-48ce-91a6-1717eb5da1bb",
+  "Status": "OK",
+  "ProviderName": "Xeno-Dev",
+  "DateTimeUTC": "2016-05-12T08:36:49.6474528Z",
+  "Contacts": {
+    "Contact": [{
+      "ContactID": "c7fae84d-0f98-4908-ad0c-597293b0faa7",
+      "AccountNumber": "ID40235",
+      "ContactStatus": "ACTIVE",
+      "Name": "Alpha Company Limited",
+      "FirstName": "Andrea",
+      "LastName": "Angel",
+      "EmailAddress": "jpa1@test.xero.com",
+      "SkypeUserName": "My.Skype.Username",
+      "Addresses": {
+        "Address": [{
+          "AddressType": "POBOX",
+          "AddressLine1": "3 Homestead Pl",
+          "City": "Glenview2",
+          "Region": "Hamilton2",
+          "PostalCode": "A3206",
+          "Country": "New Zealand"
+        }, {
+          "AddressType": "STREET",
+          "AddressLine1": "3 Homestead Pl",
+          "City": "Glenview2",
+          "Region": "Hamilton2",
+          "PostalCode": "A3206",
+          "Country": "New Zealand"
+        }]
+      },
+      "Phones": {
+        "Phone": [{
+          "PhoneType": "DDI",
+          "PhoneNumber": "68782604",
+          "PhoneCountryCode": "64"
+        }, {
+          "PhoneType": "DEFAULT",
+          "PhoneNumber": "4A12163529"
+        }, {
+          "PhoneType": "FAX",
+          "PhoneNumber": "9A99999999A0"
+        }, {
+          "PhoneType": "MOBILE",
+          "PhoneNumber": "4A12163528"
+        }]
+      },
+      "UpdatedDateUTC": "2016-03-09T01:35:44.827",
+      "IsSupplier": "false",
+      "IsCustomer": "true",
+      "DefaultCurrency": "EUR",
+      "Discount": "50.00",
+      "BrandingTheme": {
+        "BrandingThemeID": "11698565-4f79-480f-93c5-f9245a26264d",
+        "Name": "Secondary Theme "
+      },
+      "SalesDefaultAccountCode": "260",
+      "Balances": {
+        "AccountsReceivable": {
+          "Outstanding": "989.77",
+          "Overdue": "989.77"
+        },
+        "AccountsPayable": {
+          "Outstanding": "0.00",
+          "Overdue": "0.00"
+        }
+      },
+      "PaymentTerms": {
+        "Sales": {
+          "Day": "30",
+          "Type": "OFFOLLOWINGMONTH"
+        }
+      },
+      "HasAttachments": "false"
+    }, {
+      "ContactID": "043c445c-d7aa-4262-87a5-1248a8f5bcb3",
+      "ContactStatus": "ACTIVE",
+      "Name": "A",
+      "Addresses": {
+        "Address": [{
+          "AddressType": "POBOX"
+        }, {
+          "AddressType": "STREET"
+        }]
+      },
+      "Phones": {
+        "Phone": [{
+          "PhoneType": "DDI"
+        }, {
+          "PhoneType": "DEFAULT"
+        }, {
+          "PhoneType": "FAX"
+        }, {
+          "PhoneType": "MOBILE"
+        }]
+      },
+      "UpdatedDateUTC": "2015-09-28T21:25:10.833",
+      "IsSupplier": "false",
+      "IsCustomer": "true",
+      "DefaultCurrency": "NZD",
+      "Balances": {
+        "AccountsReceivable": {
+          "Outstanding": "202.40",
+          "Overdue": "202.40"
+        },
+        "AccountsPayable": {
+          "Outstanding": "0.00",
+          "Overdue": "0.00"
+        }
+      },
+      "HasAttachments": "false"
+    }, {
+      "ContactID": "ea702433-3517-4c41-aea0-a7b762c69d2b",
+      "AccountNumber": "ID21828",
+      "ContactStatus": "ACTIVE",
+      "Name": "Bravo Company Ltd",
+      "FirstName": "Bert",
+      "LastName": "Bentley",
+      "EmailAddress": "jpb1@test.xero.com",
+      "SkypeUserName": "My.Skype.Username",
+      "TaxNumber": "878787878",
+      "AccountsReceivableTaxType": "OUTPUT2",
+      "AccountsPayableTaxType": "INPUT2",
+      "Addresses": {
+        "Address": [{
+          "AddressType": "POBOX",
+          "AddressLine1": "3 Homestead Pl",
+          "AddressLine2": "Glenview",
+          "AddressLine3": "Hamilton 3206",
+          "AddressLine4": "New Zealand"
+        }, {
+          "AddressType": "STREET",
+          "AddressLine1": "3 Homestead Pl",
+          "City": "Glenview",
+          "Region": "Hamilton",
+          "PostalCode": "3206",
+          "Country": "New Zealand"
+        }]
+      },
+      "Phones": {
+        "Phone": [{
+          "PhoneType": "DDI",
+          "PhoneNumber": "999999999"
+        }, {
+          "PhoneType": "DEFAULT",
+          "PhoneNumber": "412163530"
+        }, {
+          "PhoneType": "FAX",
+          "PhoneNumber": "999999999"
+        }, {
+          "PhoneType": "MOBILE",
+          "PhoneNumber": "412163530"
+        }]
+      },
+      "UpdatedDateUTC": "2016-02-29T02:48:13.15",
+      "IsSupplier": "false",
+      "IsCustomer": "true",
+      "Website": "http://www.website.com",
+      "PurchasesDefaultAccountCode": "100",
+      "SalesDefaultAccountCode": "200",
+      "Balances": {
+        "AccountsReceivable": {
+          "Outstanding": "147.60",
+          "Overdue": "147.60"
+        },
+        "AccountsPayable": {
+          "Outstanding": "0.00",
+          "Overdue": "0.00"
+        }
+      },
+      "PaymentTerms": {
+        "Bills": {
+          "Day": "0",
+          "Type": "OFCURRENTMONTH"
+        },
+        "Sales": {
+          "Day": "0",
+          "Type": "OFCURRENTMONTH"
+        }
+      },
+      "HasAttachments": "false"
+    }, {
+      "ContactID": "fe7a5c8d-cec2-429e-abf3-22601c0ccb00",
+      "ContactStatus": "ACTIVE",
+      "Name": "City Parking",
+      "Addresses": {
+        "Address": [{
+          "AddressType": "POBOX"
+        }, {
+          "AddressType": "STREET"
+        }]
+      },
+      "Phones": {
+        "Phone": [{
+          "PhoneType": "DDI"
+        }, {
+          "PhoneType": "DEFAULT"
+        }, {
+          "PhoneType": "FAX"
+        }, {
+          "PhoneType": "MOBILE"
+        }]
+      },
+      "UpdatedDateUTC": "2016-03-16T21:52:33.54",
+      "IsSupplier": "false",
+      "IsCustomer": "true",
+      "DefaultCurrency": "USD",
+      "Balances": {
+        "AccountsReceivable": {
+          "Outstanding": "124.78",
+          "Overdue": "124.78"
+        },
+        "AccountsPayable": {
+          "Outstanding": "0.00",
+          "Overdue": "0.00"
+        }
+      },
+      "HasAttachments": "false"
+    }, {
+      "ContactID": "15811004-d487-4d00-ad71-b3b14bb463fc",
+      "ContactStatus": "ACTIVE",
+      "Name": "Test",
+      "Addresses": {
+        "Address": [{
+          "AddressType": "POBOX"
+        }, {
+          "AddressType": "STREET"
+        }]
+      },
+      "Phones": {
+        "Phone": [{
+          "PhoneType": "DDI"
+        }, {
+          "PhoneType": "DEFAULT"
+        }, {
+          "PhoneType": "FAX"
+        }, {
+          "PhoneType": "MOBILE"
+        }]
+      },
+      "UpdatedDateUTC": "2015-10-15T02:37:34.897",
+      "IsSupplier": "false",
+      "IsCustomer": "true",
+      "DefaultCurrency": "NZD",
+      "Balances": {
+        "AccountsReceivable": {
+          "Outstanding": "101.20",
+          "Overdue": "101.20"
+        },
+        "AccountsPayable": {
+          "Outstanding": "0.00",
+          "Overdue": "0.00"
+        }
+      },
+      "HasAttachments": "false"
+    }, {
+      "ContactID": "3f1971c0-5688-4cf7-9702-f241becf6cb3",
+      "AccountNumber": "ID44745",
+      "ContactStatus": "ACTIVE",
+      "Name": "Foxtrot Company Limited",
+      "FirstName": "Frank",
+      "LastName": "Fielding",
+      "EmailAddress": "jpf1@test.xero.com",
+      "SkypeUserName": "My.Skype.Username",
+      "TaxNumber": "878787878",
+      "AccountsReceivableTaxType": "OUTPUT2",
+      "AccountsPayableTaxType": "INPUT2",
+      "Addresses": {
+        "Address": [{
+          "AddressType": "POBOX",
+          "AddressLine1": "3 Homestead Pl",
+          "City": "Glenview",
+          "Region": "Hamilton",
+          "PostalCode": "3206",
+          "Country": "New Zealand"
+        }, {
+          "AddressType": "STREET",
+          "AddressLine1": "3 Homestead Pl",
+          "City": "Glenview",
+          "Region": "Hamilton",
+          "PostalCode": "3206",
+          "Country": "New Zealand"
+        }]
+      },
+      "Phones": {
+        "Phone": [{
+          "PhoneType": "DDI",
+          "PhoneNumber": "999999999"
+        }, {
+          "PhoneType": "DEFAULT",
+          "PhoneNumber": "412163532"
+        }, {
+          "PhoneType": "FAX",
+          "PhoneNumber": "999999999"
+        }, {
+          "PhoneType": "MOBILE",
+          "PhoneNumber": "412163532"
+        }]
+      },
+      "UpdatedDateUTC": "2016-03-09T21:10:33.367",
+      "IsSupplier": "false",
+      "IsCustomer": "true",
+      "DefaultCurrency": "AUD",
+      "Website": "http://www.website.com",
+      "PurchasesDefaultAccountCode": "100",
+      "SalesDefaultAccountCode": "200",
+      "Balances": {
+        "AccountsReceivable": {
+          "Outstanding": "93.73",
+          "Overdue": "93.73"
+        },
+        "AccountsPayable": {
+          "Outstanding": "0.00",
+          "Overdue": "0.00"
+        }
+      },
+      "HasAttachments": "false"
+    }, {
+      "ContactID": "1542991c-caf8-42b6-82f0-bcfdc98fdb6e",
+      "AccountNumber": "ID16152",
+      "ContactStatus": "ACTIVE",
+      "Name": "Echo Company Limited",
+      "FirstName": "Evan",
+      "LastName": "Evans",
+      "EmailAddress": "jpe1@test.xero.com",
+      "SkypeUserName": "My.Skype.Username",
+      "TaxNumber": "878787878",
+      "AccountsReceivableTaxType": "OUTPUT2",
+      "AccountsPayableTaxType": "INPUT2",
+      "Addresses": {
+        "Address": [{
+          "AddressType": "POBOX",
+          "AddressLine1": "3 Homestead Pl",
+          "City": "Glenview",
+          "Region": "Hamilton",
+          "PostalCode": "3206",
+          "Country": "New Zealand"
+        }, {
+          "AddressType": "STREET",
+          "AddressLine1": "3 Homestead Pl",
+          "City": "Glenview",
+          "Region": "Hamilton",
+          "PostalCode": "3206",
+          "Country": "New Zealand"
+        }]
+      },
+      "Phones": {
+        "Phone": [{
+          "PhoneType": "DDI",
+          "PhoneNumber": "999999999"
+        }, {
+          "PhoneType": "DEFAULT",
+          "PhoneNumber": "412163531"
+        }, {
+          "PhoneType": "FAX",
+          "PhoneNumber": "999999999"
+        }, {
+          "PhoneType": "MOBILE",
+          "PhoneNumber": "412163531"
+        }]
+      },
+      "UpdatedDateUTC": "2015-04-01T01:59:00.763",
+      "IsSupplier": "false",
+      "IsCustomer": "true",
+      "Website": "http://www.website.com",
+      "PurchasesDefaultAccountCode": "100",
+      "SalesDefaultAccountCode": "200",
+      "Balances": {
+        "AccountsReceivable": {
+          "Outstanding": "80.21",
+          "Overdue": "80.21"
+        },
+        "AccountsPayable": {
+          "Outstanding": "0.00",
+          "Overdue": "0.00"
+        }
+      },
+      "HasAttachments": "false"
+    }, {
+      "ContactID": "3114175c-b513-4d86-9b18-86c5d0ff6ed6",
+      "ContactStatus": "ACTIVE",
+      "Name": "Bob Jones",
+      "Addresses": {
+        "Address": [{
+          "AddressType": "POBOX"
+        }, {
+          "AddressType": "STREET"
+        }]
+      },
+      "Phones": {
+        "Phone": [{
+          "PhoneType": "DDI"
+        }, {
+          "PhoneType": "DEFAULT"
+        }, {
+          "PhoneType": "FAX"
+        }, {
+          "PhoneType": "MOBILE"
+        }]
+      },
+      "UpdatedDateUTC": "2015-08-02T21:52:23.763",
+      "IsSupplier": "false",
+      "IsCustomer": "true",
+      "DefaultCurrency": "NZD",
+      "Balances": {
+        "AccountsReceivable": {
+          "Outstanding": "44.10",
+          "Overdue": "44.10"
+        },
+        "AccountsPayable": {
+          "Outstanding": "0.00",
+          "Overdue": "0.00"
+        }
+      },
+      "HasAttachments": "false"
+    }, {
+      "ContactID": "b0b0960a-dd7c-44fc-8ee8-b80082aa286c",
+      "ContactStatus": "ACTIVE",
+      "Name": "Ronald Drump",
+      "AccountsReceivableTaxType": "INPUT2",
+      "Addresses": {
+        "Address": [{
+          "AddressType": "POBOX"
+        }, {
+          "AddressType": "STREET"
+        }]
+      },
+      "Phones": {
+        "Phone": [{
+          "PhoneType": "DDI"
+        }, {
+          "PhoneType": "DEFAULT"
+        }, {
+          "PhoneType": "FAX"
+        }, {
+          "PhoneType": "MOBILE"
+        }]
+      },
+      "UpdatedDateUTC": "2016-03-30T03:47:39.073",
+      "IsSupplier": "false",
+      "IsCustomer": "true",
+      "DefaultCurrency": "USD",
+      "SalesDefaultAccountCode": "900",
+      "Balances": {
+        "AccountsReceivable": {
+          "Outstanding": "34.50",
+          "Overdue": "34.50"
+        },
+        "AccountsPayable": {
+          "Outstanding": "0.00",
+          "Overdue": "0.00"
+        }
+      },
+      "PaymentTerms": {
+        "Bills": {
+          "Day": "15",
+          "Type": "OFFOLLOWINGMONTH"
+        }
+      },
+      "HasAttachments": "false"
+    }, {
+      "ContactID": "ee82257d-0e65-43b8-94fb-275aed9714d1",
+      "AccountNumber": "ID39297",
+      "ContactStatus": "ACTIVE",
+      "Name": "Juliet Company Limited",
+      "FirstName": "Julie",
+      "LastName": "Johnson",
+      "EmailAddress": "jpj1@test.xero.com",
+      "SkypeUserName": "My.Skype.Username",
+      "TaxNumber": "878787878",
+      "AccountsReceivableTaxType": "OUTPUT2",
+      "AccountsPayableTaxType": "INPUT2",
+      "Addresses": {
+        "Address": [{
+          "AddressType": "POBOX",
+          "AddressLine1": "3 Homestead Pl",
+          "City": "Glenview",
+          "Region": "Hamilton",
+          "PostalCode": "3206",
+          "Country": "New Zealand"
+        }, {
+          "AddressType": "STREET",
+          "AddressLine1": "3 Homestead Pl",
+          "City": "Glenview",
+          "Region": "Hamilton",
+          "PostalCode": "3206",
+          "Country": "New Zealand"
+        }]
+      },
+      "Phones": {
+        "Phone": [{
+          "PhoneType": "DDI",
+          "PhoneNumber": "999999999"
+        }, {
+          "PhoneType": "DEFAULT",
+          "PhoneNumber": "412163534"
+        }, {
+          "PhoneType": "FAX",
+          "PhoneNumber": "999999999"
+        }, {
+          "PhoneType": "MOBILE",
+          "PhoneNumber": "412163534"
+        }]
+      },
+      "UpdatedDateUTC": "2015-04-01T01:59:00.903",
+      "IsSupplier": "false",
+      "IsCustomer": "true",
+      "Website": "http://www.website.com",
+      "PurchasesDefaultAccountCode": "100",
+      "SalesDefaultAccountCode": "200",
+      "Balances": {
+        "AccountsReceivable": {
+          "Outstanding": "33.35",
+          "Overdue": "33.35"
+        },
+        "AccountsPayable": {
+          "Outstanding": "0.00",
+          "Overdue": "0.00"
+        }
+      },
+      "HasAttachments": "false"
+    }, {
+      "ContactID": "018b7251-f61c-4747-af83-3d543a98eb24",
+      "AccountNumber": "ID80011",
+      "ContactStatus": "ACTIVE",
+      "Name": "Lima Company Limited",
+      "FirstName": "Linda",
+      "LastName": "LaDuke",
+      "EmailAddress": "jpl1@test.xero.com",
+      "SkypeUserName": "My.Skype.Username",
+      "TaxNumber": "878787878",
+      "AccountsReceivableTaxType": "OUTPUT2",
+      "AccountsPayableTaxType": "INPUT2",
+      "Addresses": {
+        "Address": [{
+          "AddressType": "POBOX",
+          "AddressLine1": "3 Homestead Pl",
+          "City": "Glenview",
+          "Region": "Hamilton",
+          "PostalCode": "3206",
+          "Country": "New Zealand"
+        }, {
+          "AddressType": "STREET",
+          "AddressLine1": "3 Homestead Pl",
+          "City": "Glenview",
+          "Region": "Hamilton",
+          "PostalCode": "3206",
+          "Country": "New Zealand"
+        }]
+      },
+      "Phones": {
+        "Phone": [{
+          "PhoneType": "DDI",
+          "PhoneNumber": "999999999"
+        }, {
+          "PhoneType": "DEFAULT",
+          "PhoneNumber": "412163530"
+        }, {
+          "PhoneType": "FAX",
+          "PhoneNumber": "999999999"
+        }, {
+          "PhoneType": "MOBILE",
+          "PhoneNumber": "412163530"
+        }]
+      },
+      "UpdatedDateUTC": "2015-04-01T01:59:00.95",
+      "IsSupplier": "false",
+      "IsCustomer": "true",
+      "Website": "http://www.website.com",
+      "PurchasesDefaultAccountCode": "100",
+      "SalesDefaultAccountCode": "200",
+      "Balances": {
+        "AccountsReceivable": {
+          "Outstanding": "33.35",
+          "Overdue": "33.35"
+        },
+        "AccountsPayable": {
+          "Outstanding": "0.00",
+          "Overdue": "0.00"
+        }
+      },
+      "HasAttachments": "false"
+    }, {
+      "ContactID": "fcfae333-1f12-4718-b57a-7c69820e5209",
+      "ContactStatus": "ACTIVE",
+      "Name": "Test1",
+      "Addresses": {
+        "Address": [{
+          "AddressType": "POBOX"
+        }, {
+          "AddressType": "STREET"
+        }]
+      },
+      "Phones": {
+        "Phone": [{
+          "PhoneType": "DDI"
+        }, {
+          "PhoneType": "DEFAULT"
+        }, {
+          "PhoneType": "FAX"
+        }, {
+          "PhoneType": "MOBILE"
+        }]
+      },
+      "UpdatedDateUTC": "2015-10-16T03:13:40.44",
+      "IsSupplier": "false",
+      "IsCustomer": "true",
+      "Balances": {
+        "AccountsReceivable": {
+          "Outstanding": "21.85",
+          "Overdue": "21.85"
+        },
+        "AccountsPayable": {
+          "Outstanding": "0.00",
+          "Overdue": "0.00"
+        }
+      },
+      "PaymentTerms": {
+        "Bills": {
+          "Day": "0",
+          "Type": "OFCURRENTMONTH"
+        },
+        "Sales": {
+          "Day": "0",
+          "Type": "OFCURRENTMONTH"
+        }
+      },
+      "HasAttachments": "false"
+    }, {
+      "ContactID": "15b042d3-c13d-4d4e-8fd9-a922ef2c5b8c",
+      "ContactStatus": "ACTIVE",
+      "Name": "Capital Cabs",
+      "Addresses": {
+        "Address": [{
+          "AddressType": "POBOX"
+        }, {
+          "AddressType": "STREET"
+        }]
+      },
+      "Phones": {
+        "Phone": [{
+          "PhoneType": "DDI"
+        }, {
+          "PhoneType": "DEFAULT"
+        }, {
+          "PhoneType": "FAX"
+        }, {
+          "PhoneType": "MOBILE"
+        }]
+      },
+      "UpdatedDateUTC": "2016-03-01T02:55:48.29",
+      "IsSupplier": "false",
+      "IsCustomer": "true",
+      "DefaultCurrency": "NZD",
+      "Balances": {
+        "AccountsReceivable": {
+          "Outstanding": "17.25",
+          "Overdue": "17.25"
+        },
+        "AccountsPayable": {
+          "Outstanding": "0.00",
+          "Overdue": "0.00"
+        }
+      },
+      "PaymentTerms": {
+        "Bills": {
+          "Day": "15",
+          "Type": "OFFOLLOWINGMONTH"
+        },
+        "Sales": {
+          "Day": "15",
+          "Type": "OFFOLLOWINGMONTH"
+        }
+      },
+      "HasAttachments": "false"
+    }, {
+      "ContactID": "e129430d-24d3-406b-bec6-4beae50abe66",
+      "ContactStatus": "ACTIVE",
+      "Name": "City fuel",
+      "Addresses": {
+        "Address": [{
+          "AddressType": "POBOX"
+        }, {
+          "AddressType": "STREET"
+        }]
+      },
+      "Phones": {
+        "Phone": [{
+          "PhoneType": "DDI"
+        }, {
+          "PhoneType": "DEFAULT"
+        }, {
+          "PhoneType": "FAX"
+        }, {
+          "PhoneType": "MOBILE"
+        }]
+      },
+      "UpdatedDateUTC": "2016-02-17T22:58:17.9",
+      "IsSupplier": "false",
+      "IsCustomer": "true",
+      "DefaultCurrency": "NZD",
+      "BrandingTheme": {
+        "BrandingThemeID": "11698565-4f79-480f-93c5-f9245a26264d",
+        "Name": "Secondary Theme "
+      },
+      "PurchasesDefaultAccountCode": "449",
+      "SalesDefaultAccountCode": "270",
+      "SalesTrackingCategories": {
+        "SalesTrackingCategory": {
+          "TrackingCategoryName": "North / South",
+          "TrackingOptionName": "Rural"
+        }
+      },
+      "Balances": {
+        "AccountsReceivable": {
+          "Outstanding": "13.34",
+          "Overdue": "13.34"
+        },
+        "AccountsPayable": {
+          "Outstanding": "0.00",
+          "Overdue": "0.00"
+        }
+      },
+      "HasAttachments": "false"
+    }, {
+      "ContactID": "ddf85b23-4c7b-419f-b23e-2e45f59f9245",
+      "AccountNumber": "ID83086",
+      "ContactStatus": "ACTIVE",
+      "Name": "Golf Company Limited",
+      "FirstName": "Gary",
+      "LastName": "Grant",
+      "EmailAddress": "jpg1@test.xero.com",
+      "SkypeUserName": "My.Skype.Username",
+      "TaxNumber": "878787878",
+      "AccountsReceivableTaxType": "OUTPUT2",
+      "AccountsPayableTaxType": "INPUT2",
+      "Addresses": {
+        "Address": [{
+          "AddressType": "POBOX",
+          "AddressLine1": "3 Homestead Pl",
+          "City": "Glenview",
+          "Region": "Hamilton",
+          "PostalCode": "3206",
+          "Country": "New Zealand"
+        }, {
+          "AddressType": "STREET",
+          "AddressLine1": "3 Homestead Pl",
+          "City": "Glenview",
+          "Region": "Hamilton",
+          "PostalCode": "3206",
+          "Country": "New Zealand"
+        }]
+      },
+      "Phones": {
+        "Phone": [{
+          "PhoneType": "DDI",
+          "PhoneNumber": "999999999"
+        }, {
+          "PhoneType": "DEFAULT",
+          "PhoneNumber": "412163532"
+        }, {
+          "PhoneType": "FAX",
+          "PhoneNumber": "999999999"
+        }, {
+          "PhoneType": "MOBILE",
+          "PhoneNumber": "412163532"
+        }]
+      },
+      "UpdatedDateUTC": "2015-04-01T01:59:00.823",
+      "IsSupplier": "false",
+      "IsCustomer": "true",
+      "Website": "http://www.website.com",
+      "PurchasesDefaultAccountCode": "100",
+      "SalesDefaultAccountCode": "200",
+      "Balances": {
+        "AccountsReceivable": {
+          "Outstanding": "11.00",
+          "Overdue": "11.00"
+        },
+        "AccountsPayable": {
+          "Outstanding": "0.00",
+          "Overdue": "0.00"
+        }
+      },
+      "HasAttachments": "false"
+    }, {
+      "ContactID": "45fb40be-3d69-47cb-b9f3-4c807a333dd5",
+      "AccountNumber": "ID37096",
+      "ContactStatus": "ACTIVE",
+      "Name": "Kilo Company Limited",
+      "FirstName": "Kyle",
+      "LastName": "Knight",
+      "EmailAddress": "jpk1@test.xero.com",
+      "SkypeUserName": "My.Skype.Username",
+      "TaxNumber": "878787878",
+      "AccountsReceivableTaxType": "OUTPUT2",
+      "AccountsPayableTaxType": "INPUT2",
+      "Addresses": {
+        "Address": [{
+          "AddressType": "POBOX",
+          "AddressLine1": "3 Homestead Pl",
+          "City": "Glenview",
+          "Region": "Hamilton",
+          "PostalCode": "3206",
+          "Country": "New Zealand"
+        }, {
+          "AddressType": "STREET",
+          "AddressLine1": "3 Homestead Pl",
+          "City": "Glenview",
+          "Region": "Hamilton",
+          "PostalCode": "3206",
+          "Country": "New Zealand"
+        }]
+      },
+      "Phones": {
+        "Phone": [{
+          "PhoneType": "DDI",
+          "PhoneNumber": "999999999"
+        }, {
+          "PhoneType": "DEFAULT",
+          "PhoneNumber": "412163534"
+        }, {
+          "PhoneType": "FAX",
+          "PhoneNumber": "999999999"
+        }, {
+          "PhoneType": "MOBILE",
+          "PhoneNumber": "412163534"
+        }]
+      },
+      "UpdatedDateUTC": "2015-04-01T01:59:00.933",
+      "IsSupplier": "false",
+      "IsCustomer": "true",
+      "Website": "http://www.website.com",
+      "PurchasesDefaultAccountCode": "100",
+      "SalesDefaultAccountCode": "200",
+      "Balances": {
+        "AccountsReceivable": {
+          "Outstanding": "8.34",
+          "Overdue": "8.34"
+        },
+        "AccountsPayable": {
+          "Outstanding": "0.00",
+          "Overdue": "0.00"
+        }
+      },
+      "HasAttachments": "false"
+    }, {
+      "ContactID": "84311fdb-577c-4e56-9985-5bd489aeddbe",
+      "ContactStatus": "ACTIVE",
+      "Name": "Xero",
+      "EmailAddress": "testers@test.xero.com",
+      "Addresses": {
+        "Address": [{
+          "AddressType": "POBOX"
+        }, {
+          "AddressType": "STREET"
+        }]
+      },
+      "Phones": {
+        "Phone": [{
+          "PhoneType": "DDI"
+        }, {
+          "PhoneType": "DEFAULT"
+        }, {
+          "PhoneType": "FAX"
+        }, {
+          "PhoneType": "MOBILE"
+        }]
+      },
+      "UpdatedDateUTC": "2016-04-05T23:17:49.183",
+      "IsSupplier": "false",
+      "IsCustomer": "true",
+      "DefaultCurrency": "NZD",
+      "Balances": {
+        "AccountsReceivable": {
+          "Outstanding": "5.75",
+          "Overdue": "5.75"
+        },
+        "AccountsPayable": {
+          "Outstanding": "0.00",
+          "Overdue": "0.00"
+        }
+      },
+      "PaymentTerms": {
+        "Bills": {
+          "Day": "0",
+          "Type": "OFCURRENTMONTH"
+        },
+        "Sales": {
+          "Day": "0",
+          "Type": "OFCURRENTMONTH"
+        }
+      },
+      "HasAttachments": "false"
+    }, {
+      "ContactID": "66c76df1-7dc3-4ebc-b8f8-e1bb6345a919",
+      "ContactStatus": "ACTIVE",
+      "Name": "Westpac bank",
+      "Addresses": {
+        "Address": [{
+          "AddressType": "POBOX"
+        }, {
+          "AddressType": "STREET"
+        }]
+      },
+      "Phones": {
+        "Phone": [{
+          "PhoneType": "DDI"
+        }, {
+          "PhoneType": "DEFAULT"
+        }, {
+          "PhoneType": "FAX"
+        }, {
+          "PhoneType": "MOBILE"
+        }]
+      },
+      "UpdatedDateUTC": "2015-05-04T23:59:17.813",
+      "IsSupplier": "false",
+      "IsCustomer": "true",
+      "Balances": {
+        "AccountsReceivable": {
+          "Outstanding": "4.60",
+          "Overdue": "4.60"
+        },
+        "AccountsPayable": {
+          "Outstanding": "0.00",
+          "Overdue": "0.00"
+        }
+      },
+      "HasAttachments": "false"
+    }, {
+      "ContactID": "79d497e0-8348-45a4-9372-5841bcc0c410",
+      "AccountNumber": "123456",
+      "ContactStatus": "ACTIVE",
+      "Name": "Z Station",
+      "Addresses": {
+        "Address": [{
+          "AddressType": "POBOX"
+        }, {
+          "AddressType": "STREET"
+        }]
+      },
+      "Phones": {
+        "Phone": [{
+          "PhoneType": "DDI"
+        }, {
+          "PhoneType": "DEFAULT"
+        }, {
+          "PhoneType": "FAX"
+        }, {
+          "PhoneType": "MOBILE"
+        }]
+      },
+      "UpdatedDateUTC": "2015-10-19T01:50:59.657",
+      "IsSupplier": "false",
+      "IsCustomer": "true",
+      "DefaultCurrency": "NZD",
+      "Balances": {
+        "AccountsReceivable": {
+          "Outstanding": "4.31",
+          "Overdue": "4.31"
+        },
+        "AccountsPayable": {
+          "Outstanding": "0.00",
+          "Overdue": "0.00"
+        }
+      },
+      "PaymentTerms": {
+        "Bills": {
+          "Day": "0",
+          "Type": "OFCURRENTMONTH"
+        },
+        "Sales": {
+          "Day": "0",
+          "Type": "OFCURRENTMONTH"
+        }
+      },
+      "HasAttachments": "false"
+    }, {
+      "ContactID": "4ca52bec-1730-4f9e-9b0f-8844787d02a7",
+      "AccountNumber": "ID80992",
+      "ContactStatus": "ACTIVE",
+      "Name": "Romeo Company Limited",
+      "FirstName": "Ralph",
+      "LastName": "Rintoul",
+      "EmailAddress": "jpr1@test.xero.com",
+      "SkypeUserName": "My.Skype.Username",
+      "TaxNumber": "878787878",
+      "AccountsReceivableTaxType": "OUTPUT2",
+      "AccountsPayableTaxType": "INPUT2",
+      "Addresses": {
+        "Address": [{
+          "AddressType": "POBOX",
+          "AddressLine1": "3 Homestead Pl",
+          "City": "Glenview",
+          "Region": "Hamilton",
+          "PostalCode": "3206",
+          "Country": "New Zealand"
+        }, {
+          "AddressType": "STREET",
+          "AddressLine1": "3 Homestead Pl",
+          "City": "Glenview",
+          "Region": "Hamilton",
+          "PostalCode": "3206",
+          "Country": "New Zealand"
+        }]
+      },
+      "Phones": {
+        "Phone": [{
+          "PhoneType": "DDI",
+          "PhoneNumber": "999999999"
+        }, {
+          "PhoneType": "DEFAULT",
+          "PhoneNumber": "412163533"
+        }, {
+          "PhoneType": "FAX",
+          "PhoneNumber": "999999999"
+        }, {
+          "PhoneType": "MOBILE",
+          "PhoneNumber": "412163533"
+        }]
+      },
+      "UpdatedDateUTC": "2015-04-01T01:59:01.153",
+      "IsSupplier": "true",
+      "IsCustomer": "true",
+      "Website": "http://www.website.com",
+      "PurchasesDefaultAccountCode": "100",
+      "SalesDefaultAccountCode": "200",
+      "Balances": {
+        "AccountsReceivable": {
+          "Outstanding": "2.88",
+          "Overdue": "2.88"
+        },
+        "AccountsPayable": {
+          "Outstanding": "0.00",
+          "Overdue": "0.00"
+        }
+      },
+      "HasAttachments": "false"
+    }, {
+      "ContactID": "206c3132-f66c-43b2-8146-c9bd187d0368",
+      "ContactStatus": "ACTIVE",
+      "Name": "Gtctc",
+      "Addresses": {
+        "Address": [{
+          "AddressType": "POBOX"
+        }, {
+          "AddressType": "STREET"
+        }]
+      },
+      "Phones": {
+        "Phone": [{
+          "PhoneType": "DDI"
+        }, {
+          "PhoneType": "DEFAULT"
+        }, {
+          "PhoneType": "FAX"
+        }, {
+          "PhoneType": "MOBILE"
+        }]
+      },
+      "UpdatedDateUTC": "2015-10-15T22:48:31.46",
+      "IsSupplier": "false",
+      "IsCustomer": "true",
+      "Balances": {
+        "AccountsReceivable": {
+          "Outstanding": "0.75",
+          "Overdue": "0.75"
+        },
+        "AccountsPayable": {
+          "Outstanding": "0.00",
+          "Overdue": "0.00"
+        }
+      },
+      "PaymentTerms": {
+        "Bills": {
+          "Day": "0",
+          "Type": "OFCURRENTMONTH"
+        },
+        "Sales": {
+          "Day": "0",
+          "Type": "OFCURRENTMONTH"
+        }
+      },
+      "HasAttachments": "false"
+    }]
+  }
+}
