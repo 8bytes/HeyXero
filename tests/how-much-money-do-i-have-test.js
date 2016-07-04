@@ -9,9 +9,13 @@ describe('HowMuchMoneyDoIHave operation', function () {
     it('should return accountName and closingBalance', function () {
       var testResponse = JSON.parse(FS.readFileSync('./tests/testdata/HowMuchMoneyDoIHave.json'));
       var cells = howMuchMoneyDoIHave.createAnswer(testResponse);
-      assert.equal(cells.length, 1);
+      assert.equal(cells.length, 3);
       assert.equal(cells[0].accountName, 'Cheque Account');
       assert.equal(cells[0].closingBalance, '28506.98');
+      assert.equal(cells[1].accountName, 'Citibank IB');
+      assert.equal(cells[1].closingBalance, '98081679751.19');
+      assert.equal(cells[2].accountName, 'Mastercard');
+      assert.equal(cells[2].closingBalance, '22.25');
     });
   });
 
