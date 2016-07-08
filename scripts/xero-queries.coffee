@@ -52,7 +52,7 @@ module.exports = (robot) ->
     )
   )
 # Sales MTD
-robot.respond(/Sales( MTD)?( yesterday)?( revenue)?( turnover)?\??/i, (res) ->
+  robot.respond(/Sales( MTD)?( yesterday)?( revenue)?( turnover)?\??/i, (res) ->
     console.log('about to ask operator, sales month to date?')
     Operator.salesmtd().then(
         (result) ->
@@ -63,7 +63,7 @@ robot.respond(/Sales( MTD)?( yesterday)?( revenue)?( turnover)?\??/i, (res) ->
     )
 )
 #BudgetvSales
-robot.respond(/Budget( vs sales)?( performance)?( targets)?\??/i, (res) ->
+  robot.respond(/Budget( vs sales)?( performance)?( targets)?\??/i, (res) ->
     console.log('about to ask operator, how are we travelling vs budget?')
     Operator.budgetvsales().then(
         (result) ->
@@ -74,7 +74,7 @@ robot.respond(/Budget( vs sales)?( performance)?( targets)?\??/i, (res) ->
     )
 )
 #Sales Top 5 New Sales
-robot.respond(/top 5 sales( who bought)?( the most)?( yesterday)?\??/i, (res) ->
+   robot.respond(/top 5 sales( who bought)?( the most)?( yesterday)?\??/i, (res) ->
     console.log('about to ask operator, top 5 sales?')
     Operator.topnewsales().then(
         (result) ->
