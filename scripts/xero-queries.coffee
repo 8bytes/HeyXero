@@ -16,7 +16,7 @@
 Operator = require('./operator');
 _ = require('lodash');
 
-module.exports = (robot) ->
+module.exports = (robot) ->ac
 # Debtors - who owes me money
   robot.respond(/who owes( me)?( the most)?( money)?\??/i, (res) ->
     console.log('about to ask operator, who owes money?')
@@ -56,7 +56,8 @@ module.exports = (robot) ->
     console.log('about to ask operator, sales month to date?')
     Operator.salesmtd().then(
         (result) ->
-            res.reply('\n' + _.join(result, '\n'))
+        console.log('Answering!')
+        res.reply(result)
         (r) ->
             console.log('Something has gone wrong :( ' + r)
             res.reply("I'm not sure, how about you ask about sales again later?")
@@ -67,7 +68,8 @@ module.exports = (robot) ->
     console.log('about to ask operator, how are we travelling vs budget?')
     Operator.budgetvsales().then(
         (result) ->
-            res.reply('\n' + _.join(result, '\n'))
+        console.log('Answering!')
+        res.reply(result)
         (r) ->
             console.log('Something has gone wrong :( ' + r)
             res.reply("I'm not sure, how about you ask about budgets again later?")
@@ -78,7 +80,8 @@ module.exports = (robot) ->
     console.log('about to ask operator, top 5 sales?')
     Operator.topnewsales().then(
         (result) ->
-            res.reply('\n' + _.join(result, '\n'))
+        console.log('Answering!')
+        res.reply(result)
         (r) ->
             console.log('Something has gone wrong :( ' + r)
             res.reply("I'm not sure, how about you ask about Top 5 sales again later?")
