@@ -4,6 +4,9 @@ Promise = require("bluebird");
 WhoOwesMoney = require('./operations/queries/who-owes-money');
 HowMuchMoneyDoIHave = require('./operations/queries/how-much-money-do-i-have');
 WhatBillsAreComingUp = require('./operations/queries/what-bills-are-coming-up');
+sales-mtd = require('./operations/queries/sales-mtd');
+budget-v-sales = require('./operations/queries/budget-v-sales');
+top-new-sales = require('./operations/queries/top-new-sales');
 InvoiceSomebody = require('./operations/commands/invoice-somebody');
 
 standardSingleQuery = (operation) ->
@@ -32,7 +35,13 @@ module.exports = {
   howMuchMoneyDoIHave: () ->
     standardSingleQuery(HowMuchMoneyDoIHave)
 
-  invoiceSomebody: (contactName, description, unitAmount) ->
+sales-mtd: () ->
+standardSingleQuery(sales-mtd)
+budget-v-sales: () ->
+standardSingleQuery(budget-v-sales)
+top-new-sales: () ->
+standardSingleQuery(top-new-sales)
+invoiceSomebody: (contactName, description, unitAmount) ->
     new Promise((resolve, reject) ->
       # Start the request and get its promise
       promise = InvoiceSomebody.doRequest(contactName, description, unitAmount);
