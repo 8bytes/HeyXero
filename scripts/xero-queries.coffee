@@ -54,9 +54,9 @@ module.exports = (robot) ->
 # Sales MTD
 robot.respond(/Sales( MTD)?( yesterday)?( revenue)?( turnover)?\??/i, (res) ->
     console.log('about to ask operator, sales month to date?')
-    Operator.SalesMTD().then(
+    Operator.salesmtd().then(
         (result) ->
-            res.reply('\n' + _.join(result, '\n'))
+            res.reply(result)
         (r) ->
             console.log('Something has gone wrong :( ' + r)
             res.reply("I'm not sure, how about you ask about sales again later?")
@@ -65,9 +65,9 @@ robot.respond(/Sales( MTD)?( yesterday)?( revenue)?( turnover)?\??/i, (res) ->
 #BudgetvSales
 robot.respond(/Budget( vs sales)?( performance)?( targets)?\??/i, (res) ->
     console.log('about to ask operator, how are we travelling vs budget?')
-    Operator.BudgetvSales().then(
+    Operator.budgetvsales().then(
         (result) ->
-            res.reply('\n' + _.join(result, '\n'))
+            res.reply(result)
         (r) ->
             console.log('Something has gone wrong :( ' + r)
             res.reply("I'm not sure, how about you ask about budgets again later?")
@@ -76,9 +76,9 @@ robot.respond(/Budget( vs sales)?( performance)?( targets)?\??/i, (res) ->
 #Sales Top 5 New Sales
 robot.respond(/top 5 sales( who bought)?( the most)?( yesterday)?\??/i, (res) ->
     console.log('about to ask operator, top 5 sales?')
-    Operator.Top5NewSales().then(
+    Operator.topnewsales().then(
         (result) ->
-            res.reply('\n' + _.join(result, '\n'))
+            res.reply(result)
         (r) ->
             console.log('Something has gone wrong :( ' + r)
             res.reply("I'm not sure, how about you ask about Top 5 sales again later?")
