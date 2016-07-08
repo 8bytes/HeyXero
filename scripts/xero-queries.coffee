@@ -61,7 +61,7 @@ module.exports = (robot) ->
             console.log('Something has gone wrong :( ' + r)
             res.reply("I'm not sure, how about you ask about sales again later?")
     )
-)
+  )
 #BudgetvSales
   robot.respond(/Budget( vs sales)?( performance)?( targets)?\??/i, (res) ->
     console.log('about to ask operator, how are we travelling vs budget?')
@@ -72,7 +72,7 @@ module.exports = (robot) ->
             console.log('Something has gone wrong :( ' + r)
             res.reply("I'm not sure, how about you ask about budgets again later?")
     )
-)
+  )
 #Sales Top 5 New Sales
    robot.respond(/top 5 sales( who bought)?( the most)?( yesterday)?\??/i, (res) ->
     console.log('about to ask operator, top 5 sales?')
@@ -83,4 +83,4 @@ module.exports = (robot) ->
             console.log('Something has gone wrong :( ' + r)
             res.reply("I'm not sure, how about you ask about Top 5 sales again later?")
     )
-)
+  )
