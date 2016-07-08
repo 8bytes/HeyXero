@@ -35,13 +35,16 @@ module.exports = {
   howMuchMoneyDoIHave: () ->
     standardSingleQuery(HowMuchMoneyDoIHave)
 
-sales-mtd: () ->
-standardSingleQuery(sales-mtd)
-budget-v-sales: () ->
-standardSingleQuery(budget-v-sales)
-top-new-sales: () ->
-standardSingleQuery(top-new-sales)
-invoiceSomebody: (contactName, description, unitAmount) ->
+  sales-mtd: () ->
+    standardSingleQuery(sales-mtd)
+
+  budget-v-sales: () ->
+    standardSingleQuery(budget-v-sales)
+
+  top-new-sales: () ->
+    standardSingleQuery(top-new-sales)
+
+  invoiceSomebody: (contactName, description, unitAmount) ->
     new Promise((resolve, reject) ->
       # Start the request and get its promise
       promise = InvoiceSomebody.doRequest(contactName, description, unitAmount);
