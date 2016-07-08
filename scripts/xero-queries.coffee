@@ -74,7 +74,7 @@ module.exports = (robot) ->
     )
   )
 #Sales Top 5 New Sales
-  robot.respond(/top 5 sales( who bought)?( the most)?( yesterday)?\??/i, (res) ->
+  robot.respond(/top 5( sales)?( who bought)?( the most)?( yesterday)?\??/i, (res) ->
     console.log('about to ask operator, top 5 sales?')
     Operator.topnewsales().then(
         (result) ->
