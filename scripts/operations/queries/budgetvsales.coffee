@@ -6,8 +6,8 @@ module.exports = {
 
   doRequest: () ->
     new Promise((resolve, reject) ->
-      # https://api.xero.com/api.xro/2.0/reports/BankSummary
-      XeroConnection().call 'GET', '/reports/BankSummary', null, (err, json) ->
+      # https://api.xero.com/api.xro/2.0/reports/ExecutiveSummary
+      XeroConnection().call 'GET', '/reports/ExecutiveSummary', null, (err, json) ->
         if(err)
           reject()
         else
@@ -25,15 +25,15 @@ module.exports = {
       cellRows.map( (cellRow) ->
         {
           # First cell's Value
-          accountName: cellRow[0].Value
+          KPIName: cellRow[0].Value
           # Last cell
-          closingBalance: cellRow.slice(-1)[0].Value
+          ThisMonthValue: cellRow.slice(-3)[0].Value
         }
       )
 
   formatAnswer: (answer) ->
     formattedAnswer = "\n"
-    answer.forEach((row) -> formattedAnswer = formattedAnswer + "#{row.accountName}: #{numeral(row.closingBalance).format('$0,0.00')}\n")
+    answer.forEach((row) -> formattedAnswer = formattedAnswer + "#{row.KPIName}: #{numeral(row.ThisMonthValue).format('0,0.00')}\n")
     formattedAnswer
 
 }
