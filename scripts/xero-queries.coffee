@@ -59,7 +59,7 @@ module.exports = (robot) ->ac
         console.log('Answering!')
         res.reply(result)
       (err) ->
-        console.log('Something has gone wrong :( ' + err)
+        console.log("Something has gone wrong :( #{err}")
         res.reply("I'm not sure, how about you ask about sales again later?")
     )
   )
@@ -71,7 +71,7 @@ module.exports = (robot) ->ac
         console.log('Answering!')
         res.reply(result)
       (err) ->
-        console.log('Something has gone wrong :( ' + err)
+        console.log("Something has gone wrong :( #{err}")
         res.reply("I'm not sure, how about you ask about budgets again later?")
     )
   )
@@ -83,7 +83,7 @@ module.exports = (robot) ->ac
         console.log('Answering!')
         res.reply(result)
       (err) ->
-        console.log('Something has gone wrong :( ' + err)
-        res.reply("I'm not sure, how about you ask about Top 5 sales again later?")
+        console.log("Something has gone wrong :( #{err}")
+        res.reply("I'm not sure, how about you ask about top sales again later?")
     )
   )
