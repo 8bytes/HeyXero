@@ -29,7 +29,7 @@ module.exports = {
 		_.forEach(_.take(response.Invoices.Invoice, 5), (invoice) ->
 			results.push({
 				invoiceNumber: invoice.InvoiceNumber
-				name: invoice.Contact.Name
+				Contactname: invoice.Contact.Name
 				dueDate: moment(invoice.DueDate)
 				amountDue: Number(invoice.AmountDue)
 			})
@@ -43,10 +43,10 @@ module.exports = {
 			return results;
 		else
 			_.forEach(answer, (invoice) ->
-				line = moment(invoice.name);
+				line = (' *' + invoice.Contactname + '*');
 				if(invoice.invoiceNumber)
-					line += (' *' + invoice.invoiceNumber + '*')
-				line += (' ' + numeral(invoice.amountDue).format('$0,0.00') + '*/n');
+					line += (' ' + invoice.invoiceNumber + ' ')
+				line += (' ' + numeral(invoice.amountDue).format('$0,0.00') + ' '/n);
 				results.push(line);
 			)
 		return results;
