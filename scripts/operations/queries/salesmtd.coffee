@@ -32,8 +32,15 @@ module.exports = {
       )
 
   formatAnswer: (answer) ->
-    formattedAnswer = "Sales\n"
-    answer.forEach((row) -> formattedAnswer = formattedAnswer + "#{row.accountName}: #{numeral(row.BalanceThisMth).format('$0,0.00')}\n")
-    formattedAnswer
-
+    results = []
+    if(!answer.length)
+      results.push("No lines returned");
+      return results;
+    else
+      results.push("P&L MTD\n");
+      formattedAnswer = "Sales\n"
+      answer.forEach((row) -> formattedAnswer = formattedAnswer + "#{row.accountName}: #{numeral(row.BalanceThisMth).format('$0,0.00')}\n")
+        results.push(formattedAnswer);
+      )
+    return results;
 }
