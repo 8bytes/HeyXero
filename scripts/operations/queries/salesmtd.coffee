@@ -27,12 +27,12 @@ module.exports = {
           # First cell's Value
           accountName: cellRow[0].Value
           # Last cell
-          BalanceThisMth: cellRow.slice(1)[0].Value
+          BalanceThisMth: cellRow.slice(0)[1].Value
         }
       )
 
   formatAnswer: (answer) ->
-    formattedAnswer = "\n"
+    formattedAnswer = "Sales\n"
     answer.forEach((row) -> formattedAnswer = formattedAnswer + "#{row.accountName}: #{numeral(row.BalanceThisMth).format('$0,0.00')}\n")
     formattedAnswer
 
