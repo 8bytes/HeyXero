@@ -7,7 +7,7 @@ module.exports = {
   doRequest: () ->
     new Promise((resolve, reject) ->
       # https://api.xero.com/api.xro/2.0/reports/CustomerInvoiceReport
-      XeroConnection().call 'GET', '/reports/CustomerInvoiceReport', null, (err, json) ->
+      XeroConnection().call 'GET', '/reports/d455ff2f-00ac-4626-867a-484d3cb38b53', null, (err, json) ->
         if(err)
           reject()
         else
