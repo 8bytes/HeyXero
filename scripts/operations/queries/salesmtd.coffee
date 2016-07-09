@@ -20,14 +20,15 @@ module.exports = {
 
     # Filter and map to array of array
     rowsSection = jsonResponse.Response.Reports.Report.Rows.Row.filter((row) -> row.RowType == "Section" && row.Rows.Row[0].RowType == "Row")[0]
+    rowsSummary = jsonResponse.Response.Reports.Report.Rows.Row.filter((row) -> row.RowType == "SummaryRow" && row.Rows.Row[0].RowType == "Row")[0]
     cellRows = rowsSection.Rows.Row.filter((row) -> row.RowType == "Row").map((row) -> row.Cells.Cell)
-    if (cellRows.length > 0)
-      cellRows.map( (cellRow) ->
+    if (RowsSummary.length > 0)
+      RowsSummary.map( (SummRow) ->
         {
           # First cell's Value
-          accountName: cellRow[0].Value
+          accountName: SummRow[0].Value
           # Last cell
-          closingBalance: cellRow.slice(-1)[0].Value
+          closingBalance: SummRow.slice(-1)[0].Value
         }
       )
 
