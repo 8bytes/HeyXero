@@ -43,10 +43,10 @@ module.exports = {
 			return results;
 		else
 			_.forEach(answer, (invoice) ->
-				line = moment(invoice.dueDate).format('DD/MM/YYYY');
+				line = moment(invoice.name);
 				if(invoice.invoiceNumber)
 					line += (' *' + invoice.invoiceNumber + '*')
-				line += (' ' + invoice.name + ': *' + numeral(invoice.amountDue).format('$0,0.00') + '*');
+				line += (' ' + numeral(invoice.amountDue).format('$0,0.00') + '*/n');
 				results.push(line);
 			)
 		return results;
