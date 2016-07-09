@@ -4,7 +4,7 @@ _ = require('lodash');
 moment = require('moment');
 numeral = require('numeral');
 
-GetInvoicesYesterday = '/invoices?where=Type%3d%22ACCREC%22%26%26Date%3c%3dDateTime.Today.AddDays(-1)&order=-AmountDue'
+GetInvoicesYesterday = '/invoices?where=date%3dDateTime.Today.AddDays(-1)&order=-amountdue'
 
 module.exports = {
 	doRequest: () ->
@@ -42,12 +42,12 @@ module.exports = {
 			results.push("No invoices yesterday");
 			return results;
 		else
-			results.push("Top 5 Yesterday");
+			results.push("Top 5 Yesterday\n");
 			_.forEach(answer, (invoice) ->
 				line = (' *' + invoice.Contactname + '*');
 				if(invoice.invoiceNumber)
 					line += (' ' + invoice.invoiceNumber + ' ')
-				line += (' ' + numeral(invoice.amountDue).format('$0,0.00') + ' ');
+				line += (' ' + numeral(invoice.amountDue).format('$0,0.00') + ' \n');
 				results.push(line);
 			)
 		return results;
