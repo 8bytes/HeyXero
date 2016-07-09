@@ -6,8 +6,8 @@ module.exports = {
 
   doRequest: () ->
     new Promise((resolve, reject) ->
-      # https://api.xero.com/api.xro/2.0/reports/ExecutiveSummary
-      XeroConnection().call 'GET', '/reports/ExecutiveSummary', null, (err, json) ->
+      # https://api.xero.com/api.xro/2.0/reports/BudgetSummary?periods=1&timeframe=1
+      XeroConnection().call 'GET', '/reports/BudgetSummary?periods=1&timeframe=1', null, (err, json) ->
         if(err)
           reject()
         else
@@ -19,15 +19,15 @@ module.exports = {
     console.log("Received: #{JSON.stringify(jsonResponse)}")
 
     # Filter and map to array of array
-    rowsSection = jsonResponse.Response.Reports.Report.Rows.Row.filter((row) -> row.RowType == "Section" && row.Rows.Row[0].RowType == "Row")[0]
-    cellRows = rowsSection.Rows.Row.filter((row) -> row.RowType == "Row").map((row) -> row.Cells.Cell)
+    rowsSection = jsonResponse.Response.Reports.Report.Rows.Row.filter((row) -> row.RowType == "Section" && row.Rows.Row[0].RowType == "SummaryRow")[0]
+    cellRows = rowsSection.Rows.Row.filter((row) -> row.RowType == "SummaryRow").map((row) -> row.Cells.Cell)
     if (cellRows.length > 0)
       cellRows.map( (cellRow) ->
         {
           # First cell's Value
           KPIName: cellRow[0].Value
           # Last cell
-          ThisMonthValue: cellRow.slice(-3)[0].Value
+          ThisMonthValue: cellRow.slice(-1)[0].Value
         }
       )
 
