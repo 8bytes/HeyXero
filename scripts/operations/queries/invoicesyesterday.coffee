@@ -4,15 +4,15 @@ _ = require('lodash');
 moment = require('moment');
 numeral = require('numeral');
 
-GetInvoicesYesterday = '/invoices?where=Type%3d%22ACCREC%22%26%26Status%3d%22AUTHORISED%22%26%26DueDate%3e%3dDateTime.Today%26%26DueDate%3c%3dDateTime.Today.AddDays(-1)&order=DueDate&page=1'
+GetBillsComingUp = '/invoices?where=Type%3d%22ACCPAY%22%26%26Status%3d%22AUTHORISED%22%26%26DueDate%3e%3dDateTime.Today%26%26DueDate%3c%3dDateTime.Today.AddDays(7)&order=DueDate&page=1'
 
 module.exports = {
 	doRequest: () ->
-		console.log('topnewsales.doRequest()')
+		console.log('WhatBillsAreComingUp.doRequest()')
 		promise = new Promise((resolve, reject) ->
-			XeroConnection().call('GET', GetInvoicesYesterday, null, (err, json) ->
+			XeroConnection().call('GET', GetBillsComingUp, null, (err, json) ->
 				if(err)
-					console.log("Error making topnewsales call, error: #{ JSON.stringify(err) }")
+					console.log("Error making WhatBillAreComingUp call, error: #{ JSON.stringify(err) }")
 					reject()
 				else
 					resolve(json.Response)
@@ -21,7 +21,7 @@ module.exports = {
 		return promise;
 
 	createAnswer:  (response) ->
-		#console.log("Parsing invoices response: #{JSON.stringify(response)}")
+		#console.log("Parsing who owes me money response: #{JSON.stringify(response)}")
 		if(!response || !response.Invoices || !response.Invoices.Invoice || !response.Invoices.Invoice.length)
 			return [];
 
@@ -39,7 +39,7 @@ module.exports = {
 	formatAnswer: (answer) ->
 		results = []
 		if(!answer.length)
-			results.push("No invoices yesterday");
+			results.push("No bills due soon");
 			return results;
 		else
 			_.forEach(answer, (invoice) ->
