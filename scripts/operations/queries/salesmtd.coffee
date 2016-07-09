@@ -27,19 +27,13 @@ module.exports = {
           # First cell's Value
           accountName: cellRow[0].Value
           # Last cell
-          BalanceThisMth: cellRow.slice(1)[0].Value
+          closingBalance: cellRow.slice(-1)[0].Value
         }
       )
 
   formatAnswer: (answer) ->
-    results = []
-    if(!answer.length)
-      results.push("No lines returned");
-      return results;
-    else
-      formattedAnswer = "Sales\n"
-      answer.forEach((row) -> formattedAnswer = formattedAnswer + "#{row.accountName}: #{numeral(row.BalanceThisMth).format('$0,0.00')}\n")
-        results.push(formattedAnswer);
-      )
-    return results;
+    formattedAnswer = "\n"
+    answer.forEach((row) -> formattedAnswer = formattedAnswer + "#{row.accountName}: #{numeral(row.closingBalance).format('$0,0.00')}\n")
+    formattedAnswer
+
 }
