@@ -7,6 +7,7 @@ WhatBillsAreComingUp = require('./operations/queries/what-bills-are-coming-up');
 salesmtd = require('./operations/queries/salesmtd');
 budgetvsales = require('./operations/queries/budgetvsales');
 topnewsales = require('./operations/queries/topnewsales');
+cashflowmtd = require('./operations/queries/cashflowmtd');
 InvoiceSomebody = require('./operations/commands/invoice-somebody');
 
 standardSingleQuery = (operation) ->
@@ -43,6 +44,9 @@ module.exports = {
 
   topnewsales: () ->
     standardSingleQuery(topnewsales)
+
+  cashflowmtd: () ->
+    standardSingleQuery(cashflowmtd)
 
   invoiceSomebody: (contactName, description, unitAmount) ->
     new Promise((resolve, reject) ->

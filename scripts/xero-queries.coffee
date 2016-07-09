@@ -8,6 +8,7 @@
 #   Sales - for the last day and month to date
 #   Budget - Sales vs. the months budget
 #   Top 5 Sales - list of top 5 sales in last day
+#   Cashflow - summary of cash for month so far
 #
 # Notes:
 #   Uncomment the ones you want to try and experiment with.
@@ -74,7 +75,7 @@ module.exports = (robot) ->
     )
   )
 #Sales Top 5 New Sales
-  robot.respond(/top 5 sales( who bought)?( the most)?( yesterday)?\??/i, (res) ->
+  robot.respond(/top 5( sales)?( who bought)?( the most)?( yesterday)?\??/i, (res) ->
     console.log('about to ask operator, top 5 sales?')
     Operator.topnewsales().then(
         (result) ->
@@ -82,5 +83,16 @@ module.exports = (robot) ->
         (r) ->
             console.log('Something has gone wrong :( ' + r)
             res.reply("I'm not sure, how about you ask about Top 5 sales again later?")
+    )
+  )
+#cashflowMTD
+  robot.respond(/Cashflow( this month)?( MTD)?( Summary)?\??/i, (res) ->
+    console.log('about to ask operator, cashflow?')
+    Operator.cashflowmtd().then(
+        (result) ->
+            res.reply(result)
+        (r) ->
+            console.log('Something has gone wrong :( ' + r)
+            res.reply("I'm not sure, how about you ask about cashflow again later?")
     )
   )
