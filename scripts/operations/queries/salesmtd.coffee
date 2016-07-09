@@ -20,10 +20,10 @@ module.exports = {
 
     # Filter and map to array of array
     rowsSection = jsonResponse.Response.Reports.Report.Rows.Row.filter((row) -> row.RowType == "Section" && row.Rows.Row[0].RowType == "Row")[0]
-    rowsSummary = jsonResponse.Response.Reports.Report.Rows.Row.filter((row) -> row.RowType == "SummaryRow" && row.Rows.Row[0].RowType == "Row")[0]
-    cellRows = rowsSection.Rows.Row.filter((row) -> row.RowType == "Row").map((row) -> row.Cells.Cell)
-    if (RowsSummary.length > 0)
-      RowsSummary.map( (SummRow) ->
+    rowsSummary = rowsSection.Rows.Row.filter((row) -> row.RowType == "SummaryRow").map((row) -> row.Cells.Cell)
+#cellRows = rowsSection.Rows.Row.filter((row) -> row.RowType == "Row").map((row) -> row.Cells.Cell)
+    if (rowsSummary.length > 0)
+      rowsSummary.map( (SummRow) ->
         {
           # First cell's Value
           accountName: SummRow[0].Value
