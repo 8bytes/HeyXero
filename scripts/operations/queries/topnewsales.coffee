@@ -42,12 +42,12 @@ module.exports = {
 			results.push("No invoices yesterday");
 			return results;
 		else
-			results.push("Top 5 Yesterday\")
+			results.push("Top 5 Yesterday")
 			_.forEach(answer, (invoice) ->
 				line = (' *' + invoice.Contactname + '*');
 				if(invoice.invoiceNumber)
 					line += (' ' + invoice.invoiceNumber + ' ')
-				line += (' ' + numeral(invoice.amountDue).format('$0,0.00') + ' \');
+				line += (' ' + numeral(invoice.amountDue).format('$0,0.00') + ' ');
 				results.push(line);
 			)
 		return results;
