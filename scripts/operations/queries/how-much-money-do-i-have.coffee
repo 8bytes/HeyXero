@@ -32,7 +32,7 @@ module.exports = {
       )
 
   formatAnswer: (answer) ->
-    formattedAnswer = "\n"
+    formattedAnswer = "Bank Summary\n"
     answer.forEach((row) -> formattedAnswer = formattedAnswer + "#{row.accountName}: #{numeral(row.closingBalance).format('$0,0.00')}\n")
     formattedAnswer
 
