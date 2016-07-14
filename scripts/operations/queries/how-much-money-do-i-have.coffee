@@ -19,7 +19,7 @@ module.exports = {
     console.log("Received: #{JSON.stringify(jsonResponse)}")
 
     # Filter and map to array of array
-    rowsSection = jsonResponse.Response.Reports.Report.Rows.Row.filter((row) -> row.RowType == "Section" && row.Rows.Row[0].RowType == "Row")[0]
+    #rowsSection = jsonResponse.Response.Reports.Report.Rows.Row.filter((row) -> row.RowType == "Section" && row.Rows.Row[0].RowType == "Row")[0]
     cellRows = rowsSection.Rows.Row.filter((row) -> row.RowType == "Row").map((row) -> row.Cells.Cell)
     if (cellRows.length > 0)
       cellRows.map( (cellRow) ->
