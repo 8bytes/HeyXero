@@ -6,8 +6,8 @@ module.exports = {
 
   doRequest: () ->
     new Promise((resolve, reject) ->
-      # https://api.xero.com/api.xro/2.0/reports/ProfitAndLoss
-      XeroConnection().call 'GET', '/reports/ProfitAndLoss', null, (err, json) ->
+      # https://api.xero.com/api.xro/2.0/reports/ProfitAndLoss?fromDate=2016-07-13
+      XeroConnection().call 'GET', '/reports/ProfitAndLoss?fromDate=2016-07-13', null, (err, json) ->
         if(err)
           reject()
         else
@@ -32,7 +32,7 @@ module.exports = {
       )
 
   formatAnswer: (answer) ->
-    formattedAnswer = "Sales this month\n"
+    formattedAnswer = "Sales yesterday\n"
     answer.forEach((row) -> formattedAnswer = formattedAnswer + "#{row.KPIName}: #{numeral(row.ThisMonthValue).format('$0,0.00')}\n")
     formattedAnswer
 
