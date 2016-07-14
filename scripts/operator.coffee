@@ -53,12 +53,27 @@ module.exports = {
     standardSingleQuery(cashflowmtd)
 
   summary: () ->
-    standardSingleQuery(WhoOwesMoney)
-    standardSingleQuery(WhatBillsAreComingUp)     
-    standardSingleQuery(HowMuchMoneyDoIHave)
-    standardSingleQuery(salesmtd)
-    standardSingleQuery(salesYesterday)
-    standardSingleQuery(topnewsales)
+    standardSingleQuery(WhoOwesMoney).then(
+        (result) ->
+            res.reply(result)
+        (r) ->
+            console.log('Something has gone wrong :( ' + r)
+            res.reply("I'm not sure, how about you ask about this again later?")
+    standardSingleQuery(WhatBillsAreComingUp)    .then(
+        (result) ->
+            res.reply(result)
+        (r) ->
+            console.log('Something has gone wrong :( ' + r)
+            res.reply("I'm not sure, how about you ask about this again later?") 
+    standardSingleQuery(HowMuchMoneyDoIHave).then(
+        (result) ->
+            res.reply(result)
+        (r) ->
+            console.log('Something has gone wrong :( ' + r)
+            res.reply("I'm not sure, how about you ask about this again later?")
+#    standardSingleQuery(salesmtd)
+#    standardSingleQuery(salesYesterday)
+#    standardSingleQuery(topnewsales)
 
   invoiceSomebody: (contactName, description, unitAmount) ->
     new Promise((resolve, reject) ->
