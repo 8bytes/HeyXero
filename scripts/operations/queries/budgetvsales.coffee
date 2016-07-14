@@ -7,7 +7,7 @@ module.exports = {
   doRequest: () ->
     new Promise((resolve, reject) ->
       # https://api.xero.com/api.xro/2.0/reports/ProfitAndLoss?where=date%3dDateTime.Today.AddDays(-1)
-      XeroConnection().call 'GET', '/reports/ProfitAndLoss?where=date%3dDateTime.Today.AddDays(-1)', null, (err, json) ->
+      XeroConnection().call 'GET', '/reports/ProfitAndLoss?fromDate=date%3dDateTime.Today.AddDays(-1)', null, (err, json) ->
         if(err)
           reject()
         else
