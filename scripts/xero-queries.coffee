@@ -5,7 +5,8 @@
 #   who owes money - list top contact who owe the most
 #   how much money do I have - lists bank summaries
 #   what bills are coming up - lists upcoming bills
-#   Sales - for the last day and month to date
+#   Sales MTD - for the month to date
+#   Sales yesterday - for the last day
 #   Budget - Sales vs. the months budget
 #   Top 5 Sales - list of top 5 sales in last day
 #   Cashflow - summary of cash for month so far
@@ -53,7 +54,7 @@ module.exports = (robot) ->
     )
   )
 # Sales MTD
-  robot.respond(/Sales( MTD)?( yesterday)?( revenue)?( turnover)?\??/i, (res) ->
+  robot.respond(/Sales MTD( yesterday)?( revenue)?( turnover)?\??/i, (res) ->
     console.log('about to ask operator, sales month to date?')
     Operator.salesmtd().then(
         (result) ->
@@ -61,6 +62,17 @@ module.exports = (robot) ->
         (r) ->
             console.log('Something has gone wrong :( ' + r)
             res.reply("I'm not sure, how about you ask about sales again later?")
+    )
+  )
+# Sales Yesterday
+  robot.respond(/Sales yesterday ( revenue)?( turnover)?\??/i, (res) ->
+    console.log('about to ask operator, sales month to date?')
+    Operator.salesYesterday().then(
+        (result) ->
+            res.reply(result)
+        (r) ->
+            console.log('Something has gone wrong :( ' + r)
+            res.reply("I'm not sure, how about you ask about sales yesterday again later?")
     )
   )
 #BudgetvSales

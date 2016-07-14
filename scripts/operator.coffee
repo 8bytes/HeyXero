@@ -5,6 +5,7 @@ WhoOwesMoney = require('./operations/queries/who-owes-money');
 HowMuchMoneyDoIHave = require('./operations/queries/how-much-money-do-i-have');
 WhatBillsAreComingUp = require('./operations/queries/what-bills-are-coming-up');
 salesmtd = require('./operations/queries/salesmtd');
+salesYesterday = require('./operations/queries/salesYesterday');
 budgetvsales = require('./operations/queries/budgetvsales');
 topnewsales = require('./operations/queries/topnewsales');
 cashflowmtd = require('./operations/queries/cashflowmtd');
@@ -38,6 +39,9 @@ module.exports = {
 
   salesmtd: () ->
     standardSingleQuery(salesmtd)
+
+  salesYesterday: () ->
+    standardSingleQuery(salesYesterday)
 
   budgetvsales: () ->
     standardSingleQuery(budgetvsales)
