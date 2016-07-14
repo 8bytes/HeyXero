@@ -42,8 +42,9 @@ module.exports = {
 			results.push("No bills due soon");
 			return results;
 		else
+			line= 'Bills coming up\n'
 			_.forEach(answer, (invoice) ->
-				line = moment(invoice.dueDate).format('DD/MM/YYYY');
+				line += moment(invoice.dueDate).format('DD/MM/YYYY');
 				if(invoice.invoiceNumber)
 					line += (' *' + invoice.invoiceNumber + '*')
 				line += (' ' + invoice.name + ': *' + numeral(invoice.amountDue).format('$0,0.00') + '*');
