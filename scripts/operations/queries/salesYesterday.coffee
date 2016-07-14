@@ -2,12 +2,26 @@ Promise = require("bluebird");
 XeroConnection = require('./../../xero-connection');
 numeral = require('numeral');
 
+today = new Date
+dd = today.getDate()
+#The value returned by getMonth is an integer between 0 and 11, referring 0 to January, 1 to February, and so on.
+mm = today.getMonth() + 1
+yyyy = today.getFullYear()
+if dd < 10
+  dd = '0' + dd
+if mm < 10
+  mm = '0' + mm
+today = mm + '-' + dd + '-' + yyyy
+yd = dd-1
+yesterdayXero=yyyy + '-' + mm + '-' + dd
+
+
 module.exports = {
 
   doRequest: () ->
     new Promise((resolve, reject) ->
-      # https://api.xero.com/api.xro/2.0/reports/ProfitAndLoss?fromDate=2016-07-13
-      XeroConnection().call 'GET', '/reports/ProfitAndLoss?fromDate=2016-07-13', null, (err, json) ->
+      # https://api.xero.com/api.xro/2.0/reports/ProfitAndLoss?fromDate=yesterdayXero
+      XeroConnection().call 'GET', '/reports/ProfitAndLoss?fromDate='+yesterdayXero, null, (err, json) ->
         if(err)
           reject()
         else
