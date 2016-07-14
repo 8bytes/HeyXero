@@ -20,7 +20,7 @@ module.exports = {
 
     # Filter and map to array of array
     #rowsSection = jsonResponse.Response.Reports.Report.Rows.Row.filter((row) -> row.RowType == "Section" && row.Rows.Row[0].RowType == "Row")[0]
-    cellRows = jsonResponse.Response.Reports.Report.Rows.Row.filter((row) -> row.RowType == "SummaryRow").map((row) -> row.Cells.Cell)
+    cellRows = jsonResponse.Response.Reports.Report.Rows.Rows.Row.filter((row) -> row.RowType == "SummaryRow").map((row) -> row.Cells.Cell)
     if (cellRows.length > 0)
       cellRows.map( (cellRow) ->
         {
