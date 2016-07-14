@@ -54,23 +54,13 @@ module.exports = {
 
   summary: () ->
     standardSingleQuery(WhoOwesMoney).then(
-        (result) ->
-            res.reply(result)
-        (r) ->
-            console.log('Something has gone wrong :( ' + r)
-            res.reply("I'm not sure, how about you ask about this again later?")
-    standardSingleQuery(WhatBillsAreComingUp)    .then(
-        (result) ->
-            res.reply(result)
-        (r) ->
-            console.log('Something has gone wrong :( ' + r)
-            res.reply("I'm not sure, how about you ask about this again later?") 
-    standardSingleQuery(HowMuchMoneyDoIHave).then(
-        (result) ->
-            res.reply(result)
-        (r) ->
-            console.log('Something has gone wrong :( ' + r)
-            res.reply("I'm not sure, how about you ask about this again later?")
+      standardSingleQuery(WhatBillsAreComingUp)    .then(
+        standardSingleQuery(HowMuchMoneyDoIHave).then(
+          (result) ->
+              res.reply(result)
+          (r) ->
+              console.log('Something has gone wrong :( ' + r)
+              res.reply("I'm not sure, how about you ask about this again later?")
 #    standardSingleQuery(salesmtd)
 #    standardSingleQuery(salesYesterday)
 #    standardSingleQuery(topnewsales)
