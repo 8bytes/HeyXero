@@ -52,6 +52,14 @@ module.exports = {
   cashflowmtd: () ->
     standardSingleQuery(cashflowmtd)
 
+  summary: () ->
+    standardSingleQuery(WhoOwesMoney)
+    standardSingleQuery(WhatBillsAreComingUp)     
+    standardSingleQuery(HowMuchMoneyDoIHave)
+    standardSingleQuery(salesmtd)
+    standardSingleQuery(salesYesterday)
+    standardSingleQuery(topnewsales)
+
   invoiceSomebody: (contactName, description, unitAmount) ->
     new Promise((resolve, reject) ->
       # Start the request and get its promise
