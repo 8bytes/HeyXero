@@ -65,8 +65,8 @@ module.exports = (robot) ->
     )
   )
 # Sales Yesterday
-  robot.respond(/Sales yesterday ( revenue)?( turnover)?\??/i, (res) ->
-    console.log('about to ask operator, sales month to date?')
+  robot.respond(/Sales yesterday\??/i, (res) ->
+    console.log('about to ask operator, sales yesterday?')
     Operator.salesYesterday().then(
         (result) ->
             res.reply(result)
