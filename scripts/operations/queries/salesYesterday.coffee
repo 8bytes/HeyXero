@@ -47,7 +47,7 @@ module.exports = {
 
   formatAnswer: (answer) ->
     formattedAnswer = "Sales yesterday\n"
-    answer.forEach((row) -> formattedAnswer = formattedAnswer + "#{row.KPIName}: #{numeral(row.ThisMonthValue).format('$0,0.00')}\n")
+    answer.forEach((row) -> formattedAnswer = yesterdayXero+formattedAnswer + "#{row.KPIName}: #{numeral(row.ThisMonthValue).format('$0,0.00')}\n")
     formattedAnswer
 
 }
