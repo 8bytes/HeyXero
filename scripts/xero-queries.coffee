@@ -10,7 +10,8 @@
 #   Budget - Sales vs. the months budget
 #   Top 5 Sales - list of top 5 sales in last day
 #   Cashflow - summary of cash for month so far
-#
+#   Summary - detail a range of these queries
+
 # Notes:
 #   Uncomment the ones you want to try and experiment with.
 #
@@ -95,6 +96,17 @@ module.exports = (robot) ->
         (r) ->
             console.log('Something has gone wrong :( ' + r)
             res.reply("I'm not sure, how about you ask about Top 5 sales again later?")
+    )
+  )
+#Summary
+  robot.respond(/report( summary)?( results)?( daily)?( yesterday)?\??/i, (res) ->
+    console.log('about to ask operator for summary?')
+    Operator.summary().then(
+        (result) ->
+            res.reply(result)
+        (r) ->
+            console.log('Something has gone wrong :( ' + r)
+            res.reply("I'm not sure, how about you ask about this again later?")
     )
   )
 #cashflowMTD
