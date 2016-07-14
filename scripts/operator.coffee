@@ -9,6 +9,7 @@ salesYesterday = require('./operations/queries/salesYesterday');
 budgetvsales = require('./operations/queries/budgetvsales');
 topnewsales = require('./operations/queries/topnewsales');
 cashflowmtd = require('./operations/queries/cashflowmtd');
+summary = require('./operations/queries/summary');
 InvoiceSomebody = require('./operations/commands/invoice-somebody');
 
 standardSingleQuery = (operation) ->
@@ -53,17 +54,7 @@ module.exports = {
     standardSingleQuery(cashflowmtd)
 
   summary: () ->
-    standardSingleQuery(WhoOwesMoney).then(
-      standardSingleQuery(WhatBillsAreComingUp)    .then(
-        standardSingleQuery(HowMuchMoneyDoIHave).then(
-          (result) ->
-              res.reply(result)
-          (r) ->
-              console.log('Something has gone wrong :( ' + r)
-              res.reply("I'm not sure, how about you ask about this again later?")
-#    standardSingleQuery(salesmtd)
-#    standardSingleQuery(salesYesterday)
-#    standardSingleQuery(topnewsales)
+    standardSingleQuery(summary)
 
   invoiceSomebody: (contactName, description, unitAmount) ->
     new Promise((resolve, reject) ->
