@@ -26,12 +26,12 @@ module.exports = {
 			return [];
 
 		results = [];
-		_.forEach(_.take(response.Invoices.Invoice,20), (invoice) ->
+		_.forEach(_.take(response.Invoices.Invoice, 20), (invoice) ->
 			results.push({
 				invoiceNumber: invoice.InvoiceNumber
 				Contactname: invoice.Contact.Name
-				amountPaid: Number(invoice.AmountPaid)
 				amountDue: Number(invoice.AmountDue)
+				amountDue: Number(invoice.AmountPaid)
 			})
 		)
 		return results;
@@ -42,10 +42,10 @@ module.exports = {
 			results.push("No invoices yesterday");
 			return results;
 		else
-			results.push("Invoices Yesterday\n");
+			results.push("Top 5 Sales Yesterday\n");
 			_.forEach(answer, (invoice) ->
-				line = ('*' + invoice.Contactname + results.count+'*');
-				line += (' ' + numeral(invoice.amountDue).format('$0,0.00') +' ' + numeral(invoice.amountPaid).format('$0,0.00') +' \n');
+				line = ('*' + invoice.Contactname + '*');
+				line += (' ' + numeral(invoice.amountDue).format('$0,0.00') + ' Paid:' + numeral(invoice.amountPaid).format('$0,0.00') + ' \n');
 				results.push(line);
 			)
 		return results;
