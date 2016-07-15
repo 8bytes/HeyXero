@@ -38,8 +38,7 @@ module.exports = {
 
 	formatAnswer: (answer) ->
 		results = []
-		InvTotal = _.SumBy(answer(invoice),"invoice.Total")
-		results.push(numeral(invoice.InvTotal).format('$0,0.00'))
+		results.push(_.SumBy(answer(invoice),"invoice.Total"))
 		if(!answer.length)
 			results.push("No invoices yesterday");
 			return results;
