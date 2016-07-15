@@ -32,6 +32,7 @@ module.exports = {
 				Contactname: invoice.Contact.Name
 				dueDate: moment(invoice.DueDate)
 				amountDue: Number(invoice.AmountDue)
+				TotAmountDue += amountDue
 			})
 		)
 		return results;
@@ -43,13 +44,9 @@ module.exports = {
 			return results;
 		else
 			results.push("Invoices Yesterday\n");
-			TotAmountDue = 0
 			_.forEach(answer, (invoice) ->
-				TotAmountDue += amountDue
 				line = ('*' + invoice.Contactname + '*');
-				if(invoice.invoiceNumber)
-					line += (' ' + invoice.invoiceNumber + ' ')
-				line += (' ' + numeral(invoice.amountDue).format('$0,0.00') + numeral(TotAmountDue).format('$0,0.00') + ' \n');
+				line += (' ' + numeral(invoice.amountDue).format('$0,0.00') +'  '+ numeral(TotAmountDue).format('$0,0.00') + ' \n');
 				results.push(line);
 			)
 		return results;
