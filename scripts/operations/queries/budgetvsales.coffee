@@ -18,7 +18,7 @@ lastDayOfTheMonth = new Date(1900+today.getYear(), today.getMonth()+1, 0)
 todayXero = yyyy + '-' + mm + '-' + dd
 yd = dd-1
 yesterdayXero=yyyy + '-' + mm + '-' + yd
-percentOfMonth= dd/lastDayOfTheMonth
+#percentOfMonth= dd/lastDayOfTheMonth
 
 module.exports = {
 
