@@ -38,7 +38,7 @@ module.exports = {
 
 	formatAnswer: (answer) ->
 		results = []
-		results.push(_.SumBy(answer,Total))
+		results.push(_.SumBy(answer(),Total))
 		if(!answer.length)
 			results.push("No invoices yesterday");
 			return results;
