@@ -26,7 +26,7 @@ module.exports = {
 			return [];
 
 		results = [];
-		_.forEach(_.take(response.Invoices.Invoice, 20), (invoice) ->
+		_.forEach(_.take(response.Invoices.Invoice, response.Invoices.Invoice.length), (invoice) ->
 			results.push({
 				invoiceNumber: invoice.InvoiceNumber
 				Contactname: invoice.Contact.Name
