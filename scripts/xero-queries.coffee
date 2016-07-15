@@ -147,7 +147,7 @@ module.exports = (robot) ->
     )
   )
 #invoicesMTD
-  robot.respond(/invoices( this month)?( MTD)?( Summary)?\??/i, (res) ->
+  robot.respond(/invoices MTD( this month)?( Summary)?\??/i, (res) ->
     console.log('about to ask operator, invoices?')
     Operator.invoicesMTD().then(
         (result) ->
