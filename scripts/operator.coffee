@@ -9,6 +9,9 @@ salesYesterday = require('./operations/queries/salesYesterday');
 budgetvsales = require('./operations/queries/budgetvsales');
 topnewsales = require('./operations/queries/topnewsales');
 cashflowmtd = require('./operations/queries/cashflowmtd');
+margins = require('./operations/queries/margins');
+invoices = require('./operations/queries/invoices');
+position = require('./operations/queries/position');
 summary = require('./operations/queries/summary');
 InvoiceSomebody = require('./operations/commands/invoice-somebody');
 
@@ -52,6 +55,15 @@ module.exports = {
 
   cashflowmtd: () ->
     standardSingleQuery(cashflowmtd)
+
+  margins: () ->
+    standardSingleQuery(margins)
+
+  invoices: () ->
+    standardSingleQuery(invoices)
+
+  position: () ->
+    standardSingleQuery(position)
 
   summary: () ->
     standardSingleQuery(summary)

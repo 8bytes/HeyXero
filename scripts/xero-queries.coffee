@@ -11,6 +11,9 @@
 #   Top 5 Sales - list of top 5 sales in last day
 #   Cashflow - summary of cash for month so far
 #   Summary - detail a range of these queries
+#   Margin - gross profit and net profit margins
+#   Position - Avg debtor and creditor days and cash forecast
+#   Invoices - number and value of invoices
 
 # Notes:
 #   Uncomment the ones you want to try and experiment with.
@@ -118,5 +121,38 @@ module.exports = (robot) ->
         (r) ->
             console.log('Something has gone wrong :( ' + r)
             res.reply("I'm not sure, how about you ask about cashflow again later?")
+    )
+  )
+#margins
+  robot.respond(/Margins (this month)?( MTD)?( Summary)?\??/i, (res) ->
+    console.log('about to ask operator, margins?')
+    Operator.margin().then(
+        (result) ->
+            res.reply(result)
+        (r) ->
+            console.log('Something has gone wrong :( ' + r)
+            res.reply("I'm not sure, how about you ask about margins again later?")
+    )
+  )
+#position
+  robot.respond(/Position( this month)?( MTD)?( Summary)?\??/i, (res) ->
+    console.log('about to ask operator,position ?')
+    Operator.position().then(
+        (result) ->
+            res.reply(result)
+        (r) ->
+            console.log('Something has gone wrong :( ' + r)
+            res.reply("I'm not sure, how about you ask about position again later?")
+    )
+  )
+#invoices
+  robot.respond(/Cashflow( this month)?( MTD)?( Summary)?\??/i, (res) ->
+    console.log('about to ask operator, invoices?')
+    Operator.invoices().then(
+        (result) ->
+            res.reply(result)
+        (r) ->
+            console.log('Something has gone wrong :( ' + r)
+            res.reply("I'm not sure, how about you ask about invoices again later?")
     )
   )
