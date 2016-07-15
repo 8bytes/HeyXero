@@ -11,7 +11,7 @@
 #   Top 5 Sales - list of top 5 sales in last day
 #   Cashflow - summary of cash for month so far
 #   Summary - detail a range of these queries
-#   Margin - gross profit and net profit margins
+#   Margins - gross profit and net profit margins
 #   Position - Avg debtor and creditor days and cash forecast
 #   Invoices - number and value of invoices
 
@@ -124,9 +124,9 @@ module.exports = (robot) ->
     )
   )
 #margins
-  robot.respond(/Margins (this month)?( MTD)?( Summary)?\??/i, (res) ->
+  robot.respond(/Margins( this month)?( MTD)?( Summary)?\??/i, (res) ->
     console.log('about to ask operator, margins?')
-    Operator.margin().then(
+    Operator.margins().then(
         (result) ->
             res.reply(result)
         (r) ->
@@ -146,7 +146,7 @@ module.exports = (robot) ->
     )
   )
 #invoices
-  robot.respond(/Cashflow( this month)?( MTD)?( Summary)?\??/i, (res) ->
+  robot.respond(/invoices( this month)?( MTD)?( Summary)?\??/i, (res) ->
     console.log('about to ask operator, invoices?')
     Operator.invoices().then(
         (result) ->
