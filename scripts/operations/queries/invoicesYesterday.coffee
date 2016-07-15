@@ -26,10 +26,8 @@ module.exports = {
 			return [];
 
 		results = [];
-		InvCount=0;
 		_.forEach(_.take(response.Invoices.Invoice, 5), (invoice) ->
 			results.push({
-				InvCount=InvCount+1
 				invoiceNumber: invoice.InvoiceNumber
 				Contactname: invoice.Contact.Name
 				dueDate: moment(invoice.DueDate)
@@ -48,7 +46,7 @@ module.exports = {
 			_.forEach(answer, (invoice) ->
 				line = ('*' + invoice.Contactname + '*');
 				if(invoice.invoiceNumber)
-					line += (' ' + invoice.invoiceNumber + InvCount+ ' ')
+					line += (' ' + invoice.invoiceNumber + ' ')
 				line += (' ' + numeral(invoice.amountDue).format('$0,0.00') + ' \n');
 				results.push(line);
 			)
