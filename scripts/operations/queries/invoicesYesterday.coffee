@@ -12,7 +12,7 @@ module.exports = {
 		promise = new Promise((resolve, reject) ->
 			XeroConnection().call('GET', GetInvoicesYesterday, null, (err, json) ->
 				if(err)
-					console.log("Error making topnewsales call, error: #{ JSON.stringify(err) }")
+					console.log("Error making invoice call, error: #{ JSON.stringify(err) }")
 					reject()
 				else
 					resolve(json.Response)
@@ -22,9 +22,10 @@ module.exports = {
 
 	createAnswer:  (response) ->
 		#console.log("Parsing invoices response: #{JSON.stringify(response)}")
+		var InvCount=0;
 		if(!response || !response.Invoices || !response.Invoices.Invoice || !response.Invoices.Invoice.length)
 			return [];
-
+		InvCount+=1		
 		results = [];
 		_.forEach(_.take(response.Invoices.Invoice, 20), (invoice) ->
 			results.push({
@@ -44,7 +45,7 @@ module.exports = {
 		else
 			results.push("Invoices Yesterday\n");
 			_.forEach(answer, (invoice) ->
-				line = ('*' + invoice.Contactname + '*');
+				line = ('*' + invoice.Contactname + invoice.InvCount '*');
 				line += (' ' + numeral(invoice.Total).format('$0,0.00') + ' Paid:' + numeral(invoice.amountPaid).format('$0,0.00') + ' \n');
 				results.push(line);
 			)
