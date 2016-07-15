@@ -22,10 +22,9 @@ module.exports = {
 
 	createAnswer:  (response) ->
 		#console.log("Parsing invoices response: #{JSON.stringify(response)}")
-		var InvCount=0;
 		if(!response || !response.Invoices || !response.Invoices.Invoice || !response.Invoices.Invoice.length)
 			return [];
-		InvCount+=1		
+
 		results = [];
 		_.forEach(_.take(response.Invoices.Invoice, 20), (invoice) ->
 			results.push({
@@ -43,9 +42,9 @@ module.exports = {
 			results.push("No invoices yesterday");
 			return results;
 		else
-			results.push("Invoices Yesterday\n");
+			results.push("Invoices Yesterday\n"+answer.length);
 			_.forEach(answer, (invoice) ->
-				line = ('*' + invoice.Contactname + InvCount '*');
+				line = ('*' + invoice.Contactname + '*');
 				line += (' ' + numeral(invoice.Total).format('$0,0.00') + ' Paid:' + numeral(invoice.amountPaid).format('$0,0.00') + ' \n');
 				results.push(line);
 			)
