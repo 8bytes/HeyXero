@@ -18,7 +18,7 @@ lastDayOfTheMonth = new Date(1900+today.getYear(), today.getMonth()+1, 0)
 todayXero = yyyy + '-' + mm + '-' + dd
 yd = dd-1
 yesterdayXero=yyyy + '-' + mm + '-' + yd
-percentOfMonth=(dd/lastDayOfTheMonth)
+percentOfMonth= dd/lastDayOfTheMonth
 
 module.exports = {
 
@@ -50,7 +50,7 @@ module.exports = {
       )
 
   formatAnswer: (answer) ->
-    formattedAnswer = "Budget v Sales NOT YET WORKING\n"+'Budget this month: '+ dd+' '+lastDayOfTheMonth+' '+percentOfMonth+'\n'
+    formattedAnswer = "Budget v Sales NOT YET WORKING\n"+'Budget this month: '+ dd +'\n'
     answer.forEach((row) -> formattedAnswer = formattedAnswer + "#{row.KPIName}: #{numeral(row.ThisMonthValue).format('$0,0.00')}\n")
     formattedAnswer
 
