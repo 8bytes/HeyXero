@@ -13,7 +13,8 @@
 #   Summary - detail a range of these queries
 #   Margins - gross profit and net profit margins
 #   Position - Avg debtor and creditor days and cash forecast
-#   Invoices - number and value of invoices
+#   Invoices MTD - number and value of invoices month to date
+#   Invoices Yesterday - number and value of invoices for last day
 
 # Notes:
 #   Uncomment the ones you want to try and experiment with.
@@ -145,10 +146,21 @@ module.exports = (robot) ->
             res.reply("I'm not sure, how about you ask about position again later?")
     )
   )
-#invoices
+#invoicesMTD
   robot.respond(/invoices( this month)?( MTD)?( Summary)?\??/i, (res) ->
     console.log('about to ask operator, invoices?')
-    Operator.invoices().then(
+    Operator.invoicesMTD().then(
+        (result) ->
+            res.reply(result)
+        (r) ->
+            console.log('Something has gone wrong :( ' + r)
+            res.reply("I'm not sure, how about you ask about invoices again later?")
+    )
+  )
+  #invoicesYesterday
+  robot.respond(/invoices yesterday( number)?\??/i, (res) ->
+    console.log('about to ask operator, invoices?')
+    Operator.invoicesYesterday().then(
         (result) ->
             res.reply(result)
         (r) ->
