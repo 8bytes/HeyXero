@@ -38,11 +38,13 @@ module.exports = {
 
 	formatAnswer: (answer) ->
 		results = []
+		results.push(answer)
+#		InvTotal = _.SumBy(answer,"invoice.Total")
 		if(!answer.length)
 			results.push("No invoices yesterday");
 			return results;
 		else
-			results.push('*'+answer.length+'* Invoices Yesterday\n'+_.SumBy(answer,"invoice.Total"));
+			results.push('*'+answer.length+'* Invoices Yesterday\n'+InvTotal);
 			_.forEach(answer, (invoice) ->
 				line = (invoice.Contactname );
 				line += (' ' + numeral(invoice.Total).format('$0,0.00') + ' Paid:' + numeral(invoice.amountPaid).format('$0,0.00') + ' \n');
