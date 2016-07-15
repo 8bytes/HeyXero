@@ -31,7 +31,7 @@ module.exports = {
 				invoiceNumber: invoice.InvoiceNumber
 				Contactname: invoice.Contact.Name
 				amountDue: Number(invoice.AmountDue)
-				amountDue: Number(invoice.AmountPaid)
+				amountPaid: Number(invoice.AmountPaid)
 			})
 		)
 		return results;
@@ -44,7 +44,7 @@ module.exports = {
 		else
 			results.push("Top 5 Sales Yesterday\n");
 			_.forEach(answer, (invoice) ->
-				line = ('*' + invoice.Contactname + '*');
+				line = (invoice.Contactname);
 				line += (' ' + numeral(invoice.amountDue).format('$0,0.00') + ' Paid:' + numeral(invoice.amountPaid).format('$0,0.00') + ' \n');
 				results.push(line);
 			)
