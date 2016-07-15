@@ -44,10 +44,12 @@ module.exports = {
 		else
 			results.push("Invoices Yesterday\n");
 			_.forEach(answer, (invoice) ->
+				count +=1
+				TotAmountDue += invoice.amountDue
 				line = ('*' + invoice.Contactname + '*');
 				if(invoice.invoiceNumber)
 					line += (' ' + invoice.invoiceNumber + ' ')
-				line += (' ' + numeral(invoice.amountDue).format('$0,0.00') + ' \n');
+				line += (' ' + numeral(invoice.amountDue).format('$0,0.00') + count +TotAmountDue+' \n');
 				results.push(line);
 			)
 		return results;
