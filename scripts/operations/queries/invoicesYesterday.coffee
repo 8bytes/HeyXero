@@ -32,7 +32,7 @@ module.exports = {
 				Contactname: invoice.Contact.Name
 				dueDate: moment(invoice.DueDate)
 				amountDue: Number(invoice.AmountDue)
-				count += 1
+				amountTotal +=amountDue
 			})
 		)
 		return results;
@@ -48,7 +48,7 @@ module.exports = {
 				line = ('*' + invoice.Contactname + '*');
 				if(invoice.invoiceNumber)
 					line += (' ' + invoice.invoiceNumber + ' ')
-				line += (' ' + numeral(invoice.amountDue).format('$0,0.00') + count+' \n');
+				line += (' ' + numeral(invoice.amountDue).format('$0,0.00') + ' \n');
 				results.push(line);
 			)
 		return results;
