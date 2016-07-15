@@ -26,8 +26,8 @@ module.exports = {
 			return [];
 
 		results = [];
+		invCount=0;
 		_.forEach(_.take(response.Invoices.Invoice, 5), (invoice) ->
-			invCount=0
 			results.push({
 				invCount += 1
 				invoiceNumber: invoice.InvoiceNumber
