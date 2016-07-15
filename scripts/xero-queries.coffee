@@ -105,8 +105,8 @@ module.exports = (robot) ->
 #Summary
   robot.respond(/report( summary)?( results)?( daily)?( yesterday)?\??/i, (res) ->
     console.log('about to ask operator for summary?')
-    msg.send "Summary being requested"
-    robot.emit 'info-xero:command', Margins, msg.message.room
+    res.reply("Summary being requested") ->
+        robot.emit 'info-xero:command', Margins, msg.message.room
   )
 #cashflowMTD
   robot.respond(/Cashflow( this month)?( MTD)?( Summary)?\??/i, (res) ->
