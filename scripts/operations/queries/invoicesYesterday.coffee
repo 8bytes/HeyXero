@@ -42,10 +42,10 @@ module.exports = {
 			results.push("No invoices yesterday");
 			return results;
 		else
-			results.push('*'+answer.length+'* Invoices Yesterday\n'+answer.sum(invoice.Total));
+			results.push('*'+answer.length+'* Invoices Yesterday\n');
 			_.forEach(answer, (invoice) ->
 				line = (invoice.Contactname );
-				line += (' ' + numeral(invoice.Total).format('$0,0.00') + ' Paid:' + numeral(invoice.amountPaid).format('$0,0.00') + ' \n');
+				line += (' ' + numeral(answer.sum(invoice.Total)).format('$0,0.00') + ' Paid:' + numeral(invoice.amountPaid).format('$0,0.00') + ' \n');
 				results.push(line);
 			)
 		return results;
