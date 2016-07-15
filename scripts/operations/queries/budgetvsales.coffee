@@ -51,7 +51,7 @@ module.exports = {
       )
 
   formatAnswer: (answer) ->
-    formattedAnswer = "Budget v Sales NOT YET WORKING\n"+'Budget this month: '+ {numeral(percentOfMonth).format('00.00%')} + "\n"
+    formattedAnswer = "Budget v Sales NOT YET WORKING\n"+'Budget this month: '+ numeral(percentOfMonth).format('00.00%') + "\n"
     answer.forEach((row) -> formattedAnswer = formattedAnswer + "#{row.KPIName}: #{numeral(row.ThisMonthValue).format('$0,0.00')}\n")
     formattedAnswer
 
