@@ -49,7 +49,7 @@ module.exports = {
 				line = ('*' + invoice.Contactname + '*');
 				if(invoice.invoiceNumber)
 					line += (' ' + invoice.invoiceNumber + ' ')
-				line += (' ' + numeral(invoice.amountDue).format('$0,0.00') + numeral(TotAmountDue) + ' \n');
+				line += (' ' + numeral(invoice.amountDue).format('$0,0.00') + numeral(TotAmountDue).format('$0,0.00') + ' \n');
 				results.push(line);
 			)
 		return results;
