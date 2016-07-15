@@ -22,7 +22,7 @@ module.exports = {
 
   doRequest: () ->
     new Promise((resolve, reject) ->
-      # https://api.xero.com/api.xro/2.0/reports/BudgetSummary?periods=1  ***NOTE remove date filter later when working
+      # https://api.xero.com/api.xro/2.0/reports/BudgetSummary?periods=1  ***NOTE remove date filterlater when working
       XeroConnection().call 'GET', '/reports/BudgetSummary?periods=1&date=2016-06-13', null, (err, json) ->
         if(err)
           reject()
@@ -48,9 +48,8 @@ module.exports = {
       )
 
   formatAnswer: (answer) ->
-    BudgetToDate=row.ThisMonthValue/30*dd
     formattedAnswer = "Budget v Sales NOT YET WORKING\n"
-    answer.forEach((row) -> formattedAnswer = formattedAnswer + "#{row.KPIName}: #{numeral(row.ThisMonthValue).format('$0,0.00')}+BudgetToDate\n")
+    answer.forEach((row) -> formattedAnswer = formattedAnswer + "#{row.KPIName}: #{numeral(row.ThisMonthValue).format('$0,0.00')}\n")
     formattedAnswer
 
 }
