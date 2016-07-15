@@ -26,13 +26,12 @@ module.exports = {
 			return [];
 
 		results = [];
-		_.forEach(_.take(response.Invoices.Invoice, 5), (invoice) ->
+		_.forEach(_.take(response.Invoices.Invoice), (invoice) ->
 			results.push({
 				invoiceNumber: invoice.InvoiceNumber
 				Contactname: invoice.Contact.Name
 				dueDate: moment(invoice.DueDate)
 				amountDue: Number(invoice.AmountDue)
-				amountTotal +=amountDue
 			})
 		)
 		return results;
