@@ -30,7 +30,7 @@ module.exports = {
 			results.push({
 				invoiceNumber: invoice.InvoiceNumber
 				Contactname: invoice.Contact.Name
-				amountDue: Number(invoice.AmountDue)
+				Total: Number(invoice.Total)
 				amountPaid: Number(invoice.AmountPaid)
 			})
 		)
@@ -42,10 +42,10 @@ module.exports = {
 			results.push("No invoices yesterday");
 			return results;
 		else
-			results.push("Top 5 Sales Yesterday\n");
+			results.push("Invoices Yesterday\n");
 			_.forEach(answer, (invoice) ->
 				line = ('*' + invoice.Contactname + '*');
-				line += (' ' + numeral(invoice.amountDue).format('$0,0.00') + ' Paid:' + numeral(invoice.amountPaid).format('$0,0.00') + ' \n');
+				line += (' ' + numeral(invoice.Total).format('$0,0.00') + ' Paid:' + numeral(invoice.amountPaid).format('$0,0.00') + ' \n');
 				results.push(line);
 			)
 		return results;
