@@ -32,8 +32,9 @@ module.exports = {
 				Contactname: invoice.Contact.Name
 				dueDate: moment(invoice.DueDate)
 				amountDue: Number(invoice.AmountDue)
-				TotAmountDue += amountDue
+
 			})
+			TotAmountDue += amountDue
 		)
 		return results;
 
