@@ -2,19 +2,19 @@
 #   Example scripts for you to examine and try out.
 #
 # Commands:
-#   who owes money - list top contact who owe the most
-#   how much money do I have - lists bank summaries
-#   what bills are coming up - lists upcoming bills
-#   Sales MTD - for the month to date
-#   Sales yesterday - for the last day
-#   Budget - Sales vs. the months budget
-#   Top 5 Sales - list of top 5 sales in last day
-#   Cashflow - summary of cash for month so far
-#   Summary - detail a range of these queries
-#   Margins - gross profit and net profit margins
-#   Position - Avg debtor and creditor days and cash forecast
-#   Invoices MTD - number and value of invoices month to date
-#   Invoices Yesterday - number and value of invoices for last day
+#   Xero> who owes money - list top contact who owe the most
+#   Xero> how much money do I have - lists bank summaries
+#   Xero> what bills are coming up - lists upcoming bills
+#   Xero> Sales MTD - for the month to date
+#   Xero> Sales yesterday - for the last day
+#   Xero> Budget - Sales vs. the months budget ***TBA***
+#   Xero> Top 5 Sales - list of top 5 sales in last day
+#   Xero> Cashflow - summary of cash for month so far
+#   Xero> Summary - lists a number of the other queries ***TBA***
+#   Xero> Margins - gross profit and net profit margins
+#   Xero> Position - Avg debtor and creditor days and cash forecast
+#   Xero> Invoices MTD - total number and value of invoices month to date
+#   Xero> Invoices Yesterday - number and list of invoices for last day
 
 # Notes:
 #   Uncomment the ones you want to try and experiment with.

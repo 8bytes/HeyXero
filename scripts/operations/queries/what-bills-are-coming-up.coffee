@@ -46,7 +46,7 @@ module.exports = {
 			_.forEach(answer, (invoice) ->
 				line = moment(invoice.dueDate).format('DD/MM/YYYY');
 				if(invoice.invoiceNumber)
-					line += (' *' + invoice.invoiceNumber + '*')
+					line += (' ' + invoice.invoiceNumber + '')
 				line += (' ' + invoice.name + ': *' + numeral(invoice.amountDue).format('$0,0.00') + '*');
 				results.push(line);
 			)
