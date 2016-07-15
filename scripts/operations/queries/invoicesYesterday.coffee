@@ -30,7 +30,7 @@ module.exports = {
 		_.forEach(_.take(response.Invoices.Invoice, 5), (invoice) ->
 			results.push({
 				InvCount=InvCount+1
-				nvoiceNumber: invoice.InvoiceNumber
+				invoiceNumber: invoice.InvoiceNumber
 				Contactname: invoice.Contact.Name
 				dueDate: moment(invoice.DueDate)
 				amountDue: Number(invoice.AmountDue)
