@@ -49,8 +49,8 @@ module.exports = {
 				line = ('*' + invoice.Contactname + '*');
 				if(invoice.invoiceNumber)
 					line += (' ' + invoice.invoiceNumber + ' ')
-				line += (' ' + numeral(invoice.amountDue).format('$0,0.00') + count +TotAmountDue+' \n');
-				results.push(line);
+				line += (' ' + numeral(invoice.amountDue).format('$0,0.00') + ' \n');
+				results.push(count + "tot"+TotAmountDue);
 			)
 		return results;
 }
