@@ -7,7 +7,6 @@ today = new Date
 dd = today.getDate()
 #The value returned by getMonth is an integer between 0 and 11, referring 0 to January, 1 to February, and so on. 
 mm = today.getMonth() + 1
-lastDayOfTheMonth = new Date(1900+today.getYear(), today.getMonth()+1, 0)
 yyyy = today.getFullYear()
 if dd < 10
   dd = '0' + dd
@@ -15,6 +14,7 @@ if mm < 10
   mm = '0' + mm
 today = dd + '-' + mm + '-' + yyyy
 #now make some formats for Xero to use
+lastDayOfTheMonth = new Date(1900+today.getYear(), today.getMonth()+1, 0)
 todayXero = yyyy + '-' + mm + '-' + dd
 yd = dd-1
 yesterdayXero=yyyy + '-' + mm + '-' + yd
@@ -49,7 +49,7 @@ module.exports = {
       )
 
   formatAnswer: (answer) ->
-    formattedAnswer = "Budget v Sales NOT YET WORKING\n"+'Budget this month: '+ (dd/lastDayOfTheMonth)+"\n"
+    formattedAnswer = "Budget v Sales NOT YET WORKING\n"+'Budget this month: '+ dd+lastDayOfTheMonth+(dd/lastDayOfTheMonth)+"\n"
     answer.forEach((row) -> formattedAnswer = formattedAnswer + "#{row.KPIName}: #{numeral(row.ThisMonthValue).format('$0,0.00')}\n")
     formattedAnswer
 
