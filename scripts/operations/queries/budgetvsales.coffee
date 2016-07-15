@@ -2,12 +2,28 @@ Promise = require("bluebird");
 XeroConnection = require('./../../xero-connection');
 numeral = require('numeral');
 
+#get some dates for the queries - should be in a separate script later! from http://www.w3resource.com/coffeescript-exercises/coffeescript-exercise-2.php
+today = new Date
+dd = today.getDate()
+#The value returned by getMonth is an integer between 0 and 11, referring 0 to January, 1 to February, and so on. 
+mm = today.getMonth() + 1
+yyyy = today.getFullYear()
+if dd < 10
+  dd = '0' + dd
+if mm < 10
+  mm = '0' + mm
+today = dd + '-' + mm + '-' + yyyy
+#now make some formats for Xero to use
+todayXero = yyyy + '-' + mm + '-' + dd
+yd = dd-1
+yesterdayXero=yyyy + '-' + mm + '-' + yd
+
 module.exports = {
 
   doRequest: () ->
     new Promise((resolve, reject) ->
-      # https://api.xero.com/api.xro/2.0/reports/ProfitAndLoss?fromDate=2016-07-13
-      XeroConnection().call 'GET', '/reports/ProfitAndLoss?fromDate=2016-07-13', null, (err, json) ->
+      # https://api.xero.com/api.xro/2.0/reports/BudgetSummary?periods=1  ***NOTE remove date filter later when working
+      XeroConnection().call 'GET', '/reports/BudgetSummary?periods=1&date=2016-06-13', null, (err, json) ->
         if(err)
           reject()
         else
@@ -32,8 +48,9 @@ module.exports = {
       )
 
   formatAnswer: (answer) ->
+    BudgetToDate=row.ThisMonthValue/30*dd
     formattedAnswer = "Budget v Sales NOT YET WORKING\n"
-    answer.forEach((row) -> formattedAnswer = formattedAnswer + "#{row.KPIName}: #{numeral(row.ThisMonthValue).format('$0,0.00')}\n")
+    answer.forEach((row) -> formattedAnswer = formattedAnswer + "#{row.KPIName}: #{numeral(row.ThisMonthValue).format('$0,0.00')}+BudgetToDate\n")
     formattedAnswer
 
 }
