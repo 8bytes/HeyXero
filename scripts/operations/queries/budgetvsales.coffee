@@ -7,8 +7,8 @@ today = new Date
 dd = today.getDate()
 #The value returned by getMonth is an integer between 0 and 11, referring 0 to January, 1 to February, and so on. 
 mm = today.getMonth() + 1
-lastDayOfTheMonth = new Date(1900+today.getYear(), today.getMonth()+1, 0)
 yyyy = today.getFullYear()
+lastDayOfTheMonth = new Date(yyyy, mm, 0)
 if dd < 10
   dd = '0' + dd
 if mm < 10
@@ -49,7 +49,7 @@ module.exports = {
       )
 
   formatAnswer: (answer) ->
-    formattedAnswer = "Budget v Sales NOT YET WORKING\n"+'Budget this month: '+ dd = "\n"
+    formattedAnswer = "Budget v Sales NOT YET WORKING\n"+'Budget this month: '+ dd + "\n"
     answer.forEach((row) -> formattedAnswer = formattedAnswer + "#{row.KPIName}: #{numeral(row.ThisMonthValue).format('$0,0.00')}\n")
     formattedAnswer
 
