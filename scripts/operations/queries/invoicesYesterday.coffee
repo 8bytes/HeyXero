@@ -52,6 +52,6 @@ module.exports = {
 				line += (' ' + numeral(invoice.Total).format('$0,0.00') + ' Paid:' + numeral(invoice.amountPaid).format('$0,0.00') + ' \n');
 				results.push(line);
 			)
-			results.push("Total value of invoices: "+numeral(TotAmountPaid).format('$0,0.00'))
+			results.push("Total value of invoices: *"+numeral(TotAmount).format('$0,0.00')+"* Paid:"+numeral(TotAmountPaid).format('$0,0.00'))
 		return results;
 }
