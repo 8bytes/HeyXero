@@ -26,22 +26,18 @@ module.exports = {
 			return [];
 
 		results = [];
-		TotAmountPaid = 0
 		_.forEach(_.take(response.Invoices.Invoice, response.Invoices.Invoice.length), (invoice) ->
-			TotAmountPaid += invoice.AmountPaid
 			results.push({
 				invoiceNumber: invoice.InvoiceNumber
 				Contactname: invoice.Contact.Name
 				Total: Number(invoice.Total)
 				amountPaid: Number(invoice.AmountPaid)
 			})
-			results.push(TotAmountPaid)
 		)
 		return results;
 
 	formatAnswer: (answer) ->
 		results = []
-		results.push(TotAmountPaid)
 		if(!answer.length)
 			results.push("No invoices yesterday");
 			return results;
