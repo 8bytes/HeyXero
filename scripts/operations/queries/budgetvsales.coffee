@@ -41,16 +41,8 @@ module.exports = {
     rowsSection = jsonResponse.Response.Reports.Report.Rows.Row.filter((row) -> row.RowType == "Section" && row.Title == "Income" && row.Rows.Row[0].RowType == "Row")[0]
     cellRows = rowsSection.Rows.Row.filter((row) -> row.RowType == "SummaryRow").map((row) -> row.Cells.Cell)
     if (cellRows.length > 0)
-        BudgetThisMonth=0
-        cellRows.map( (cellRow) ->
-        {
-          # First cell's Value
-          KPIName: cellRow[0].Value
-          # Last cell
-          ThisMonthValue: cellRow.slice(-1)[0].Value
-        }
-        BudgetThisMonth=ThisMonthValue
-      )
+        BudgetThisMonth= cellRow.slice(-1)[0].Value
+    )
 
   formatAnswer: (answer) ->
     formattedAnswer = "Budget v Sales NOT YET WORKING\n"+'Budget this month: '
