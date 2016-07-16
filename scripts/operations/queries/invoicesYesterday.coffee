@@ -35,6 +35,7 @@ module.exports = {
 				Total: Number(invoice.Total)
 				amountPaid: Number(invoice.AmountPaid)
 			})
+			results.push(TotAmountPaid)
 		)
 		return results;
 
