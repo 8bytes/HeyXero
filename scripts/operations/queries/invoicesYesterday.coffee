@@ -40,6 +40,7 @@ module.exports = {
 
 	formatAnswer: (answer) ->
 		results = []
+		results.push(TotAmountPaid)
 		if(!answer.length)
 			results.push("No invoices yesterday");
 			return results;
