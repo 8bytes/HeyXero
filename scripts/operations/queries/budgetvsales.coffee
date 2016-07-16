@@ -40,12 +40,20 @@ module.exports = {
     # Filter and map to array of array
     rowsSection = jsonResponse.Response.Reports.Report.Rows.Row.filter((row) -> row.RowType == "Section" && row.Title == "Income" && row.Rows.Row[0].RowType == "Row")[0]
     cellRows = rowsSection.Rows.Row.filter((row) -> row.RowType == "SummaryRow").map((row) -> row.Cells.Cell)
-    BudgetThisMonth= cellRow.slice(-1)[0].Value
-    )
+    if (cellRows.length > 0)
+      cellRows.map( (cellRow) ->
+        {
+          # First cell's Value
+          KPIName: cellRow[0].Value
+          # Last cell
+          ThisMonthValue: cellRow.slice(-1)[0].Value
+        }
+      )
 
   formatAnswer: (answer) ->
     formattedAnswer = "Budget v Sales NOT YET WORKING\n"+'Budget this month: '
-    formattedAnswer += numeral(BudgetThisMonth).format('$0,0.00')+" with "+ numeral(percentOfMonth).format('00.0%') + " of Month past"+' so Budget to date: '+numeral(BudgetThisMonth*percentOfMonth).format('$0,0.00')+"\n"+'Sales to date: '+numeral(dd).format('$0,0.00')+' Sales to date as % of budget: '+numeral((dd/BudgetThisMonth*percentOfMonth).format('00.0%')+"\n"
+    answer.forEach((row) -> formattedAnswer = formattedAnswer + "#{numeral(row.ThisMonthValue).format('$0,0.00')}")
+    formattedAnswer += " with "+ numeral(percentOfMonth).format('00.0%') + " of Month past"+' so Budget to date: '+numeral(yd*percentOfMonth).format('$0,0.00')+"\n"+'Sales to date: '+numeral(dd).format('$0,0.00')+' Sales to date as % of budget: '+numeral((dd/yd*percentOfMonth).format('00.0%')+"\n"
     formattedAnswer
 
 }
