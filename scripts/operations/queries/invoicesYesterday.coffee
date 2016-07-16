@@ -31,6 +31,7 @@ module.exports = {
 			TotAmountPaid += invoice.AmountPaid
 			results.push({
 				invoiceNumber: invoice.InvoiceNumber
+				reference: invoice.Reference
 				Contactname: invoice.Contact.Name
 				Total: Number(invoice.Total)
 				amountPaid: Number(invoice.AmountPaid)
@@ -46,7 +47,7 @@ module.exports = {
 		else
 			results.push('*'+answer.length+'* Invoices Yesterday\n');
 			_.forEach(answer, (invoice) ->
-				line = (invoice.Contactname );
+				line = (invoice.Contactname +" for "+invoice.Reference);
 				line += (' ' + numeral(invoice.Total).format('$0,0.00') + ' Paid:' + numeral(invoice.amountPaid).format('$0,0.00') + ' \n');
 				results.push(line);
 			)
