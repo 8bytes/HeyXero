@@ -51,10 +51,11 @@ module.exports = {
       )
 
   formatAnswer: (answer) ->
-    budgetForMonth = 0
+    budgetForMonth = 12
+    salesForMonth=11
     formattedAnswer = "Budget v Sales NOT YET WORKING\n"+'Budget this month: '
     answer.forEach((row) -> formattedAnswer = formattedAnswer + "#{numeral(row.ThisMonthValue).format('$0,0.00')}")
-    formattedAnswer += numeral(budgetForMonth).format('$0,0.00')+" with "+ numeral(percentOfMonth).format('00.0%') + " of Month past\n"+'Budget to date: '+numeral(yd*percentOfMonth).format('$0,0.00')+"\n"+'Sales to date: '+numeral(dd).format('$0,0.00')+' Sales to date as % of budget: '+numeral(dd/(yd*percentOfMonth)).format('00.0%')+"\n"
+    formattedAnswer += numeral(budgetForMonth).format('$0,0.00')+" with "+ numeral(percentOfMonth).format('00.0%') + " of Month past\n"+'Budget to date: '+numeral(budgetForMonth*percentOfMonth).format('$0,0.00')+"\n"+'Sales to date: '+numeral(salesForMonth).format('$0,0.00')+' Sales to date as % of budget: '+numeral(salesForMonth/(budgetForMonth*percentOfMonth)).format('00.0%')+"\n"
     formattedAnswer
 
 }
