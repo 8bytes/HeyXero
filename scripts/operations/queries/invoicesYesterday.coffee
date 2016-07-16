@@ -49,8 +49,8 @@ module.exports = {
 			_.forEach(answer, (invoice) ->
 				TotAmountPaid += invoice.amountPaid
 				TotAmount += invoice.Total
-				line = (invoice.Contactname+' for '+invoice.Reference);
-				line += (' ' + numeral(invoice.Total).format('$0,0.00') + ' Paid:' + numeral(invoice.amountPaid).format('$0,0.00') + ' \n');
+				line = (invoice.Contactname+' for *'+invoice.Reference);
+				line += (' ' + numeral(invoice.Total).format('$0,0.00') + '* Paid:' + numeral(invoice.amountPaid).format('$0,0.00') + ' \n');
 				results.push(line);
 			)
 			AvgSizeInvoice = TotAmount/answer.length
