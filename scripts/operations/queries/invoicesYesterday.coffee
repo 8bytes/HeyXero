@@ -38,8 +38,6 @@ module.exports = {
 
 	formatAnswer: (answer) ->
 		results = []
-		s = _.reduce(answer, function(s, invoice) {return s + parseFloat(invoice.Total);}, 0);
-		results.push(s)
 		if(!answer.length)
 			results.push("No invoices yesterday");
 			return results;
