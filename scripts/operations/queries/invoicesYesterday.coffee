@@ -30,6 +30,7 @@ module.exports = {
 			results.push({
 				invoiceNumber: invoice.InvoiceNumber
 				Contactname: invoice.Contact.Name
+				Reference: invoice.Reference
 				Total: Number(invoice.Total)
 				amountPaid: Number(invoice.AmountPaid)
 			})
@@ -53,6 +54,6 @@ module.exports = {
 				results.push(line);
 			)
 			AvgSizeInvoice = TotAmount/answer.length
-			results.push("Total value of invoices: *"+numeral(TotAmount).format('$0,0.00')+"* Paid:"+numeral(TotAmountPaid).format('$0,0.00')+" Average size: "+(AvgSizeInvoice))
+			results.push("Total value of invoices: *"+numeral(TotAmount).format('$0,0.00')+"* Paid:"+numeral(TotAmountPaid).format('$0,0.00')+" Average size: "+numeral(AvgSizeInvoice).format('$0,0.00')
 		return results;
 }
