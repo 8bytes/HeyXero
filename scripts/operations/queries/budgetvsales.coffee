@@ -40,8 +40,7 @@ module.exports = {
     # Filter and map to array of array
     rowsSection = jsonResponse.Response.Reports.Report.Rows.Row.filter((row) -> row.RowType == "Section" && row.Title == "Income" && row.Rows.Row[0].RowType == "Row")[0]
     cellRows = rowsSection.Rows.Row.filter((row) -> row.RowType == "SummaryRow").map((row) -> row.Cells.Cell)
-    if (cellRows.length > 0)
-        BudgetThisMonth= cellRow.slice(-1)[0].Value
+    BudgetThisMonth= cellRow.slice(-1)[0].Value
     )
 
   formatAnswer: (answer) ->
