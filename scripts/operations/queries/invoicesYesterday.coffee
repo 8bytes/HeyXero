@@ -26,7 +26,9 @@ module.exports = {
 			return [];
 
 		results = [];
+		TotAmountPaid = 0
 		_.forEach(_.take(response.Invoices.Invoice, response.Invoices.Invoice.length), (invoice) ->
+			TotAmountPaid += invoice.AmountPaid
 			results.push({
 				invoiceNumber: invoice.InvoiceNumber
 				Contactname: invoice.Contact.Name
