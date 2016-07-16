@@ -44,12 +44,14 @@ module.exports = {
 		else
 			results.push('*'+answer.length+'* Invoices Yesterday\n');
 			TotAmountPaid=0
+			TotAmount=0
 			_.forEach(answer, (invoice) ->
 				TotAmountPaid += invoice.amountPaid
-				line = (invoice.Contactname+' '+TotAmountPaid);
+				TotAmount += invoice.Total
+				line = (invoice.Contactname+' ');
 				line += (' ' + numeral(invoice.Total).format('$0,0.00') + ' Paid:' + numeral(invoice.amountPaid).format('$0,0.00') + ' \n');
 				results.push(line);
 			)
-			results.push(numeral(TotAmountPaid).format('$0,0.00'))
+			results.push("Total value of invoices: "+numeral(TotAmountPaid).format('$0,0.00'))
 		return results;
 }
