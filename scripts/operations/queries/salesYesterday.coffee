@@ -15,7 +15,7 @@ if mm < 10
 today = dd + '-' + mm + '-' + yyyy
 #now make some formats for Xero to use
 todayXero = yyyy + '-' + mm + '-' + dd
-yd = dd-1
+yd = dd-3
 yesterdayXero=yyyy + '-' + mm + '-' + yd
 
 
@@ -45,15 +45,13 @@ module.exports = {
           KPIName: cellRow[0].Value
           # Last cell
           ThisMonthValue: cellRow.slice(-1)[0].Value
-        }
-      else
-        results.push("No data today");  
+        }  
       )
 
   formatAnswer: (answer) ->
     results = []
     if(!answer.length)
-      results.push("No sales yesterday");
+      results.push("No sales data yesterday");
       return results;
     else
       formattedAnswer = "Sales yesterday\n";
