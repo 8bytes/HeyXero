@@ -22,6 +22,20 @@ yd = dd-1
 yesterdayXero=yyyy + '-' + mm + '-' + yd
 percentOfMonth=dd/lastDayOfTheMonth
 
+standardSingleQuery = (require('./operations/queries/salesmtdbare')) ->
+  new Promise((resolve, reject) ->
+      # Start the request and get its promise
+      promise = operation.doRequest();
+      promise.then(
+        (xeroResponse) ->
+          answer = operation.createAnswer(xeroResponse);
+          formattedAnswer = operation.formatAnswer(answer);
+          resolve(formattedAnswer);
+          sales = formattedAnswer;
+        () ->
+          reject();
+      )
+    )
     
 module.exports = {
 
@@ -55,7 +69,7 @@ module.exports = {
   formatAnswer: (answer) ->
     budgetForMonth = 0
     salesForMonth=55000   #note placeholder until can draw in sales MTD
-    formattedAnswer = "Budget v Sales NOT YET WORKING\n"+'Budget this month: '
+    formattedAnswer = "Budget v Sales NOT YET WORKING\n"+sales+'Budget this month: '
     answer.forEach((row) -> budgetForMonth = "#{row.ThisMonthValue}")
     formattedAnswer += numeral(budgetForMonth).format('$0,0.00')+" with "+ numeral(percentOfMonth).format('00.0%') + " of Month past\n"+'Budget to date: '+numeral(budgetForMonth*percentOfMonth).format('$0,0.00')+"\n"+'Sales to date: '+numeral(salesForMonth).format('$0,0.00')+' Sales to date as % of budget: '+numeral(salesForMonth/(budgetForMonth*percentOfMonth)).format('00.0%')+"\n"
     formattedAnswer
