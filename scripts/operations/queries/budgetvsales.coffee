@@ -22,10 +22,10 @@ yd = dd-1
 yesterdayXero=yyyy + '-' + mm + '-' + yd
 percentOfMonth=dd/lastDayOfTheMonth
 
-standardSingleQuery = (require('./operations/queries/salesmtdbare')) ->
+standardSingleQuery = ()) ->
   new Promise((resolve, reject) ->
       # Start the request and get its promise
-      promise = operation.doRequest();
+      promise = require('./operations/queries/salesmtdbare'.doRequest();
       promise.then(
         (xeroResponse) ->
           answer = operation.createAnswer(xeroResponse);
