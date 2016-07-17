@@ -6,6 +6,7 @@
   "description": "A personal assitant for your small business, by Xero.",
   "dependencies": {
     "bluebird": "^3.3.5",
+    "cron": "^1.1.0",
     "hubot": "^2.10.0",
     "hubot-diagnostics": "0.0.1",
     "hubot-google-images": "^0.1.2",
@@ -23,6 +24,7 @@
     "lodash": "^4.12.0",
     "moment": "^2.13.0",
     "numeral": "^1.5.3",
+    "time": "^0.11.4",
     "xero": "0.0.8"
   },
   "engines": {
