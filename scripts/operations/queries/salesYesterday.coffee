@@ -46,6 +46,8 @@ module.exports = {
           # Last cell
           ThisMonthValue: cellRow.slice(-1)[0].Value
         }
+      else
+        results.push("No data today");  
       )
 
   formatAnswer: (answer) ->
