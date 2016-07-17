@@ -22,6 +22,14 @@ yd = dd-1
 yesterdayXero=yyyy + '-' + mm + '-' + yd
 percentOfMonth=dd/lastDayOfTheMonth
     
+  Operator.salesmtd().then(
+        (result) ->
+            sales=result
+        (r) ->
+            console.log('Something has gone wrong :( ' + r)
+            res.reply("I'm not sure, how about you ask about sales again later?")
+  )
+
 module.exports = {
 
   doRequest: () ->
@@ -54,7 +62,7 @@ module.exports = {
   formatAnswer: (answer) ->
     budgetForMonth = 0
     salesForMonth=55000
-    formattedAnswer = "Budget v Sales NOT YET WORKING\n"+'Budget this month: '
+    formattedAnswer = "Budget v Sales NOT YET WORKING\n"+sales+'Budget this month: '
     answer.forEach((row) -> budgetForMonth = "#{row.ThisMonthValue}")
     formattedAnswer += numeral(budgetForMonth).format('$0,0.00')+" with "+ numeral(percentOfMonth).format('00.0%') + " of Month past\n"+'Budget to date: '+numeral(budgetForMonth*percentOfMonth).format('$0,0.00')+"\n"+'Sales to date: '+numeral(salesForMonth).format('$0,0.00')+' Sales to date as % of budget: '+numeral(salesForMonth/(budgetForMonth*percentOfMonth)).format('00.0%')+"\n"
     formattedAnswer
