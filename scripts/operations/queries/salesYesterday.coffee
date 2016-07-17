@@ -15,7 +15,7 @@ if mm < 10
 today = dd + '-' + mm + '-' + yyyy
 #now make some formats for Xero to use
 todayXero = yyyy + '-' + mm + '-' + dd
-yd = dd-1
+yd = dd-2
 yesterdayXero=yyyy + '-' + mm + '-' + yd
 
 
@@ -51,12 +51,12 @@ module.exports = {
   formatAnswer: (answer) ->
     results = []
     if(!answer.length)
-      results.push("No invoices yesterday");
+      results.push("No sales yesterday");
       return results;
     else
       formattedAnswer = "Sales yesterday\n";
       answer.forEach((row) -> formattedAnswer = formattedAnswer + "#{row.KPIName}: #{numeral(row.ThisMonthValue).format('$0,0.00')}\n");
-      results.push(formattedAnswer)
+      results.push(formattedAnswer);
     return results;
 
 }
