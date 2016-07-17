@@ -21,7 +21,6 @@ todayXero = yyyy + '-' + mm + '-' + dd
 yd = dd-1
 yesterdayXero=yyyy + '-' + mm + '-' + yd
 percentOfMonth=dd/lastDayOfTheMonth
-    test=Operator.salesmtd()
     
 module.exports = {
 
