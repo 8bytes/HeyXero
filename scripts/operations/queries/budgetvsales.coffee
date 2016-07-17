@@ -1,7 +1,7 @@
 Promise = require("bluebird");
 XeroConnection = require('./../../xero-connection');
 numeral = require('numeral');
-salesmtd = require('./salesmtdbare');
+
 
 #get some dates for the queries - should be in a separate script later! from http://www.w3resource.com/coffeescript-exercises/coffeescript-exercise-2.php
 today = new Date
@@ -22,16 +22,6 @@ yd = dd-1
 yesterdayXero=yyyy + '-' + mm + '-' + yd
 percentOfMonth=dd/lastDayOfTheMonth
 
-new Promise((resolve, reject) ->
-    promise = salesmtd.doRequest();
-      promise.then(
-        (xeroResponse) ->
-          answer = salesmtd.createAnswer(xeroResponse);
-          formattedAnswer = salesmtd.formatAnswer(answer);
-        () ->
-          reject();
-      )
-    )  
     
 module.exports = {
 
@@ -64,7 +54,7 @@ module.exports = {
 
   formatAnswer: (answer) ->
     budgetForMonth = 0
-    salesForMonth=formattedAnswer   #note placeholder until can draw in sales MTD
+    salesForMonth=55000   #note placeholder until can draw in sales MTD
     formattedAnswer = "Budget v Sales NOT YET WORKING\n"+'Budget this month: '
     answer.forEach((row) -> budgetForMonth = "#{row.ThisMonthValue}")
     formattedAnswer += numeral(budgetForMonth).format('$0,0.00')+" with "+ numeral(percentOfMonth).format('00.0%') + " of Month past\n"+'Budget to date: '+numeral(budgetForMonth*percentOfMonth).format('$0,0.00')+"\n"+'Sales to date: '+numeral(salesForMonth).format('$0,0.00')+' Sales to date as % of budget: '+numeral(salesForMonth/(budgetForMonth*percentOfMonth)).format('00.0%')+"\n"
