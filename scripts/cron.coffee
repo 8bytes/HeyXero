@@ -14,10 +14,10 @@ module.exports = (robot) ->
    cronJob = require('cron').CronJob
    tz = 'Australia/Sydney'
    new cronJob('0 0 6 * * 1-5', workdaysSixAm, null, true, tz)                            #6am workdays
-   new cronJob('0 */1 * * * *', everyFiveMinutes, null, true, tz)                         #every 5 min
+   new cronJob('0 */1 * * * *', workdaysSixAm, null, true, tz)           #every 5 min
    new cronJob('00 25 14 * * 1-5', Operator.howMuchMoneyDoIHave(), null, true,tz)         #2:25pm workdays
 
-   room = "#general"
+   room = "testchannel"
  
    workdaysSixAm = ->
      robot.emit 'slave:command', 'wake everyone up', room
