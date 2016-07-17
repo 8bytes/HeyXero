@@ -15,7 +15,7 @@ if mm < 10
 today = dd + '-' + mm + '-' + yyyy
 #now make some formats for Xero to use
 todayXero = yyyy + '-' + mm + '-' + dd
-yd = dd-2
+yd = dd-1
 yesterdayXero=yyyy + '-' + mm + '-' + yd
 
 
