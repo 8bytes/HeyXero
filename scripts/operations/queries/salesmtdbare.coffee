@@ -32,7 +32,8 @@ module.exports = {
       )
 
   formatAnswer: (answer) ->
-    answer.forEach((row) -> formattedAnswer = "#{row.ThisMonthValue}")
+    formattedAnswer = ""
+    answer.forEach((row) -> formattedAnswer = formattedAnswer + "#{row.ThisMonthValue}")
     formattedAnswer
 
 }
