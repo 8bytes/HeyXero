@@ -1,5 +1,6 @@
 Promise = require("bluebird");
 XeroConnection = require('./../../xero-connection');
+XeroDates = require('./../../xero-dates');
 numeral = require('numeral');
 
 #get some dates for the queries - should be in a separate script later! from http://www.w3resource.com/coffeescript-exercises/coffeescript-exercise-2.php
@@ -15,7 +16,7 @@ if mm < 10
 today = dd + '-' + mm + '-' + yyyy
 #now make some formats for Xero to use
 todayXero = yyyy + '-' + mm + '-' + dd
-yd = dd-3
+yd = XeroDates.yd
 yesterdayXero=yyyy + '-' + mm + '-' + yd
 
 

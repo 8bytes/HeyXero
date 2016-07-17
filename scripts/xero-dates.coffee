@@ -15,7 +15,7 @@ yyyy = today.getFullYear()
 lastDayOfTheMonthDate = new Date(yyyy, mm, 0)
 lastDayOfTheMonth = lastDayOfTheMonthDate.getDate()             #how many days in the month
 today = dd + '-' + mm + '-' + yyyy
-yd = dd-1                                                     #yesterday in date format
+(->@)().yd = dd-3                                                     #yesterday in date format
 
 #now make some formats for Xero to use
 todayXero = yyyy + '-' + mm + '-' + dd
