@@ -21,7 +21,8 @@ todayXero = yyyy + '-' + mm + '-' + dd
 yd = dd-1
 yesterdayXero=yyyy + '-' + mm + '-' + yd
 percentOfMonth=dd/lastDayOfTheMonth
-
+    test=Operator.salesmtd()
+    
 module.exports = {
 
   doRequest: () ->
@@ -52,7 +53,6 @@ module.exports = {
       )
 
   formatAnswer: (answer) ->
-    test=Operator.salesmtd()
     budgetForMonth = 0
     salesForMonth=55000
     formattedAnswer = "Budget v Sales NOT YET WORKING\n"+'Budget this month: '
