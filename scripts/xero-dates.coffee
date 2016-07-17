@@ -20,7 +20,7 @@ yd -> dd-3                                                     #yesterday in dat
 
 #now make some formats for Xero to use
 todayXero = yyyy + '-' + mm + '-' + dd
-yesterdayXero=yyyy + '-' + mm + '-' + yd
+yesterdayXero -> yyyy + '-' + mm + '-' + yd
 endOfMonthXero=yyyy + '-' + mm + '-' + lastDayOfTheMonth
 percentOfMonth=dd/lastDayOfTheMonth
  

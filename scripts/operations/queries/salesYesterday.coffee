@@ -17,7 +17,7 @@ today = dd + '-' + mm + '-' + yyyy
 #now make some formats for Xero to use
 todayXero = yyyy + '-' + mm + '-' + dd
 yd = XeroDates.yd
-yesterdayXero=yyyy + '-' + mm + '-' + yd
+yesterdayXero= XeroDates.yesterdayXero
 
 
 module.exports = {
