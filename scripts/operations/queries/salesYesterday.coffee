@@ -1,9 +1,9 @@
 Promise = require("bluebird");
 XeroConnection = require('./../../xero-connection');
-XeroDates = require('./../../xero-dates');
+#XeroDates = require('./../../xero-dates');
 numeral = require('numeral');
 
-#get some dates for the queries - should be in a separate script later! from http://www.w3resource.com/coffeescript-exercises/coffeescript-exercise-2.php
+#get some dates for the queries - should be in a separate script later - see ./../../xero-dates! from http://www.w3resource.com/coffeescript-exercises/coffeescript-exercise-2.php
 today = new Date
 dd = today.getDate()
 #The value returned by getMonth is an integer between 0 and 11, referring 0 to January, 1 to February, and so on. 
