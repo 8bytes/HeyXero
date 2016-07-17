@@ -16,8 +16,8 @@ if mm < 10
 today = dd + '-' + mm + '-' + yyyy
 #now make some formats for Xero to use
 todayXero = yyyy + '-' + mm + '-' + dd
-yd = XeroDates.yd
-yesterdayXero= XeroDates.yesterdayXero
+yd = dd-3
+yesterdayXero=yyyy + '-' + mm + '-' + yd
 
 
 module.exports = {
