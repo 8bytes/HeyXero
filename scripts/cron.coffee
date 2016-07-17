@@ -19,8 +19,8 @@ module.exports = (robot) ->
    room = "testchannel"
  
    workdaysSixAm = ->
-     robot.emit 'slave:command', 'wake everyone up', room
+     robot.emit 'slave:command', 'sales MTD', room
  
    everyFiveMinutes = ->
-      console.log 'about to ask operator, CRON WORKING?'
+      console.log('about to ask operator, CRON WORKING?')
 #     robot.messageRoom room, 'I will nag you every minute'
