@@ -1,7 +1,7 @@
 Promise = require("bluebird");
 XeroConnection = require('./../../xero-connection');
 numeral = require('numeral');
-
+salesmtd = require('./salesmtdbare');
 
 #get some dates for the queries - should be in a separate script later! from http://www.w3resource.com/coffeescript-exercises/coffeescript-exercise-2.php
 today = new Date
@@ -22,10 +22,27 @@ yd = dd-1
 yesterdayXero=yyyy + '-' + mm + '-' + yd
 percentOfMonth=dd/lastDayOfTheMonth
 
+standardSingleQuery = (operation) ->
+  new Promise((resolve, reject) ->
+      # Start the request and get its promise
+      promise = operation.doRequest();
+      promise.then(
+        (xeroResponse) ->
+          answer = operation.createAnswer(xeroResponse);
+          formattedAnswer = operation.formatAnswer(answer);
+          resolve(formattedAnswer);
+        () ->
+          reject();
+      )
+    )
+
     
 module.exports = {
 
-  doRequest: () ->
+    salesmtd: () ->
+    standardSingleQuery(salesmtd)
+
+    doRequest: () ->
     new Promise((resolve, reject) ->
       # https://api.xero.com/api.xro/2.0/reports/BudgetSummary?periods=1  ***NOTE remove date filterlater when working
       XeroConnection().call 'GET', '/reports/BudgetSummary?periods=1&date=2016-06-13', null, (err, json) ->
