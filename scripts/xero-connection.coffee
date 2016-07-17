@@ -1,3 +1,15 @@
+# Description:
+#   Xero API Keys
+#
+# Dependencies:
+#
+# Configuration:
+#
+# Commands:
+#
+# Author:
+#   Scott Potter
+
 Xero = require('xero');
 
 module.exports = () ->
