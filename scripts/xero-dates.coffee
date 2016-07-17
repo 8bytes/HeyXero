@@ -1,7 +1,17 @@
-#some handlers to make it easier to use dates with the way Xero handles them!
-#first get some dates for the queries - based off http://www.w3resource.com/coffeescript-exercises/coffeescript-exercise-2.php
-
-module.exports () ->
+# Description:
+#   Allows access to date formats used by Xero so that APOI calls can be made
+#
+# Dependencies:
+#
+# Configuration:
+#
+# Commands:
+#
+# Author:
+#   Brent Jackson
+#   With inital dates for the queries based off http://www.w3resource.com/coffeescript-exercises/coffeescript-exercise-2.php
+#
+module.exports = () ->
 today = new Date
 dd = today.getDate()
 if dd < 10
