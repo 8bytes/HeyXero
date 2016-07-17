@@ -106,7 +106,7 @@ module.exports = (robot) ->
 #Summary
   robot.respond(/report( summary)?( results)?( daily)?( yesterday)?\??/i, (res) ->
     console.log('about to ask operator for summary?')
-    res.reply("<@info-xero> how much do I owe?") 
+    res.reply("<@info-xero> Still to work this one out!") 
   )
 #cashflowMTD
   robot.respond(/Cashflow( this month)?( MTD)?( Summary)?\??/i, (res) ->
