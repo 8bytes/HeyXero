@@ -54,6 +54,7 @@ module.exports = {
 				results.push(line);
 			)
 			AvgSizeInvoice = TotAmount/answer.length
-			results.push("Total value of invoices: *"+numeral(TotAmount).format('$0,0.00')+"* Paid:"+numeral(TotAmountPaid).format('$0,0.00')+" Average size: "+numeral(AvgSizeInvoice).format('$0,0.00'))
+			InvoiceSummary = "Total value of invoices: *"+numeral(TotAmount).format('$0,0.00')+"* Paid:"+numeral(TotAmountPaid).format('$0,0.00')+" Average size: "+numeral(AvgSizeInvoice).format('$0,0.00')
+			results.push(InvoiceSummary)
 		return results;
 }
