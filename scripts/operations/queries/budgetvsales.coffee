@@ -1,7 +1,7 @@
 Promise = require("bluebird");
 XeroConnection = require('./../../xero-connection');
 numeral = require('numeral');
-Operator = require('./../../operator');
+
 
 #get some dates for the queries - should be in a separate script later! from http://www.w3resource.com/coffeescript-exercises/coffeescript-exercise-2.php
 today = new Date
@@ -21,28 +21,8 @@ todayXero = yyyy + '-' + mm + '-' + dd
 yd = dd-1
 yesterdayXero=yyyy + '-' + mm + '-' + yd
 percentOfMonth=dd/lastDayOfTheMonth
+
     
-##GET SALES NO.
-XeroConnection().call 'GET', '/reports/ProfitAndLoss', null, (err, json) ->
-        if(err)
-          reject()
-        else
-          resolve(json)
- # Filter and map to array of array
-    rowsSection = jsonResponse.Response.Reports.Report.Rows.Row.filter((row) -> row.RowType == "Section" && row.Title == "Income" && row.Rows.Row[0].RowType == "Row")[0]
-    cellRows = rowsSection.Rows.Row.filter((row) -> row.RowType == "SummaryRow").map((row) -> row.Cells.Cell)
-    if (cellRows.length > 0)
-      cellRows.map( (cellRow) ->
-        {
-          # First cell's Value
-          KPIName: cellRow[0].Value
-          # Last cell
-          ThisMonthValue: cellRow.slice(-1)[0].Value
-        }
-    cellRows.forEach((row) -> Sales = #{row.ThisMonthValue}")
-
-
-
 module.exports = {
 
   doRequest: () ->
@@ -75,9 +55,9 @@ module.exports = {
   formatAnswer: (answer) ->
     budgetForMonth = 0
     salesForMonth=55000
-    formattedAnswer = "Budget v Sales NOT YET WORKING\n"+sales+'Budget this month: '
+    formattedAnswer = "Budget v Sales NOT YET WORKING\n"+'Budget this month: '
     answer.forEach((row) -> budgetForMonth = "#{row.ThisMonthValue}")
-    formattedAnswer += numeral(budgetForMonth).format('$0,0.00')+" with "+ numeral(percentOfMonth).format('00.0%') + " of Month past\n"+'Budget to date: '+numeral(budgetForMonth*percentOfMonth).format('$0,0.00')+"\n"+'Sales to date: '+numeral(salesForMonth).format('$0,0.00')+' Sales to date as % of budget: '+numeral(salesForMonth/(budgetForMonth*percentOfMonth)).format('00.0%')+"\n"
+    formattedAnswer += test+numeral(budgetForMonth).format('$0,0.00')+" with "+ numeral(percentOfMonth).format('00.0%') + " of Month past\n"+'Budget to date: '+numeral(budgetForMonth*percentOfMonth).format('$0,0.00')+"\n"+'Sales to date: '+numeral(salesForMonth).format('$0,0.00')+' Sales to date as % of budget: '+numeral(salesForMonth/(budgetForMonth*percentOfMonth)).format('00.0%')+"\n"
     formattedAnswer
 
 }
