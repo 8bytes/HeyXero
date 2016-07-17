@@ -2,24 +2,25 @@
 #   Example scripts for you to examine and try out.
 #
 # Commands:
-#   Xero> who owes money - list top contact who owe the most
-#   Xero> how much money do I have - lists bank summaries
-#   Xero> what bills are coming up - lists upcoming bills
-#   Xero> Sales MTD - for the month to date
-#   Xero> Sales yesterday - for the last day
-#   Xero> Budget - Sales vs. the months budget ***TBA***
-#   Xero> Top 5 Sales - list of top 5 sales in last day
-#   Xero> Cashflow - summary of cash for month so far
-#   Xero> Summary - lists a number of the other queries ***TBA***
-#   Xero> Margins - gross profit and net profit margins
-#   Xero> Position - Avg debtor and creditor days and cash forecast
-#   Xero> Invoices MTD - total number and value of invoices month to date
-#   Xero> Invoices Yesterday - number and list of invoices for last day
+#   hubot Xero> who owes money - list top contact who owe the most
+#   hubot Xero> how much money do I have - lists bank summaries
+#   hubot Xero> what bills are coming up - lists upcoming bills
+#   hubot Xero> Sales MTD - for the month to date
+#   hubot Xero> Sales yesterday - for the last day
+#   hubot Xero> Budget - Sales vs. the months budget ***TBA***
+#   hubot Xero> Top 5 Sales - list of top 5 sales in last day
+#   hubot Xero> Cashflow - summary of cash for month so far
+#   hubot Xero> Summary - lists a number of the other queries ***TBA***
+#   hubot Xero> Margins - gross profit and net profit margins
+#   hubot Xero> Position - Avg debtor and creditor days and cash forecast
+#   hubot Xero> Invoices MTD - total number and value of invoices month to date
+#   hubot Xero> Invoices Yesterday - number and list of invoices for last day
 
 # Notes:
 #   Uncomment the ones you want to try and experiment with.
 #
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
+
 Operator = require('./operator');
 _ = require('lodash');
 
@@ -105,7 +106,7 @@ module.exports = (robot) ->
 #Summary
   robot.respond(/report( summary)?( results)?( daily)?( yesterday)?\??/i, (res) ->
     console.log('about to ask operator for summary?')
-    res.reply("TBA still to create!") 
+    res.reply('<@info-xero> how much do I owe?'') 
   )
 #cashflowMTD
   robot.respond(/Cashflow( this month)?( MTD)?( Summary)?\??/i, (res) ->
