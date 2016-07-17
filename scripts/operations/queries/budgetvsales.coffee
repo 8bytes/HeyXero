@@ -1,6 +1,7 @@
 Promise = require("bluebird");
 XeroConnection = require('./../../xero-connection');
 numeral = require('numeral');
+Operator = require('./../../operator');
 
 #get some dates for the queries - should be in a separate script later! from http://www.w3resource.com/coffeescript-exercises/coffeescript-exercise-2.php
 today = new Date
