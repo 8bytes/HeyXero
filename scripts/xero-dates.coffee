@@ -1,7 +1,7 @@
 #some handlers to make it easier to use dates with the way Xero handles them!
 #first get some dates for the queries - based off http://www.w3resource.com/coffeescript-exercises/coffeescript-exercise-2.php
 
-module.exports  ->
+module.exports () ->
 today = new Date
 dd = today.getDate()
 if dd < 10
