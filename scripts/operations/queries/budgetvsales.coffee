@@ -22,13 +22,26 @@ yd = dd-1
 yesterdayXero=yyyy + '-' + mm + '-' + yd
 percentOfMonth=dd/lastDayOfTheMonth
     
-  Operator.salesmtd().then(
-        (result) ->
-            sales=result
-        (r) ->
-            console.log('Something has gone wrong :( ' + r)
-            res.reply("I'm not sure, how about you ask about sales again later?")
-  )
+##GET SALES NO.
+XeroConnection().call 'GET', '/reports/ProfitAndLoss', null, (err, json) ->
+        if(err)
+          reject()
+        else
+          resolve(json)
+ # Filter and map to array of array
+    rowsSection = jsonResponse.Response.Reports.Report.Rows.Row.filter((row) -> row.RowType == "Section" && row.Title == "Income" && row.Rows.Row[0].RowType == "Row")[0]
+    cellRows = rowsSection.Rows.Row.filter((row) -> row.RowType == "SummaryRow").map((row) -> row.Cells.Cell)
+    if (cellRows.length > 0)
+      cellRows.map( (cellRow) ->
+        {
+          # First cell's Value
+          KPIName: cellRow[0].Value
+          # Last cell
+          ThisMonthValue: cellRow.slice(-1)[0].Value
+        }
+    cellRows.forEach((row) -> Sales = #{row.ThisMonthValue}")
+
+
 
 module.exports = {
 
