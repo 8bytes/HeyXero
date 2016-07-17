@@ -1,7 +1,7 @@
 Promise = require("bluebird");
 XeroConnection = require('./../../xero-connection');
 numeral = require('numeral');
-
+salesmtd = require('./operations/queries/salesmtdbare');
 
 #get some dates for the queries - should be in a separate script later! from http://www.w3resource.com/coffeescript-exercises/coffeescript-exercise-2.php
 today = new Date
@@ -22,6 +22,16 @@ yd = dd-1
 yesterdayXero=yyyy + '-' + mm + '-' + yd
 percentOfMonth=dd/lastDayOfTheMonth
 
+  new Promise((resolve, reject) ->
+    promise = salesmtd.doRequest();
+      promise.then(
+        (xeroResponse) ->
+          answer = salesmtd.createAnswer(xeroResponse);
+          formattedAnswer = salesmtd.formatAnswer(answer);
+        () ->
+          reject();
+      )
+    )  
     
 module.exports = {
 
