@@ -57,6 +57,8 @@ module.exports = (robot) ->
     console.log('about to ask operator, who owes money?')
     Operator.whoOwesMoney().then(
       (result) ->
+        console.log('about to ask operator, who owes money?')
+        console.log(result)
         res.reply('\n' + _.join(result, '\n'))
       (r) ->
         console.log('Something has gone wrong :( ' + r)
