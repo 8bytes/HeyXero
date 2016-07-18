@@ -190,9 +190,13 @@ module.exports = (robot) ->
             console.log('Something has gone wrong :( ' + r)
             res.reply("I'm not sure, how about you ask about margins again later?")
     )
-  
 #position
   robot.respond(/Position( this month)?( MTD)?( Summary)?\??/i, (res) ->
+    console.log('about to ask event,position ?')
+    robot.emit 'position', (res)
+  )  
+#position
+  robot.on 'position', (res) ->
     console.log('about to ask operator,position ?')
     Operator.position().then(
         (result) ->
@@ -201,9 +205,13 @@ module.exports = (robot) ->
             console.log('Something has gone wrong :( ' + r)
             res.reply("I'm not sure, how about you ask about position again later?")
     )
-  )
 #invoicesMTD
   robot.respond(/invoices MTD( this month)?( Summary)?\??/i, (res) ->
+    console.log('about to ask event, invoices?')
+    robot.emit 'invoicesmtd', (res)
+  )
+  #invoicesMTD
+  robot.on 'invoicesmtd', (res) ->
     console.log('about to ask operator, invoices?')
     Operator.invoicesMTD().then(
         (result) ->
@@ -212,9 +220,13 @@ module.exports = (robot) ->
             console.log('Something has gone wrong :( ' + r)
             res.reply("I'm not sure, how about you ask about invoices again later?")
     )
-  )
   #invoicesYesterday
   robot.respond(/invoices yesterday( number)?\??/i, (res) ->
+    console.log('about to ask event, invoices?')
+    robot.emit 'invoicesyesterday', (res)
+  )
+    #invoicesYesterday
+  robot.on 'invoicesyesterday', (res) ->
     console.log('about to ask operator, invoices?')
     Operator.invoicesYesterday().then(
         (result) ->
@@ -223,4 +235,3 @@ module.exports = (robot) ->
             console.log('Something has gone wrong :( ' + r)
             res.reply("I'm not sure, how about you ask about invoices again later?")
     )
-  )
