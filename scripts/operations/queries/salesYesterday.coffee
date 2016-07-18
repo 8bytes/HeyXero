@@ -47,6 +47,8 @@ module.exports = {
           ThisMonthValue: cellRow.slice(-1)[0].Value
         }  
       )
+      else
+        cellRows= null
 
   formatAnswer: (answer) ->
     results = []
