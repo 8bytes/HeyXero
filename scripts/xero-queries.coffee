@@ -10,11 +10,11 @@
 #   hubot Xero> Budget - Sales vs. the months budget ***TBA***
 #   hubot Xero> Top 5 Sales - list of top 5 sales in last day
 #   hubot Xero> Cashflow - summary of cash for month so far
-#   hubot Xero> Summary - lists a number of the other queries ***TBA***
 #   hubot Xero> Margins - gross profit and net profit margins
 #   hubot Xero> Position - Avg debtor and creditor days and cash forecast
 #   hubot Xero> Invoices MTD - total number and value of invoices month to date
 #   hubot Xero> Invoices Yesterday - number and list of invoices for last day
+#   hubot Xero> Summary - lists a number of the other queries 
 
 # Notes:
 #   Uncomment the ones you want to try and experiment with.
@@ -26,21 +26,21 @@ _ = require('lodash');
 
 module.exports = (robot) ->
 #Summary - comment out ones you don't want in the report!
-  robot.respond(/summary( report)?( results)?( status)?( yesterday)?\??/i, (res) ->
+  robot.respond(/(summary)?(report)?( results)?( status)?( yesterday)?\??/i, (res) ->
     console.log('about to ask operator for summary?')
+    res.reply("*Summary*") 
     robot.emit "whatbills", (res)
     robot.emit "Top5", (res)
-    robot.emit "salesmtd", (res)
-    robot.emit "whoowes", (res)
-    robot.emit "bankbalance", (res)
-    robot.emit "margins", (res)
-    robot.emit "salesyesterday", (res)
-    robot.emit "budget", (res)
-    robot.emit "cashflow", (res)
-    robot.emit "position", (res)
     robot.emit "invoicesmtd", (res)
     robot.emit "invoicesyesterday", (res)
-    res.reply("*Summary*") 
+    robot.emit "salesyesterday", (res)
+    robot.emit "salesmtd", (res)
+    robot.emit "whoowes", (res)
+    robot.emit "bankbalances", (res)
+#    robot.emit "budget", (res)
+#    robot.emit "cashflow", (res)
+#    robot.emit "margins", (res)
+#    robot.emit "position", (res)
   )
 # Debtors - who owes me money
   robot.respond(/who owes( me)?( the most)?( money)?\??/i, (res) ->
