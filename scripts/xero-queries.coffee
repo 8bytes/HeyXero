@@ -104,7 +104,7 @@ module.exports = (robot) ->
     )
   )
 #Summary
-  robot.respond(/report( summary)?( results)?( daily)?( yesterday)?\??/i, (res) ->
+  robot.respond(/summary( report)?( results)?( status)?( yesterday)?\??/i, (res) ->
     console.log('about to ask operator for summary?')
     robot.emit "margins", (res)
     res.reply("<@info-xero> Still to work this one out!") 
@@ -123,14 +123,7 @@ module.exports = (robot) ->
 #margins
   robot.respond(/Margins( this month)?( MTD)?( Summary)?\??/i, (res) ->
     console.log('about to ask operator, margins?')
-    Operator.margins().then(
-        (result) ->
-            res.reply(result)
-        (r) ->
-            console.log('Something has gone wrong :( ' + r)
-            res.reply("I'm not sure, how about you ask about margins again later?")
-    )
-  )
+    robot.emit "margins", (res)
 
 #margins fom an event
   robot.on 'margins', (res) ->
