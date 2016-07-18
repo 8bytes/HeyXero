@@ -25,9 +25,14 @@ Operator = require('./operator');
 _ = require('lodash');
 
 module.exports = (robot) ->
-#Summary - comment out ones you don't want in the report. Note you could wait for each response to ensure in order - otherwise they will just come when ready!
+#Summary 
   robot.respond(/summary|report|results|status( yesterday)?( this month)?\??/i, (res) ->
-    console.log('about to ask operator for summary?')
+    console.log('about to ask event for summary?')
+    robot.emit 'summary', (res)
+  )
+# Summary event - comment out ones you don't want in the report. Note you could wait for each response to ensure in order - otherwise they will just come when ready!
+  robot.on 'summary', (res) ->
+    console.log('about to ask operator, who owes money?')
     res.reply('*Summary*') 
     robot.emit 'whatbills', (res)
     robot.emit 'Top5', (res)
