@@ -39,7 +39,7 @@ module.exports = {
 	formatAnswer: (answer) ->
 		results = []
 		if(!answer.length)
-			results.push("No invoices yesterday");
+			results.push("No Top 5 as No invoices yesterday");
 			return results;
 		else
 			results.push("Top 5 Sales Yesterday\n");
