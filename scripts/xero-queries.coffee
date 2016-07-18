@@ -55,7 +55,7 @@ module.exports = (robot) ->
         res.reply('\n' + _.join(result, '\n'))
       (r) ->
         console.log('Something has gone wrong :( ' + r)
-        res.reply('I'm not sure, how about you ask who owes money again later?')
+        res.reply("I'm not sure, how about you ask who owes money again later?")
     )
   
 # Bank Balances - of all active accounts
