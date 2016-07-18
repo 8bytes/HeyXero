@@ -25,8 +25,19 @@ Operator = require('./operator');
 _ = require('lodash');
 
 module.exports = (robot) ->
+#Summary - comment out ones you don't want in the report!
+  robot.respond(/summary( report)?( results)?( status)?( yesterday)?\??/i, (res) ->
+    console.log('about to ask operator for summary?')
+    robot.emit "margins", (res)
+    res.reply("<@info-xero> Still to work this one out!") 
+  )
 # Debtors - who owes me money
   robot.respond(/who owes( me)?( the most)?( money)?\??/i, (res) ->
+    console.log('about to ask operator, who owes money?')
+    robot.emit "whoowes", (res)
+  )
+# Debtors - who owes me money event
+  robot.on "whoowes", (res) ->
     console.log('about to ask operator, who owes money?')
     Operator.whoOwesMoney().then(
       (result) ->
@@ -38,6 +49,11 @@ module.exports = (robot) ->
   )
 # Bank Balances - of all active accounts
   robot.respond(/how much( money)?( do I have)?( cash)?/i, (res) ->
+    console.log('about to ask operator, how much money do i have?')
+    robot.emit "bankbalances", (res)
+  )
+# Bank Balances - of all active accounts event
+  robot.on "bankbalances", (res) ->
     console.log('about to ask operator, how much money do i have?')
     Operator.howMuchMoneyDoIHave().then(
       (result) ->
@@ -103,12 +119,6 @@ module.exports = (robot) ->
             res.reply("I'm not sure, how about you ask about Top 5 sales again later?")
     )
   )
-#Summary
-  robot.respond(/summary( report)?( results)?( status)?( yesterday)?\??/i, (res) ->
-    console.log('about to ask operator for summary?')
-    robot.emit "margins", (res)
-    res.reply("<@info-xero> Still to work this one out!") 
-  )
 #cashflowMTD
   robot.respond(/Cashflow( this month)?( MTD)?( Summary)?\??/i, (res) ->
     console.log('about to ask operator, cashflow?')
@@ -126,7 +136,7 @@ module.exports = (robot) ->
     robot.emit "margins", (res)
     )
 
-#margins fom an event
+#margins from the event
   robot.on 'margins', (res) ->
     console.log('about to ask operator, margins from event?')
     Operator.margins().then(
