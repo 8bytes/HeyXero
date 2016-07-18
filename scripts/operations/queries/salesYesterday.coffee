@@ -47,8 +47,6 @@ module.exports = {
           ThisMonthValue: cellRow.slice(-1)[0].Value
         }  
       )
-      else
-        cellRows.map( (cellrow) -> {KPIName: 0, ThisMonthValue: 0})
 
   formatAnswer: (answer) ->
     results = []
