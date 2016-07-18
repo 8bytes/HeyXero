@@ -46,7 +46,7 @@ module.exports = (robot) ->
 #    robot.emit 'cashflow', (res)
 #    robot.emit 'margins', (res)
 #    robot.emit 'position', (res)
-  )
+  
 # Debtors - who owes me money
   robot.respond(/who owes( me)?( the most)?( money)?\??/i, (res) ->
     console.log('about to ask event, who owes money?')
