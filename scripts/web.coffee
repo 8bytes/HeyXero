@@ -11,7 +11,8 @@ _ = require('lodash');
 
 module.exports = (robot) ->
    robot.router.get '/hubot/xero/:testchannel', (req, res) ->
-    robot.emit 'summary', (res)
+      robot.messageroom "#testchannel", "a test"
+      robot.emit 'topfive', (res)
 
 #        robot.emit "summary", {
 #      room: req.params.room
