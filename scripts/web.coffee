@@ -10,7 +10,7 @@ Operator = require('./operator');
 _ = require('lodash');
 
 module.exports = (robot) ->
-]
+
   # the expected value of :room is going to vary by adapter, it might be a numeric id, name, token, or some other value
   robot.router.post '/hubot/xero/#testchannel', (req, res) ->
     room   = req.params.room
