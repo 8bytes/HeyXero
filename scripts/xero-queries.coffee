@@ -124,6 +124,7 @@ module.exports = (robot) ->
   robot.respond(/Margins( this month)?( MTD)?( Summary)?\??/i, (res) ->
     console.log('about to ask operator, margins?')
     robot.emit "margins", (res)
+    )
 
 #margins fom an event
   robot.on 'margins', (res) ->
