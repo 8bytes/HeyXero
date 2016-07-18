@@ -37,7 +37,10 @@ module.exports = {
 
     # Filter and map to array of array
     rowsSection = jsonResponse.Response.Reports.Report.Rows.Row.filter((row) -> row.RowType == "Section" && row.Title == "Income" && row.Rows.Row[0].RowType == "Row")[0]
-    cellRows = rowsSection.Rows.Row.filter((row) -> row.RowType == "SummaryRow").map((row) -> row?.Cells.Cell)
+    try
+      cellRows = rowsSection.Rows.Row.filter((row) -> row.RowType == "SummaryRow").map((row) -> row.Cells.Cell)
+    catch error
+      cellRows=""
     if (cellRows.length > 0)
       cellRows.map( (cellRow) ->
         {
@@ -47,8 +50,6 @@ module.exports = {
           ThisMonthValue: cellRow.slice(-1)[0].Value
         }  
       )
-    else
-      cellRows= ""
 
   formatAnswer: (answer) ->
     results = []
