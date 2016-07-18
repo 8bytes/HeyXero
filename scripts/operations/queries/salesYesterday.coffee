@@ -48,7 +48,7 @@ module.exports = {
         }  
       )
       else
-        cellRows= null
+        cellRows= ""
 
   formatAnswer: (answer) ->
     results = []
