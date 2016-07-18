@@ -34,10 +34,10 @@ module.exports = (robot) ->
 # Debtors - who owes me money
   robot.respond(/who owes( me)?( the most)?( money)?\??/i, (res) ->
     console.log('about to ask operator, who owes money?')
-    robot.emit "whoowes", (res)
+    robot.emit 'whoowes', (res)
   )
 # Debtors - who owes me money event
-  robot.on "whoowes", (res) ->
+  robot.on 'whoowes', (res) ->
     console.log('about to ask operator, who owes money?')
     Operator.whoOwesMoney().then(
       (result) ->
@@ -50,7 +50,7 @@ module.exports = (robot) ->
 # Bank Balances - of all active accounts
   robot.respond(/how much( money)?( do I have)?( cash)?/i, (res) ->
     console.log('about to ask operator, how much money do i have?')
-    robot.emit "bankbalances", (res)
+    robot.emit 'bankbalances', (res)
   )
 # Bank Balances - of all active accounts event
   robot.on "bankbalances", (res) ->
@@ -146,7 +146,7 @@ module.exports = (robot) ->
             console.log('Something has gone wrong :( ' + r)
             res.reply("I'm not sure, how about you ask about margins again later?")
     )
-
+  )
 #position
   robot.respond(/Position( this month)?( MTD)?( Summary)?\??/i, (res) ->
     console.log('about to ask operator,position ?')
