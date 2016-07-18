@@ -35,7 +35,7 @@ module.exports = (robot) ->
     console.log('about to ask operator, who owes money?')
     res.reply('*Summary*') 
     robot.emit 'whatbills', (res)
-    robot.emit 'Top5', (res)
+    robot.emit 'topfive', (res)
     robot.emit 'invoicesmtd', (res)
     robot.emit 'invoicesyesterday', (res)
     robot.emit 'salesyesterday', (res)
@@ -146,11 +146,11 @@ module.exports = (robot) ->
     )
 #Sales Top 5 New Sales
   robot.respond(/top 5( sales)?( who bought)?( the most)?( yesterday)?\??/i, (res) ->
-    console.log('about to ask operator, top 5 sales?')
-    robot.emit 'top5', (res)
+    console.log('about to ask event, top 5 sales?')
+    robot.emit 'topfive', (res)
   )
 #Sales Top 5 New Sales
-  robot.on 'top5', (res) ->
+  robot.on 'topfive', (res) ->
     console.log('about to ask operator, top 5 sales?')
     Operator.topnewsales().then(
         (result) ->
