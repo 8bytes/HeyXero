@@ -25,22 +25,22 @@ Operator = require('./operator');
 _ = require('lodash');
 
 module.exports = (robot) ->
-#Summary - comment out ones you don't want in the report!
-  robot.respond(/summary|report|results|status( yesterday)?\??/i, (res) ->
+#Summary - comment out ones you don't want in the report. Note you could wait for each response to ensure in order - otherwise they will just come when ready!
+  robot.respond(/summary|report|results|status( yesterday)?( this month)?\??/i, (res) ->
     console.log('about to ask operator for summary?')
-    res.reply("*Summary*") 
-    robot.emit "whatbills", (res)
-    robot.emit "Top5", (res)
-    robot.emit "invoicesmtd", (res)
-    robot.emit "invoicesyesterday", (res)
-    robot.emit "salesyesterday", (res)
-    robot.emit "salesmtd", (res)
-    robot.emit "whoowes", (res)
-    robot.emit "bankbalances", (res)
-#    robot.emit "budget", (res)
-#    robot.emit "cashflow", (res)
-#    robot.emit "margins", (res)
-#    robot.emit "position", (res)
+    res.reply('*Summary*') 
+    robot.emit 'whatbills', (res)
+    robot.emit 'Top5', (res)
+    robot.emit 'invoicesmtd', (res)
+    robot.emit 'invoicesyesterday', (res)
+    robot.emit 'salesyesterday', (res)
+    robot.emit 'salesmtd', (res)
+    robot.emit 'whoowes', (res)
+    robot.emit 'bankbalances', (res)
+#    robot.emit 'budget', (res)
+#    robot.emit 'cashflow', (res)
+#    robot.emit 'margins', (res)
+#    robot.emit 'position', (res)
   )
 # Debtors - who owes me money
   robot.respond(/who owes( me)?( the most)?( money)?\??/i, (res) ->
@@ -55,7 +55,7 @@ module.exports = (robot) ->
         res.reply('\n' + _.join(result, '\n'))
       (r) ->
         console.log('Something has gone wrong :( ' + r)
-        res.reply("I'm not sure, how about you ask who owes money again later?")
+        res.reply('I'm not sure, how about you ask who owes money again later?')
     )
   
 # Bank Balances - of all active accounts
@@ -64,7 +64,7 @@ module.exports = (robot) ->
     robot.emit 'bankbalances', (res)
   )
 # Bank Balances - of all active accounts event
-  robot.on "bankbalances", (res) ->
+  robot.on 'bankbalances', (res) ->
     console.log('about to ask operator, how much money do i have?')
     Operator.howMuchMoneyDoIHave().then(
       (result) ->
@@ -74,9 +74,13 @@ module.exports = (robot) ->
         console.log("Something has gone wrong :( #{err}")
         res.reply("I'm not sure, how about you ask about bank balances again later?")
     )
-  
 # Creditors - people I owe money
   robot.respond(/what bills( are)?( coming up)?\??/i, (res) ->
+    console.log('about to ask event, what bills are coming up?')
+    robot.emit 'whatbills', (res)
+  )  
+# Creditors - people I owe money
+  robot.on 'whatbills', (res) ->
     console.log('about to ask operator, what bills are coming up?')
     Operator.whatBillsAreComingUp().then(
       (result) ->
@@ -85,9 +89,15 @@ module.exports = (robot) ->
         console.log('Something has gone wrong :( ' + r)
         res.reply("I'm not sure, how about you ask about bills due later?")
     )
-  )
+  
 # Sales MTD
   robot.respond(/Sales MTD( yesterday)?( revenue)?( turnover)?\??/i, (res) ->
+    console.log('about to ask event, sales month to date?')
+    robot.emit 'salesmtd', (res)
+    )
+  
+# Sales MTD
+  robot.on 'salesmtd', (res) ->
     console.log('about to ask operator, sales month to date?')
     Operator.salesmtd().then(
         (result) ->
@@ -96,9 +106,15 @@ module.exports = (robot) ->
             console.log('Something has gone wrong :( ' + r)
             res.reply("I'm not sure, how about you ask about sales again later?")
     )
-  )
+  
 # Sales Yesterday
   robot.respond(/Sales yesterday\??/i, (res) ->
+    console.log('about to ask operator, sales yesterday?')
+    robot.emit 'salesyesterday', (res)
+    )
+  
+# Sales Yesterday
+  robot.on 'salesyesterday', (res) ->
     console.log('about to ask operator, sales yesterday?')
     Operator.salesYesterday().then(
         (result) ->
@@ -107,7 +123,7 @@ module.exports = (robot) ->
             console.log('Something has gone wrong :( ' + r)
             res.reply("I'm not sure, how about you ask about sales yesterday again later?")
     )
-  )
+  
 #BudgetvSales
   robot.respond(/Budget( vs sales)?( performance)?( targets)?\??/i, (res) ->
     console.log('about to ask operator, how are we travelling vs budget?')
@@ -144,7 +160,7 @@ module.exports = (robot) ->
 #margins
   robot.respond(/Margins( this month)?( MTD)?( Summary)?\??/i, (res) ->
     console.log('about to ask operator, margins?')
-    robot.emit "margins", (res)
+    robot.emit 'margins', (res)
     )
 
 #margins from the event
