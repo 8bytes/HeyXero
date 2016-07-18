@@ -40,7 +40,7 @@ module.exports = {
     try
       cellRows = rowsSection.Rows.Row.filter((row) -> row.RowType == "SummaryRow").map((row) -> row.Cells.Cell)
     catch error
-      cellRows = ['value',"",'sales',0]
+      cellRows = [{"Value":""}{"Value":""}]
     if (cellRows.length > 0)
       cellRows.map( (cellRow) ->
         {

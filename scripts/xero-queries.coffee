@@ -96,12 +96,12 @@ module.exports = (robot) ->
     )
   
 # Sales MTD
-  robot.respond(/(?=Sales|revenue|turnover)(?= MTD| this month)\??/i, (res) ->
+  robot.respond(/(?=Sales|revenue|turnover)(?=( MTD| this month))\??/i, (res) ->
     console.log('about to ask event, sales month to date?')
     robot.emit 'salesmtd', (res)
     )
   
-# Sales MTD event
+# Sales MTD event)
   robot.on 'salesmtd', (res) ->
     console.log('about to ask operator, sales month to date?')
     Operator.salesmtd().then(
