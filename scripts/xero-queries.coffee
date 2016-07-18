@@ -101,7 +101,6 @@ module.exports = (robot) ->
   robot.respond(/(Sales|revenue|turnover)( MTD| this month)\??/i, (res) ->
     console.log('about to ask event, sales month to date?')
     robot.emit 'salesmtd', (res)
-    console.log(res)
     )
   
 # Sales MTD event)
@@ -114,7 +113,24 @@ module.exports = (robot) ->
             console.log('Something has gone wrong :( ' + r)
             res.reply("I'm not sure, how about you ask about sales again later?")
     )
+# Sales MTD bare
+  robot.respond(/Sales mtd bare\??/i, (res) ->
+    console.log('about to ask event, sales MTD bare?')
+    robot.emit 'salesmtdbare', (res)
+    )
   
+# Sales MTD event bare
+  robot.on 'salesmtdbare', (res) ->
+    console.log('about to ask operator, sales month to date?')
+    Operator.salesmtdbare().then(
+        (result) ->
+            res.reply(result)
+            console.log(res)
+        (r) ->
+            console.log('Something has gone wrong :( ' + r)
+            res.reply("I'm not sure, how about you ask about sales again later?")
+    ) 
+
 # Sales Yesterday
   robot.respond(/Sales yesterday\??/i, (res) ->
     console.log('about to ask event, sales yesterday?')
