@@ -17,13 +17,13 @@ module.exports = (robot) ->
    new cronJob('0 */5 * * * *', everyFiveMinutes, null, true, tz)           #every 5 min
    new cronJob('00 25 14 * * 1-5', workdaysSixPm, null, true, tz)           #6pm workdays
 
-   room = "#testchannel"
+   room = "%23testchannel"
  
    workdaysSixAm = ->
-     robot.emit 'slave:command', 'invoices yesterday', room
+      robot.emit 'summary', (res)
  
    workdaysSixPm = ->
-     robot.emit 'slave:command', 'how much money do I Have?', room
+      robot.emit 'howmuch', (res)
  
    everyFiveMinutes = ->
       console.log('about to check if CRON working!')
