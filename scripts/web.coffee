@@ -12,11 +12,11 @@ _ = require('lodash');
 
 module.exports = (robot) ->
   robot.router.get "/hubot/say", (req, res) ->
-    console.log('about to ask operator, who owes money?')
+    console.log('web call has been recieved')
     robot.emit 'whoowes', (res)
     message=res
     user = {}
-    user.room = query.room if query.room
+    user.room = "#testchannel"
 
     robot.send(message)
     res.end "said #{message}"
