@@ -37,14 +37,14 @@ module.exports = (robot) ->
     robot.emit 'whatbills', (res)
     robot.emit 'topfive', (res)
     robot.emit 'invoicesmtd', (res)
-    robot.emit 'invoicesyesterday', (res)
+#    robot.emit 'invoicesyesterday', (res)
     robot.emit 'salesyesterday', (res)
     robot.emit 'salesmtd', (res)
     robot.emit 'whoowes', (res)
     robot.emit 'bankbalances', (res)
     robot.emit 'budget', (res)
     robot.emit 'cashflowmtd', (res)
-    robot.emit 'margins', (res)
+#    robot.emit 'margins', (res)
     robot.emit 'position', (res)
   
 # Debtors - who owes me money

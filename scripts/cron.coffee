@@ -5,7 +5,8 @@
 #   Correct the timezone!
 #   They are commented out by default
 #   Uncomment the ones you want to try and experiment with.
-#   Ensure you set the room to use by default
+#   Ensure you set the room to use by default 
+#   If you are using Heroku they have a scheduler that runs instead of this file
 #
 #   These are from the scripting documentation: https://leanpub.com/automation-and-monitoring-with-hubot/read#leanpub-auto-periodic-task-execution
 
