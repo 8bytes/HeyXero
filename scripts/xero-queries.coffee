@@ -26,7 +26,7 @@ _ = require('lodash');
 
 module.exports = (robot) ->
 #Summary - comment out ones you don't want in the report!
-  robot.respond(/(summary)?(report)?( results)?( status)?( yesterday)?\??/i, (res) ->
+  robot.respond(/summary|report|results|status( yesterday)?\??/i, (res) ->
     console.log('about to ask operator for summary?')
     res.reply("*Summary*") 
     robot.emit "whatbills", (res)
