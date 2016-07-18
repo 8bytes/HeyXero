@@ -28,12 +28,23 @@ module.exports = (robot) ->
 #Summary - comment out ones you don't want in the report!
   robot.respond(/summary( report)?( results)?( status)?( yesterday)?\??/i, (res) ->
     console.log('about to ask operator for summary?')
+    robot.emit "whatbills", (res)
+    robot.emit "Top5", (res)
+    robot.emit "salesmtd", (res)
+    robot.emit "whoowes", (res)
+    robot.emit "bankbalance", (res)
     robot.emit "margins", (res)
-    res.reply("<@info-xero> Still to work this one out!") 
+    robot.emit "salesyesterday", (res)
+    robot.emit "budget", (res)
+    robot.emit "cashflow", (res)
+    robot.emit "position", (res)
+    robot.emit "invoicesmtd", (res)
+    robot.emit "invoicesyesterday", (res)
+    res.reply("*Summary*") 
   )
 # Debtors - who owes me money
   robot.respond(/who owes( me)?( the most)?( money)?\??/i, (res) ->
-    console.log('about to ask operator, who owes money?')
+    console.log('about to ask event, who owes money?')
     robot.emit 'whoowes', (res)
   )
 # Debtors - who owes me money event
@@ -49,7 +60,7 @@ module.exports = (robot) ->
   
 # Bank Balances - of all active accounts
   robot.respond(/how much( money)?( do I have)?( cash)?/i, (res) ->
-    console.log('about to ask operator, how much money do i have?')
+    console.log('about to ask event, how much money do i have?')
     robot.emit 'bankbalances', (res)
   )
 # Bank Balances - of all active accounts event
