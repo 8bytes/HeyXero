@@ -38,14 +38,14 @@ module.exports = (robot) ->
     robot.emit 'Top5', (res)
     robot.emit 'invoicesmtd', (res)
     robot.emit 'invoicesyesterday', (res)
-#    robot.emit 'salesyesterday', (res)
+    robot.emit 'salesyesterday', (res)
     robot.emit 'salesmtd', (res)
     robot.emit 'whoowes', (res)
     robot.emit 'bankbalances', (res)
-#    robot.emit 'budget', (res)
-#    robot.emit 'cashflow', (res)
-#    robot.emit 'margins', (res)
-#    robot.emit 'position', (res)
+    robot.emit 'budget', (res)
+    robot.emit 'cashflow', (res)
+    robot.emit 'margins', (res)
+    robot.emit 'position', (res)
   
 # Debtors - who owes me money
   robot.respond(/who owes( me)?( the most)?( money)?\??/i, (res) ->
