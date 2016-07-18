@@ -1,5 +1,6 @@
 # Description:
-#   Allows access to date formats used by Xero so that APOI calls can be made
+#   Allows access to date formats used by Xero so that API calls can be made
+#   NOT YET BEING USED
 #
 # Dependencies:
 #

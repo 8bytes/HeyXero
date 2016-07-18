@@ -2,6 +2,8 @@ Promise = require("bluebird");
 XeroConnection = require('./../../xero-connection');
 numeral = require('numeral');
 
+# note: this is not being used, aim is to try and call the other queries rather than recreate here
+
 module.exports = {
 
   doRequest: () ->

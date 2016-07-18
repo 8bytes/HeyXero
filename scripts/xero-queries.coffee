@@ -130,6 +130,19 @@ module.exports = (robot) ->
             res.reply("I'm not sure, how about you ask about margins again later?")
     )
   )
+  
+#margins fom an event
+  robot.on 'margins' (room) ->
+    console.log('about to ask operator, margins from event?')
+    Operator.margins().then(
+        (result) ->
+            res.reply(result)
+        (r) ->
+            console.log('Something has gone wrong :( ' + r)
+            res.reply("I'm not sure, how about you ask about margins again later?")
+    )
+  )
+
 #position
   robot.respond(/Position( this month)?( MTD)?( Summary)?\??/i, (res) ->
     console.log('about to ask operator,position ?')
