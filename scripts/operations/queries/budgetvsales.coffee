@@ -53,7 +53,6 @@ module.exports = {
       )
 #NOTE: answers below are correct except for the sales as that needs to be called with second API call - the right info is in salesmtdbare.coffee
   formatAnswer: (answer) ->
-    robot.emit "margins"
     budgetForMonth = 0
     salesForMonth=55000   #note placeholder until can draw in sales MTD
     formattedAnswer = "Budget v Sales NOT YET WORKING - SALES NUMBER IS MADE UP\n"+'Budget this month: '
