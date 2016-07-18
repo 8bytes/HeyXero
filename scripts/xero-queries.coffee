@@ -114,7 +114,7 @@ module.exports = (robot) ->
             res.reply("I'm not sure, how about you ask about sales again later?")
     )
 # Sales MTD bare
-  robot.respond(/Sales mtd bare\??/i, (res) ->
+  robot.respond(/Salesmtd bare\??/i, (res) ->
     console.log('about to ask event, sales MTD bare?')
     robot.emit 'salesmtdbare', (res)
     )
@@ -125,7 +125,7 @@ module.exports = (robot) ->
     Operator.salesmtdbare().then(
         (result) ->
             res.reply(result)
-            console.log(res)
+            console.log(res.rawMessage)
         (r) ->
             console.log('Something has gone wrong :( ' + r)
             res.reply("I'm not sure, how about you ask about sales again later?")
