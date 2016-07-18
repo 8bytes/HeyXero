@@ -33,7 +33,7 @@ module.exports = (robot) ->
     robot.emit 'Top5', (res)
     robot.emit 'invoicesmtd', (res)
     robot.emit 'invoicesyesterday', (res)
-    robot.emit 'salesyesterday', (res)
+#    robot.emit 'salesyesterday', (res)
     robot.emit 'salesmtd', (res)
     robot.emit 'whoowes', (res)
     robot.emit 'bankbalances', (res)
@@ -126,7 +126,7 @@ module.exports = (robot) ->
   
 #BudgetvSales
   robot.respond(/Budget|performance|targets( MTD| this month)?\??/i, (res) ->
-    console.log('about to ask operator, how are we travelling vs budget?')
+    console.log('about to ask event, how are we travelling vs budget?')
     robot.emit 'budget', (res)
     )
 #BudgetvSales event
