@@ -48,7 +48,7 @@ module.exports = {
         }  
       )
       else
-        cellRows.map( (cellrow) -> {KPIName: 0, ThisMonthValue: 0}
+        cellRows.map( (cellrow) -> {KPIName: 0, ThisMonthValue: 0})
 
   formatAnswer: (answer) ->
     results = []
