@@ -79,7 +79,7 @@ module.exports = (robot) ->
     console.log('about to ask event, what bills are coming up?')
     robot.emit 'whatbills', (res)
   )  
-# Creditors - people I owe money
+# Creditors - people I owe money event
   robot.on 'whatbills', (res) ->
     console.log('about to ask operator, what bills are coming up?')
     Operator.whatBillsAreComingUp().then(
@@ -91,12 +91,12 @@ module.exports = (robot) ->
     )
   
 # Sales MTD
-  robot.respond(/Sales MTD( yesterday)?( revenue)?( turnover)?\??/i, (res) ->
+  robot.respond(/Sales|revenue|turnover( MTD| this month)?\??/i, (res) ->
     console.log('about to ask event, sales month to date?')
     robot.emit 'salesmtd', (res)
     )
   
-# Sales MTD
+# Sales MTD event
   robot.on 'salesmtd', (res) ->
     console.log('about to ask operator, sales month to date?')
     Operator.salesmtd().then(
@@ -109,11 +109,11 @@ module.exports = (robot) ->
   
 # Sales Yesterday
   robot.respond(/Sales yesterday\??/i, (res) ->
-    console.log('about to ask operator, sales yesterday?')
+    console.log('about to ask event, sales yesterday?')
     robot.emit 'salesyesterday', (res)
     )
   
-# Sales Yesterday
+# Sales Yesterday event
   robot.on 'salesyesterday', (res) ->
     console.log('about to ask operator, sales yesterday?')
     Operator.salesYesterday().then(
@@ -125,7 +125,12 @@ module.exports = (robot) ->
     )
   
 #BudgetvSales
-  robot.respond(/Budget( vs sales)?( performance)?( targets)?\??/i, (res) ->
+  robot.respond(/Budget|performance|targets( MTD| this month)?\??/i, (res) ->
+    console.log('about to ask operator, how are we travelling vs budget?')
+    robot.emit 'budget', (res)
+    )
+#BudgetvSales event
+  robot.on 'budget', (res) ->
     console.log('about to ask operator, how are we travelling vs budget?')
     Operator.budgetvsales().then(
         (result) ->
@@ -134,9 +139,13 @@ module.exports = (robot) ->
             console.log('Something has gone wrong :( ' + r)
             res.reply("I'm not sure, how about you ask about budgets again later?")
     )
-  )
 #Sales Top 5 New Sales
   robot.respond(/top 5( sales)?( who bought)?( the most)?( yesterday)?\??/i, (res) ->
+    console.log('about to ask operator, top 5 sales?')
+    robot.emit 'top5', (res)
+  )
+#Sales Top 5 New Sales
+  robot.on 'top5', (res) ->
     console.log('about to ask operator, top 5 sales?')
     Operator.topnewsales().then(
         (result) ->
@@ -145,9 +154,13 @@ module.exports = (robot) ->
             console.log('Something has gone wrong :( ' + r)
             res.reply("I'm not sure, how about you ask about Top 5 sales again later?")
     )
+#cashflowMTD
+  robot.respond(/Cashflow( this month| MTD)?\??/i, (res) ->
+    console.log('about to ask event, cashflow?')
+    robot.emit 'cashflow', (res)
   )
 #cashflowMTD
-  robot.respond(/Cashflow( this month)?( MTD)?( Summary)?\??/i, (res) ->
+  robot.on 'Cashflow', (res) ->
     console.log('about to ask operator, cashflow?')
     Operator.cashflowmtd().then(
         (result) ->
@@ -156,7 +169,6 @@ module.exports = (robot) ->
             console.log('Something has gone wrong :( ' + r)
             res.reply("I'm not sure, how about you ask about cashflow again later?")
     )
-  )
 #margins
   robot.respond(/Margins( this month)?( MTD)?( Summary)?\??/i, (res) ->
     console.log('about to ask operator, margins?')
