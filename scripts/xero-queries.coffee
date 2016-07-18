@@ -43,7 +43,7 @@ module.exports = (robot) ->
     robot.emit 'whoowes', (res)
     robot.emit 'bankbalances', (res)
     robot.emit 'budget', (res)
-    robot.emit 'cashflow', (res)
+    robot.emit 'cashflowmtd', (res)
     robot.emit 'margins', (res)
     robot.emit 'position', (res)
   
@@ -162,10 +162,10 @@ module.exports = (robot) ->
 #cashflowMTD
   robot.respond(/Cashflow( this month| MTD)?\??/i, (res) ->
     console.log('about to ask event, cashflow?')
-    robot.emit 'cashflow', (res)
+    robot.emit 'cashflowmtd', (res)
   )
-#cashflowMTD
-  robot.on 'Cashflow', (res) ->
+#cashflowMTD event
+  robot.on 'cashflowmtd', (res) ->
     console.log('about to ask operator, cashflow?')
     Operator.cashflowmtd().then(
         (result) ->
@@ -180,7 +180,7 @@ module.exports = (robot) ->
     robot.emit 'margins', (res)
     )
 
-#margins from the event
+#margins event
   robot.on 'margins', (res) ->
     console.log('about to ask operator, margins from event?')
     Operator.margins().then(
@@ -195,7 +195,7 @@ module.exports = (robot) ->
     console.log('about to ask event,position ?')
     robot.emit 'position', (res)
   )  
-#position
+#position event
   robot.on 'position', (res) ->
     console.log('about to ask operator,position ?')
     Operator.position().then(
@@ -210,7 +210,7 @@ module.exports = (robot) ->
     console.log('about to ask event, invoices?')
     robot.emit 'invoicesmtd', (res)
   )
-  #invoicesMTD
+#invoicesMTD event
   robot.on 'invoicesmtd', (res) ->
     console.log('about to ask operator, invoices?')
     Operator.invoicesMTD().then(
@@ -220,12 +220,12 @@ module.exports = (robot) ->
             console.log('Something has gone wrong :( ' + r)
             res.reply("I'm not sure, how about you ask about invoices again later?")
     )
-  #invoicesYesterday
+#invoicesYesterday
   robot.respond(/invoices yesterday( number)?\??/i, (res) ->
     console.log('about to ask event, invoices?')
     robot.emit 'invoicesyesterday', (res)
   )
-    #invoicesYesterday
+#invoicesYesterday event
   robot.on 'invoicesyesterday', (res) ->
     console.log('about to ask operator, invoices?')
     Operator.invoicesYesterday().then(
