@@ -141,7 +141,6 @@ module.exports = (robot) ->
             console.log('Something has gone wrong :( ' + r)
             res.reply("I'm not sure, how about you ask about margins again later?")
     )
-  )
 
 #position
   robot.respond(/Position( this month)?( MTD)?( Summary)?\??/i, (res) ->
