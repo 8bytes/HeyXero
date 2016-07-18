@@ -130,9 +130,9 @@ module.exports = (robot) ->
             res.reply("I'm not sure, how about you ask about margins again later?")
     )
   )
-  
+
 #margins fom an event
-  robot.on 'margins' (room) ->
+  robot.on 'margins', (room) ->
     console.log('about to ask operator, margins from event?')
     Operator.margins().then(
         (result) ->
