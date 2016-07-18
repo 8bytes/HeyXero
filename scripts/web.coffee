@@ -9,16 +9,14 @@ Promise = require("bluebird");
 Operator = require('./operator');
 _ = require('lodash');
 
-querystring = require('querystring')
 
 module.exports = (robot) ->
   robot.router.get "/hubot/say", (req, res) ->
     console.log('about to ask operator, who owes money?')
-    query = querystring.parse(req._parsedUrl.query)
-    message = query.message
-
+    robot.emit 'whoowes', (res)
+    message=res
     user = {}
     user.room = query.room if query.room
 
-    robot.send(user, message)
+    robot.send(message)
     res.end "said #{message}"
