@@ -39,8 +39,8 @@ module.exports = {
     rowsSection = jsonResponse.Response.Reports.Report.Rows.Row.filter((row) -> row.RowType == "Section" && row.Title == "Income" && row.Rows.Row[0].RowType == "Row")[0]
     try
       cellRows = rowsSection.Rows.Row.filter((row) -> row.RowType == "SummaryRow").map((row) -> row.Cells.Cell)
-    catch error
-      return ""
+    catch error                      # this just catches days when no summary row exists in report
+      return ""       
     if (cellRows.length > 0)
       cellRows.map( (cellRow) ->
         {
@@ -57,7 +57,7 @@ module.exports = {
       results.push("No sales data yesterday");
       return results;
     else
-      formattedAnswer = "Sales yesterday\n";
+      formattedAnswer = "*Sales yesterday*\n";
       answer.forEach((row) -> formattedAnswer = formattedAnswer + "#{row.KPIName}: #{numeral(row.ThisMonthValue).format('$0,0.00')}\n");
       results.push(formattedAnswer);
     return results;

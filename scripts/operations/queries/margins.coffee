@@ -32,7 +32,7 @@ module.exports = {
       )
 
   formatAnswer: (answer) ->
-    formattedAnswer = "\n"
+    formattedAnswer = "*Margins*\n"
     answer.forEach((row) -> formattedAnswer = formattedAnswer + "#{row.KPIName}: #{numeral(row.ThisMonthValue).format('0,0.00%')}\n")
     formattedAnswer
 

@@ -42,7 +42,7 @@ module.exports = {
     if(!answer.length)
       results.push("Nobody does");
     else
-      results.push("Largest debtors\n");
+      results.push("*Largest debtors*\n");
       _.forEach(answer, (contact) ->
         line = '' + contact.name + ': *' + numeral(Number(contact.outstanding)).format('$0,0.00') + '*'
         if(contact.overdue > 0)
