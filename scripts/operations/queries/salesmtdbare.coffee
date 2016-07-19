@@ -34,7 +34,7 @@ module.exports = {
   formatAnswer: (answer) ->
     formattedAnswer = ""
     answer.forEach((row) -> formattedAnswer = formattedAnswer + "#{row.ThisMonthValue}")
-    (->@)().salesmtd = formattedAnswer
+    (->@)().salesmtd = formattedAnswer     #creates global variable for other queries to use
     formattedAnswer
 
 }
