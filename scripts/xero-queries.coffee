@@ -143,30 +143,6 @@ module.exports = (robot) ->
             console.log('Something has gone wrong :( ' + r)
             res.reply("I'm not sure, how about you ask about sales again later?")
     )  
-#BudgetvSales
-  robot.respond(/Budget|performance|targets( MTD| this month)?\??/i, (res) ->
-    console.log('about to ask event, how are we travelling vs budget?')
-    robot.emit 'budgetvsales', (res)
-    )
-
-# Budget v Sales event
-  robot.on 'budgetvsales', (res) ->
-    console.log('about to ask operator, sales month to date in raw format to load variable?')
-    Operator.salesmtdbare().then(
-        (result) ->
-            console.log("Raw sales MTD is"+result)
-            Operator.budgetvsales().then(
-              (result) ->
-                res.reply(result)
-              (r) ->
-                console.log('Something has gone wrong :( ' + r)
-                res.reply("I'm not sure, how about you ask about budgets again later?")
-            )
-            console.log("end of budget query")
-        (r) ->
-            console.log('Something has gone wrong :( ' + r)
-            res.reply("I'm not sure, how about you ask about sales again later?")
-    ) 
 
 # Sales Yesterday
   robot.respond(/Sales yesterday\??/i, (res) ->
