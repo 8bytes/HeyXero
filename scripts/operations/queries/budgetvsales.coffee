@@ -51,7 +51,8 @@ module.exports = {
           ThisMonthValue: cellRow.slice(-1)[0].Value
         }
       )
-#NOTE: answers below are correct except for the sales as that needs to be called with second API call - the right info is in salesmtdbare.coffee
+
+
   formatAnswer: (answer) ->
     budgetForMonth = 0
     salesForMonth=salesmtd  #note drawing in from global variable created in salesmtdbare
