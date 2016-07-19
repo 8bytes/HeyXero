@@ -139,7 +139,7 @@ module.exports = (robot) ->
     console.log('about to ask operator, sales month to date?')
     Operator.salesmtdbare().then(
         (result) ->
-            res.reply(result)
+            console.log("Raw sales MTD is"+result)
             Operator.budgetvsales().then(
               (result) ->
                 res.reply(result)
@@ -147,7 +147,7 @@ module.exports = (robot) ->
                 console.log('Something has gone wrong :( ' + r)
                 res.reply("I'm not sure, how about you ask about budgets again later?")
             )
-            console.log("end")
+            console.log("end of budget query")
         (r) ->
             console.log('Something has gone wrong :( ' + r)
             res.reply("I'm not sure, how about you ask about sales again later?")

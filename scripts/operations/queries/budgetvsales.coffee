@@ -25,8 +25,7 @@ percentOfMonth=dd/lastDayOfTheMonth
     
 module.exports = {
 
-  doRequest: (sales) ->
-    salesmtd=sales
+  doRequest: () ->
     new Promise((resolve, reject) ->
       # https://api.xero.com/api.xro/2.0/reports/BudgetSummary?periods=1  
       XeroConnection().call 'GET', '/reports/BudgetSummary?periods=1', null, (err, json) ->
@@ -55,7 +54,7 @@ module.exports = {
 #NOTE: answers below are correct except for the sales as that needs to be called with second API call - the right info is in salesmtdbare.coffee
   formatAnswer: (answer) ->
     budgetForMonth = 0
-    salesForMonth=salesmtd   #note placeholder until can draw in sales MTD
+    salesForMonth=55000   #note placeholder until can draw in sales MTD
     formattedAnswer = "*Budget v Sales* NOT YET WORKING - SALES NUMBER IS MADE UP\n"+'Budget this month: '
     answer.forEach((row) -> budgetForMonth = "#{row.ThisMonthValue}")
     formattedAnswer += numeral(budgetForMonth).format('$0,0.00')+" with "+ numeral(percentOfMonth).format('00.0%') + " of Month past\n"+'Budget to date: '+numeral(budgetForMonth*percentOfMonth).format('$0,0.00')+"\n"+'Sales to date: '+numeral(salesForMonth).format('$0,0.00')+' Sales to date as % of budget: '+numeral(salesForMonth/(budgetForMonth*percentOfMonth)).format('00.0%')+"\n"
