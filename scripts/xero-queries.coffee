@@ -140,8 +140,14 @@ module.exports = (robot) ->
     Operator.salesmtdbare().then(
         (result) ->
             res.reply(result)
-            x = JSON.parse(result)['Total Income'];
-            console.log(x)
+            Operator.budgetvsales().then(
+              (result) ->
+                res.reply(result)
+              (r) ->
+                console.log('Something has gone wrong :( ' + r)
+                res.reply("I'm not sure, how about you ask about budgets again later?")
+            )
+            console.log("end")
         (r) ->
             console.log('Something has gone wrong :( ' + r)
             res.reply("I'm not sure, how about you ask about sales again later?")
