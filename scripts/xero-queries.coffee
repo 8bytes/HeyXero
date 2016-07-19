@@ -32,12 +32,13 @@ module.exports = (robot) ->
     robot.emit 'summary', (res)
   )
 # Summary event - comment out ones you don't want in the report. Note you could wait for each response to ensure in order - otherwise they will just come when ready!
+# this would be better done with a separate code to turn on and off through bot then just cycle through here
   robot.on 'summary', (res) ->
     console.log('about to ask operator, who owes money?')
     res.reply('*Summary*') 
-    robot.emit 'whatbills', (res)
-    robot.emit 'whatbillsoverdue', (res)
-    robot.emit 'topfive', (res)
+    robot.emit 'whatbills', (res) ->
+      robot.emit 'whatbillsoverdue', (res) ->
+        robot.emit 'topfive', (res)
     robot.emit 'invoicesmtd', (res)
 #    robot.emit 'invoicesyesterday', (res)
     robot.emit 'salesyesterday', (res)
@@ -48,6 +49,7 @@ module.exports = (robot) ->
     robot.emit 'cashflowmtd', (res)
 #    robot.emit 'margins', (res)
     robot.emit 'position', (res)
+    robot.emit 'budgetvsales', (res)
   
 # Debtors - who owes me money
   robot.respond(/who owes( me)?( the most)?( money)?\??/i, (res) ->
