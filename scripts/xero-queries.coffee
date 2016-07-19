@@ -5,6 +5,7 @@
 #   hubot Xero> who owes money - list top contact who owe the most
 #   hubot Xero> how much money do I have - lists bank summaries
 #   hubot Xero> what bills are coming up - lists upcoming bills
+#   hubot Xero> what bills are overdue - lists 5 bills most past due date
 #   hubot Xero> Sales MTD - for the month to date
 #   hubot Xero> Sales yesterday - for the last day
 #   hubot Xero> Budget - Sales vs. the months budget ***TBA***
@@ -35,6 +36,7 @@ module.exports = (robot) ->
     console.log('about to ask operator, who owes money?')
     res.reply('*Summary*') 
     robot.emit 'whatbills', (res)
+    robot.emit 'whatbillsoverdue', (res)
     robot.emit 'topfive', (res)
     robot.emit 'invoicesmtd', (res)
 #    robot.emit 'invoicesyesterday', (res)
@@ -81,12 +83,12 @@ module.exports = (robot) ->
         console.log("Something has gone wrong :( #{err}")
         res.reply("I'm not sure, how about you ask about bank balances again later?")
     )
-# Creditors - people I owe money
+# Creditors - people I owe money soon
   robot.respond(/what bills( are)?( coming up)?\??/i, (res) ->
     console.log('about to ask event, what bills are coming up?')
     robot.emit 'whatbills', (res)
   )  
-# Creditors - people I owe money event
+# Creditors - people I owe money soon event
   robot.on 'whatbills', (res) ->
     console.log('about to ask operator, what bills are coming up?')
     Operator.whatBillsAreComingUp().then(
@@ -96,7 +98,21 @@ module.exports = (robot) ->
         console.log('Something has gone wrong :( ' + r)
         res.reply("I'm not sure, how about you ask about bills due later?")
     )
-  
+# Creditors - people I owe money overdue
+  robot.respond(/(overdue|late)( debts)?( bills)?\??/i, (res) ->
+    console.log('about to ask event, what bills are overdue?')
+    robot.emit 'whatbillsoverdue', (res)
+  )  
+# Creditors - people I owe money overdue event
+  robot.on 'whatbillsoverdue', (res) ->
+    console.log('about to ask operator, what bills are overdue?')
+    Operator.whatBillsAreOverdue().then(
+      (result) ->
+        res.reply('\n' + _.join(result, '\n'))
+      (r) ->
+        console.log('Something has gone wrong :( ' + r)
+        res.reply("I'm not sure, how about you ask about bills overdue later?")
+    )  
 # Sales MTD
   robot.respond(/(Sales|revenue|turnover)( MTD| this month)\??/i, (res) ->
     console.log('about to ask event, sales month to date?')
@@ -125,7 +141,7 @@ module.exports = (robot) ->
     Operator.salesmtdbare().then(
         (result) ->
             res.reply(result)
-            console.log(res.rawMessage)
+            console.log(res.Va;)
         (r) ->
             console.log('Something has gone wrong :( ' + r)
             res.reply("I'm not sure, how about you ask about sales again later?")

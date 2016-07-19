@@ -4,6 +4,7 @@ Promise = require("bluebird");
 WhoOwesMoney = require('./operations/queries/who-owes-money');
 HowMuchMoneyDoIHave = require('./operations/queries/how-much-money-do-i-have');
 WhatBillsAreComingUp = require('./operations/queries/what-bills-are-coming-up');
+WhatBillsAreOverdue = require('./operations/queries/what-bills-are-overdue');
 salesmtd = require('./operations/queries/salesmtd');
 salesmtdbare = require('./operations/queries/salesmtdbare');
 salesYesterday = require('./operations/queries/salesYesterday');
@@ -39,6 +40,9 @@ module.exports = {
 
   whatBillsAreComingUp: () ->
     standardSingleQuery(WhatBillsAreComingUp)
+
+  whatBillsAreOverdue: () ->
+    standardSingleQuery(WhatBillsAreOverdue)
 
   howMuchMoneyDoIHave: () ->
     standardSingleQuery(HowMuchMoneyDoIHave)
