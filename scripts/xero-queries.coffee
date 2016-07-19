@@ -140,9 +140,10 @@ module.exports = (robot) ->
     Operator.salesmtdbare().then(
         (result) ->
             res.reply(result)
+            x=(10000*results[0])+(1000*results[1])+(100*results[2])+(10*results[3])+(1*results[2])
             for k,v of result
               console.log k + " is " + v
-            console.log("end")
+            console.log(x)
         (r) ->
             console.log('Something has gone wrong :( ' + r)
             res.reply("I'm not sure, how about you ask about sales again later?")
