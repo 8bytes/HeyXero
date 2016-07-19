@@ -140,7 +140,7 @@ module.exports = (robot) ->
     Operator.salesmtdbare().then(
         (result) ->
             res.reply(result)
-            list=_.value(result)
+            list=result()
             console.log(result[1])
         (r) ->
             console.log('Something has gone wrong :( ' + r)
