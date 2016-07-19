@@ -4,7 +4,7 @@ _ = require('lodash');
 moment = require('moment');
 numeral = require('numeral');
 
-GetBillsComingUp = '/invoices?where=Type%3d%22ACCPAY%22+and+AmountDue%3e0&order=DueDate+ASC'
+GetBillsOverdue = '/invoices?where=Type%3d%22ACCPAY%22+and+AmountDue%3e0&order=DueDate+ASC'
 
 module.exports = {
 	doRequest: () ->
@@ -39,10 +39,10 @@ module.exports = {
 	formatAnswer: (answer) ->
 		results = []
 		if(!answer.length)
-			results.push("No bills due soon");
+			results.push("No bills are overdue");
 			return results;
 		else
-			results.push("*Largest Bills coming up in next week*\n");
+			results.push("*Bills overdue*\n");
 			_.forEach(answer, (invoice) ->
 				line = moment(invoice.dueDate).format('DD/MM/YYYY');
 				if(invoice.invoiceNumber)
