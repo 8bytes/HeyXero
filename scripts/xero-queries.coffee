@@ -140,7 +140,7 @@ module.exports = (robot) ->
     Operator.salesmtdbare().then(
         (result) ->
             res.reply(result)
-            console.log(result)
+            console.log(res.reply)
         (r) ->
             console.log('Something has gone wrong :( ' + r)
             res.reply("I'm not sure, how about you ask about sales again later?")
