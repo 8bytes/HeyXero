@@ -155,9 +155,9 @@ module.exports = (robot) ->
 # Sales Yesterday event
   robot.on 'salesyesterday', (res) ->
     console.log('about to ask operator, sales yesterday?')
-    Operator.salesYesterday().then(
+    Operator.salesYesterday(x).then(
         (result) ->
-            res.reply(result)
+            res.reply(x)
         (r) ->
             console.log('Something has gone wrong :( ' + r)
             res.reply("I'm not sure, how about you ask about sales yesterday again later?")
