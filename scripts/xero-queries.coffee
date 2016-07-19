@@ -140,7 +140,7 @@ module.exports = (robot) ->
     Operator.salesmtdbare().then(
         (result) ->
             res.reply(result)
-            Operator.budgetvsales().then(
+            Operator.budgetvsales(result).then(
               (result) ->
                 res.reply(result)
               (r) ->
