@@ -140,7 +140,7 @@ module.exports = (robot) ->
     Operator.salesmtdbare().then(
         (result) ->
             res.reply(result)
-            x=(10000*result.0)+(1000*result.1)+(100*result[2])+(10*result[3])+(1*result[2])
+            x = JSON.parse(result)['Total Income'];
             console.log(x)
         (r) ->
             console.log('Something has gone wrong :( ' + r)
