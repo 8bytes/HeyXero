@@ -55,10 +55,10 @@ module.exports = {
   formatAnswer: (answer) ->
     budgetForMonth = 0
     salesForMonth=salesmtd  #note drawing in from global variable created in salesmtdbare
-    heading = "*Budget v Sales*\n"+'Budget this month: '
+    heading = "*Budget v Sales*\n"
     answer.forEach((row) -> budgetForMonth = "#{row.ThisMonthValue}")
-    budgetInfo = numeral(budgetForMonth).format('$0,0.00')+" with "+ numeral(percentOfMonth).format('00.0%') + " of Month past so Budget to date: '+numeral(budgetForMonth*percentOfMonth).format('$0,0.00')+"\n"
-    salesInfo='Sales to date: '+numeral(salesForMonth).format('$0,0.00')+' Sales to date as % of budget: '+numeral(salesForMonth/(budgetForMonth*percentOfMonth)).format('00.0%')+' avg daily sales '+numeral(salesForMonth/dd).format('$0,0.00')+"\n"
+    budgetInfo = "Budget this month: "+numeral(budgetForMonth).format('$0,0.00')+" with "+ numeral(percentOfMonth).format('00.0%') + " of Month past so Budget to date: '+numeral(budgetForMonth*percentOfMonth).format('$0,0.00')+"\n"
+    salesInfo="Sales to date: "+numeral(salesForMonth).format('$0,0.00')+" Sales to date as % of budget: "+numeral(salesForMonth/(budgetForMonth*percentOfMonth)).format('00.0%')+" avg daily sales "+numeral(salesForMonth/dd).format('$0,0.00')+"\n"
     formattedAnswer = heading+budgetInfo+salesInfo
     formattedAnswer
 
