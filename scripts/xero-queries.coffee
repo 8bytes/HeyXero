@@ -34,11 +34,11 @@ module.exports = (robot) ->
 # Summary event - comment out ones you don't want in the report. Note you could wait for each response to ensure in order - otherwise they will just come when ready!
 # this would be better done with a separate code to turn on and off through bot then just cycle through here
   robot.on 'summary', (res) ->
-    console.log('about to ask operator, who owes money?')
+    console.log('about to ask operator for a summary')
     res.reply('*Summary*') 
-    robot.emit 'whatbills', (res) ->
-      robot.emit 'whatbillsoverdue', (res) ->
-        robot.emit 'topfive', (res)
+    robot.emit 'whatbills', (res)
+    robot.emit 'whatbillsoverdue', (res)
+    robot.emit 'topfive', (res)
     robot.emit 'invoicesmtd', (res)
 #    robot.emit 'invoicesyesterday', (res)
     robot.emit 'salesyesterday', (res)
