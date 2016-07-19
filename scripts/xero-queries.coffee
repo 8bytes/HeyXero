@@ -133,25 +133,16 @@ module.exports = (robot) ->
     console.log('about to ask event, sales MTD bare?')
     robot.emit 'salesmtdbare', (res)
     )
-  
-# Budget v Sales event
+#Sales mtd bare event
   robot.on 'salesmtdbare', (res) ->
-    console.log('about to ask operator, sales month to date in raw format to load variable?')
+    console.log('about to ask operator, sales mtd bare')
     Operator.salesmtdbare().then(
         (result) ->
-            console.log("Raw sales MTD is"+result)
-            Operator.budgetvsales().then(
-              (result) ->
-                res.reply(result)
-              (r) ->
-                console.log('Something has gone wrong :( ' + r)
-                res.reply("I'm not sure, how about you ask about budgets again later?")
-            )
-            console.log("end of budget query")
+            res.reply(result)
         (r) ->
             console.log('Something has gone wrong :( ' + r)
             res.reply("I'm not sure, how about you ask about sales again later?")
-    ) 
+    )  
 
 # Sales Yesterday
   robot.respond(/Sales yesterday\??/i, (res) ->
@@ -168,22 +159,6 @@ module.exports = (robot) ->
         (r) ->
             console.log('Something has gone wrong :( ' + r)
             res.reply("I'm not sure, how about you ask about sales yesterday again later?")
-    )
-  
-#BudgetvSales
-  robot.respond(/Budget|performance|targets( MTD| this month)?\??/i, (res) ->
-    console.log('about to ask event, how are we travelling vs budget?')
-    robot.emit 'budget', (res)
-    )
-#BudgetvSales event
-  robot.on 'budget', (res) ->
-    console.log('about to ask operator, how are we travelling vs budget?')
-    Operator.budgetvsales().then(
-        (result) ->
-            res.reply(result)
-        (r) ->
-            console.log('Something has gone wrong :( ' + r)
-            res.reply("I'm not sure, how about you ask about budgets again later?")
     )
 #Sales Top 5 New Sales
   robot.respond(/top 5( sales)?( who bought)?( the most)?( yesterday)?\??/i, (res) ->
