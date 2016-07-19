@@ -135,7 +135,7 @@ module.exports = (robot) ->
     )
   
 # Budget v Sales event
-  robot.on 'budgetvsales', (res) ->
+  robot.on 'salesmtdbare', (res) ->
     console.log('about to ask operator, sales month to date in raw format to load variable?')
     Operator.salesmtdbare().then(
         (result) ->
@@ -173,17 +173,17 @@ module.exports = (robot) ->
 #BudgetvSales
   robot.respond(/Budget|performance|targets( MTD| this month)?\??/i, (res) ->
     console.log('about to ask event, how are we travelling vs budget?')
-    robot.emit 'budgetvsales', (res)
+    robot.emit 'budget', (res)
     )
-#Sales mtd bare event
-  robot.on 'salesmtdbare', (res) ->
-    console.log('about to ask operator, sales mtd bare')
-    Operator.salesmtdbare().then(
+#BudgetvSales event
+  robot.on 'budget', (res) ->
+    console.log('about to ask operator, how are we travelling vs budget?')
+    Operator.budgetvsales().then(
         (result) ->
             res.reply(result)
         (r) ->
             console.log('Something has gone wrong :( ' + r)
-            res.reply("I'm not sure, how about you ask about sales again later?")
+            res.reply("I'm not sure, how about you ask about budgets again later?")
     )
 #Sales Top 5 New Sales
   robot.respond(/top 5( sales)?( who bought)?( the most)?( yesterday)?\??/i, (res) ->
