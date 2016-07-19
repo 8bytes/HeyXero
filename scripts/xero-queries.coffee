@@ -141,7 +141,7 @@ module.exports = (robot) ->
         (result) ->
             res.reply(result)
             list=_.keys(result)
-            console.log(result[0])
+            console.log(result[1])
         (r) ->
             console.log('Something has gone wrong :( ' + r)
             res.reply("I'm not sure, how about you ask about sales again later?")
