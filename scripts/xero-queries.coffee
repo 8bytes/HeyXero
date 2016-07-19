@@ -60,8 +60,7 @@ module.exports = (robot) ->
     Operator.whoOwesMoney().then(
       (result) ->
         console.log('about to ask operator, who owes money?')
-        console.log(result)
-        res.reply('\n' + _.join(result, '\n'))
+        res.reply(_.join(result, '\n'))
       (r) ->
         console.log('Something has gone wrong :( ' + r)
         res.reply("I'm not sure, how about you ask who owes money again later?")
@@ -93,7 +92,7 @@ module.exports = (robot) ->
     console.log('about to ask operator, what bills are coming up?')
     Operator.whatBillsAreComingUp().then(
       (result) ->
-        res.reply('\n' + _.join(result, '\n'))
+        res.reply(_.join(result, '\n'))
       (r) ->
         console.log('Something has gone wrong :( ' + r)
         res.reply("I'm not sure, how about you ask about bills due later?")
@@ -108,7 +107,7 @@ module.exports = (robot) ->
     console.log('about to ask operator, what bills are overdue?')
     Operator.whatBillsAreOverdue().then(
       (result) ->
-        res.reply('\n' + _.join(result, '\n'))
+        res.reply(_.join(result, '\n'))
       (r) ->
         console.log('Something has gone wrong :( ' + r)
         res.reply("I'm not sure, how about you ask about bills overdue later?")
@@ -141,7 +140,7 @@ module.exports = (robot) ->
     Operator.salesmtdbare().then(
         (result) ->
             res.reply(result)
-            console.log(res.Va;)
+            console.log(res.ThisMonthValue)
         (r) ->
             console.log('Something has gone wrong :( ' + r)
             res.reply("I'm not sure, how about you ask about sales again later?")
