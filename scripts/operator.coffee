@@ -56,19 +56,8 @@ module.exports = {
   salesYesterday: () ->
     standardSingleQuery(salesYesterday)
 
-  budgetvsales: (sales) ->
-    new Promise((resolve, reject) ->
-      # Start the request and get its promise
-      promise = operation.doRequest(sales);
-      promise.then(
-        (xeroResponse) ->
-          answer = operation.createAnswer(xeroResponse);
-          formattedAnswer = operation.formatAnswer(answer);
-          resolve(formattedAnswer);
-        () ->
-          reject();
-      )
-    )
+  budgetvsales: () ->
+    standardSingleQuery(budgetvsales)
 
   topnewsales: () ->
     standardSingleQuery(topnewsales)
