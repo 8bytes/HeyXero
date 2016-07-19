@@ -19,7 +19,10 @@ module.exports = (robot) ->
   	console.log('they want help')
   	res.reply('It looks like you need some more capital... finweb coming soon!')
   )
-
+  robot.respond(/i need to (set up a company)?(register a business)?/i, (res) ->
+    console.log('they want company incorporation help')
+    res.reply('It looks like you need some help - start with the www.businessnamechooser.com.au !')
+  )
   robot.respond(/invoice (.*) for (.*) of (.*)/i, (res) ->
     contactName = res.match[1]
     unitAmount = res.match[2]
