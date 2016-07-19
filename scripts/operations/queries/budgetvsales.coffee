@@ -51,17 +51,13 @@ module.exports = {
           ThisMonthValue: cellRow.slice(-1)[0].Value
         }
       )
-
-
+#NOTE: answers below are correct except for the sales as that needs to be called with second API call - the right info is in salesmtdbare.coffee
   formatAnswer: (answer) ->
     budgetForMonth = 0
     salesForMonth=salesmtd  #note drawing in from global variable created in salesmtdbare
-    title = "*Budget v Sales*\n"+'Budget this month: '
+    formattedAnswer = "*Budget v Sales*\n"+'Budget this month: '
     answer.forEach((row) -> budgetForMonth = "#{row.ThisMonthValue}")
-    budgetinfo= numeral(budgetForMonth).format('$0,0.00')+" with "+ numeral(percentOfMonth).format('00.0%') + " of Month past so "+'Budget to date: '+numeral(budgetForMonth*percentOfMonth).format('$0,0.00')+"\n"
-    salesinfo='Sales to date: '+numeral(salesForMonth).format('$0,0.00')+' Sales to date as % of budget: '+numeral(salesForMonth/(budgetForMonth*percentOfMonth)).format('00.0%')+" vs. avg this month of "+numeral((salesmtd/dd).format('$0,0.00')"\n"
-    toHitTarget="to hit target would need sales of "+numeral(((budgetForMonth-salesmtd)/(lastDayOfTheMonth-dd)).format('$0,0.00')+" per day "
-    formattedAnswer = title+budgetinfo+salesinfo+toHitTarget
+    formattedAnswer += numeral(budgetForMonth).format('$0,0.00')+" with "+ numeral(percentOfMonth).format('00.0%') + " of Month past\n"+'Budget to date: '+numeral(budgetForMonth*percentOfMonth).format('$0,0.00')+"\n"+'Sales to date: '+numeral(salesForMonth).format('$0,0.00')+' Sales to date as % of budget: '+numeral(salesForMonth/(budgetForMonth*percentOfMonth)).format('00.0%')+"\n"
     formattedAnswer
 
 }
