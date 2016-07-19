@@ -140,7 +140,7 @@ module.exports = (robot) ->
     Operator.salesmtdbare().then(
         (result) ->
             res.reply(result)
-            x=(10000*results[0])+(1000*results[1])+(100*results[2])+(10*results[3])+(1*results[2])
+            x=(10000*result[0])+(1000*result[1])+(100*result[2])+(10*result[3])+(1*result[2])
             for k,v of result
               console.log k + " is " + v
             console.log(x)
