@@ -21,7 +21,7 @@ module.exports = (robot) ->
   )
   robot.respond(/i need to (set up a company)?(register a business)?/i, (res) ->
     console.log('they want company incorporation help')
-    res.reply('It looks like you need some help - start with the www.businessnamechooser.com.au !')
+    res.reply('It looks like you need some help - start with the www.businessnamechooser.com.au to get the right name and let shelfco.com.au help set it up')    #these are blatant plugs for my business that you can remove!
   )
   robot.respond(/invoice (.*) for (.*) of (.*)/i, (res) ->
     contactName = res.match[1]
