@@ -140,7 +140,7 @@ module.exports = (robot) ->
     Operator.salesmtdbare().then(
         (result) ->
             res.reply(result)
-            console.log(res.reply)
+            console.log(result)
         (r) ->
             console.log('Something has gone wrong :( ' + r)
             res.reply("I'm not sure, how about you ask about sales again later?")
@@ -155,9 +155,9 @@ module.exports = (robot) ->
 # Sales Yesterday event
   robot.on 'salesyesterday', (res) ->
     console.log('about to ask operator, sales yesterday?')
-    Operator.salesYesterday(x).then(
+    Operator.salesYesterday().then(
         (result) ->
-            res.reply(x)
+            res.reply(result)
         (r) ->
             console.log('Something has gone wrong :( ' + r)
             res.reply("I'm not sure, how about you ask about sales yesterday again later?")
