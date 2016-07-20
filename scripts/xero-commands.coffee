@@ -21,9 +21,8 @@ module.exports = (robot) ->
   )
   robot.respond(/i need to (set up a company)?(register a business)?/i, (res) ->
     console.log('they want company incorporation help')
-     attachments: [
-        {
-            "fallback": "Link to Facebook Messenger for ShelfCo Bot",
+    attachments: [
+        {   "fallback": "Link to Facebook Messenger for ShelfCo Bot",
             "color": "#36a64f",
             "pretext": "Talk with Shelf now",
             "author_name": "Brent Jackson",
@@ -31,17 +30,15 @@ module.exports = (robot) ->
             "author_icon": "https://www.shelfco.com.au/new/wp-content/uploads/2014/08/logo2.png",
             "title": "Shelfco Facebook Messenger Bot",
             "title_link": "https://m.me/ShelfCompaniesAustralia/",
-            "text": "Optional",
-            "fields": [
-                {
+            "text": "Optional text",
+            "fields": [{
                     "title": "Priority",
                     "value": "High",
                     "short": false
-                }
-            ],
+                }],
             "image_url": "http://img.labnol.org/di/facebook-messenger.png",
             "thumb_url": "http://img.labnol.org/di/facebook-messenger.png",
-            "footer": "Shelfco @ FB Messenger",
+            "footer": "Shelfco FB Messenger",
             "footer_icon": "https://platform.slack-edge.com/img/default_application_icon.png",
         }
     ]
