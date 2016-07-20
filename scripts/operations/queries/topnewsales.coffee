@@ -43,7 +43,7 @@ module.exports = {
 			return results;
 		else
 			results.push("*Top 5 Sales Yesterday*\n");
-			console.log("build results")
+			console.log(answer)
 			_.forEach(answer, (invoice) ->
 				line = ('*' + invoice.Contactname + '*');
 				if(invoice.invoiceNumber)
