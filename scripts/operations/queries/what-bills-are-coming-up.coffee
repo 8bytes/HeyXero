@@ -44,6 +44,7 @@ module.exports = {
 		else
 			results.push("*Largest Bills coming up in next week*\n");
 			_.forEach(answer, (invoice) ->
+			    line=""
 				line = moment(invoice.dueDate).format('DD/MM/YYYY');
 				if(invoice.invoiceNumber)
 					line += (' ' + invoice.invoiceNumber + '')
