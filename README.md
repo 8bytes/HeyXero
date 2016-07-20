@@ -5,17 +5,17 @@ It's basic and only has a few commands, but it's a start and we want to get it o
 
 Ths fork by Brent Jackson has added a bunch of other commands to extend the work done by Scott and Nick, it should result in the following extra commands working
 
-#   hubot Xero> what bills are overdue - lists 5 bills most past due date
-#   hubot Xero> Sales MTD - for the month to date
-#   hubot Xero> Sales yesterday - for the last day
-#   hubot Xero> Budget - Sales vs. the months budget 
-#   hubot Xero> Top 5 Sales - list of top 5 sales in last day
-#   hubot Xero> Cashflow - summary of cash for month so far
-#   hubot Xero> Margins - gross profit and net profit margins
-#   hubot Xero> Position - Avg debtor and creditor days and cash forecast
-#   hubot Xero> Invoices MTD - total number and value of invoices month to date
-#   hubot Xero> Invoices Yesterday - number and list of invoices for last day
-#   hubot Xero> Summary - lists a number of the other queries 
+hubot Xero> what bills are overdue - lists 5 bills most past due date
+hubot Xero> Sales MTD - for the month to date
+hubot Xero> Sales yesterday - for the last day
+hubot Xero> Budget - Sales vs. the months budget 
+hubot Xero> Top 5 Sales - list of top 5 sales in last day
+hubot Xero> Cashflow - summary of cash for month so far
+hubot Xero> Margins - gross profit and net profit margins
+hubot Xero> Position - Avg debtor and creditor days and cash forecast
+hubot Xero> Invoices MTD - total number and value of invoices month to date
+hubot Xero> Invoices Yesterday - number and list of invoices for last day
+hubot Xero> Summary - lists a number of the other queries 
 
 There is also a cron file but that does not work with the base Heroku setup (use Heroku scheduler instead).  
 
