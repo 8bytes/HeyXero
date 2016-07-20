@@ -47,7 +47,7 @@ module.exports = (robot) ->
     robot.emit 'bankbalances', (res)
     robot.emit 'cashflowmtd', (res)
 #    robot.emit 'margins', (res)
-    robot.emit 'position', (res)
+#    robot.emit 'position', (res)
     robot.emit 'budgetvsales', (res)
   
 # Debtors - who owes me money - significant debtors

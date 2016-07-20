@@ -44,7 +44,6 @@ module.exports = {
 		else
 			results.push("*Bills overdue*\n");
 			_.forEach(answer, (invoice) ->
-			    line=""
 				line = moment(invoice.dueDate).format('DD/MM/YYYY');
 				if(invoice.invoiceNumber)
 					line += (' ' + invoice.invoiceNumber + '')
