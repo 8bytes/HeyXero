@@ -21,28 +21,8 @@ module.exports = (robot) ->
   )
   robot.respond(/i need to (set up a company)?(register a business)?/i, (res) ->
     console.log('they want company incorporation help')
-    attachments = [   "fallback": "Link to Facebook Messenger for ShelfCo Bot",
-            "color": "#36a64f",
-            "pretext": "Talk with Shelf now",
-            "author_name": "Brent Jackson",
-            "author_link": "https://au.linkedin.com/in/brentjackson",
-            "author_icon": "https://www.shelfco.com.au/new/wp-content/uploads/2014/08/logo2.png",
-            "title": "Shelfco Facebook Messenger Bot",
-            "title_link": "https://m.me/ShelfCompaniesAustralia/",
-            "text": "Optional text",
-            "fields": [
-                    "title": "Priority",
-                    "value": "High",
-                    "short": false
-                ],
-            "image_url": "http://img.labnol.org/di/facebook-messenger.png",
-            "thumb_url": "http://img.labnol.org/di/facebook-messenger.png",
-            "footer": "Shelfco FB Messenger",
-            "footer_icon": "https://platform.slack-edge.com/img/default_application_icon.png"
-        ]
-    robot.adapter.customMessage attachments
-#    res.reply(attachments)    #these are blatant plugs for my business that you can remove - just testing linking to other bot from slack!
-
+    res.reply('It looks like you need some help - start with the www.businessnamechooser.com.au to get the right name or have a chat on messenger here https://m.me/ShelfCompaniesAustralia/ to help set it up')    #these are blatant plugs for my business that you can remove!
+    
   )
   robot.respond(/invoice (.*) for (.*) of (.*)/i, (res) ->
     contactName = res.match[1]
