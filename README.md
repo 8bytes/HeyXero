@@ -5,16 +5,26 @@ It's basic and only has a few commands, but it's a start and we want to get it o
 
 Ths fork by Brent Jackson has added a bunch of other commands to extend the work done by Scott and Nick, it should result in the following extra commands working
 
-> what bills are overdue - lists 5 bills most past due date \n
-> Sales MTD - for the month to date\n
-> Sales yesterday - for the last day\n
-> Budget - Sales vs. the months budget \n
-> Top 5 Sales - list of top 5 sales in last day\n
-> Cashflow - summary of cash for month so far\n
-> Margins - gross profit and net profit margins\n
-> Position - Avg debtor and creditor days and cash forecast\n
-> Invoices MTD - total number and value of invoices month to date\n
-> Invoices Yesterday - number and list of invoices for last day\n
+> what bills are overdue - lists 5 bills most past due date
+
+> Sales MTD - for the month to date
+
+> Sales yesterday - for the last day
+
+> Budget - Sales vs. the months budget
+
+> Top 5 Sales - list of top 5 sales in last day
+
+> Cashflow - summary of cash for month so far
+
+> Margins - gross profit and net profit margins
+
+> Position - Avg debtor and creditor days and cash forecast
+
+> Invoices MTD - total number and value of invoices month to date
+
+> Invoices Yesterday - number and list of invoices for last day
+
 > Summary - lists a number of the other queries 
 
 There is also a cron file but that does not work with the base Heroku setup (use Heroku scheduler instead).  
