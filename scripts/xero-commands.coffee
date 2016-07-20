@@ -21,7 +21,31 @@ module.exports = (robot) ->
   )
   robot.respond(/i need to (set up a company)?(register a business)?/i, (res) ->
     console.log('they want company incorporation help')
-    res.reply('It looks like you need some help - start with the www.businessnamechooser.com.au to get the right name or have a chat on messenger here https://m.me/ShelfCompaniesAustralia/ to help set it up')    #these are blatant plugs for my business that you can remove!
+    robot.reply(message, {
+  attachments:[
+    {
+      title: ‘Do you want to interact with my buttons?’,
+      callback_id: ‘123’,
+      attachment_type: ‘default’,
+      actions: [
+         {
+            “name”:”yes”,
+            “text”: “Yes”,
+            “value”: “yes”,
+            “type”: “button”,
+         },
+         {
+             “name”:”no”,
+             “text”: “No”,
+             “value”: “no”,
+             “type”: “button”,
+         }
+      ]
+    }
+  ]
+});
+ console.log (robot.reply)
+ #   res.reply('It looks like you need some help - start with the www.businessnamechooser.com.au to get the right name or have a chat on messenger here https://m.me/ShelfCompaniesAustralia/ to help set it up')    #these are blatant plugs for my business that you can remove!
     
   )
   robot.respond(/invoice (.*) for (.*) of (.*)/i, (res) ->
