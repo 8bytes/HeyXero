@@ -43,7 +43,7 @@ module.exports = (robot) ->
       ]
     }
   ]
-});
+  
  console.log (robot.reply)
  #   res.reply('It looks like you need some help - start with the www.businessnamechooser.com.au to get the right name or have a chat on messenger here https://m.me/ShelfCompaniesAustralia/ to help set it up')    #these are blatant plugs for my business that you can remove!
     
