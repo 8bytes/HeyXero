@@ -45,6 +45,9 @@ module.exports = {
 			results.push("*Top 5 Sales Yesterday*\n");
 			_.forEach(answer, (invoice) ->
 				line = ('*' + invoice.Contactname + '*');
+				if(invoice.invoiceNumber)
+					line += (' ' + invoice.invoiceNumber + ' ')
+					console.log(invoice.total)
 #				line += (' ' + numeral(invoice.total).format('$0,0.00') + ' \n');
 				results.push(line);
 			)
