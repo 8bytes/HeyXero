@@ -57,7 +57,7 @@ module.exports = {
       results.push("No sales data yesterday");
       return results;
     else
-      formattedAnswer = "*Sales yesterday*\n";
+      formattedAnswer = "*Total Income yesterday*\n";
       answer.forEach((row) -> formattedAnswer = formattedAnswer + "#{row.KPIName}: #{numeral(row.ThisMonthValue).format('$0,0.00')}\n");
       results.push(formattedAnswer);
     return results;
