@@ -21,7 +21,7 @@ module.exports = (robot) ->
   )
   robot.respond(/i need to (set up a company)?(register a business)?/i, (res) ->
     console.log('they want company incorporation help')
-    attachments: [   "fallback": "Link to Facebook Messenger for ShelfCo Bot",
+    attachments = [   "fallback": "Link to Facebook Messenger for ShelfCo Bot",
             "color": "#36a64f",
             "pretext": "Talk with Shelf now",
             "author_name": "Brent Jackson",
@@ -40,7 +40,7 @@ module.exports = (robot) ->
             "footer": "Shelfco FB Messenger",
             "footer_icon": "https://platform.slack-edge.com/img/default_application_icon.png"
         ]
-    res.reply(attachments)    #these are blatant plugs for my business that you can remove!
+    res.reply(attachments)    #these are blatant plugs for my business that you can remove - just testing linking to other bot from slack!
 
   )
   robot.respond(/invoice (.*) for (.*) of (.*)/i, (res) ->
