@@ -40,7 +40,8 @@ module.exports = (robot) ->
             "footer": "Shelfco FB Messenger",
             "footer_icon": "https://platform.slack-edge.com/img/default_application_icon.png"
         ]
-    res.reply(attachments)    #these are blatant plugs for my business that you can remove - just testing linking to other bot from slack!
+    robot.adapter.customMessage attachments
+#    res.reply(attachments)    #these are blatant plugs for my business that you can remove - just testing linking to other bot from slack!
 
   )
   robot.respond(/invoice (.*) for (.*) of (.*)/i, (res) ->
