@@ -23,7 +23,7 @@ module.exports = (robot) ->
     console.log('they want company incorporation help')
     robot.reply(message, {attachments:[
     {
-      title: ‘Do you want to interact with my buttons?’,
+      title: ‘Do you want to interact wh my buttons?’,
       callback_id: ‘123’,
       attachment_type: ‘default’,
       actions: [
