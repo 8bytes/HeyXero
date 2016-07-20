@@ -40,10 +40,10 @@ module.exports = {
 	formatAnswer: (answer) ->
 		results = []
 		if(!answer.length)
-			results.push("No invoices yesterday");
-			return results;
+			results.push("No invoices yesterday")
+			return results
 		else
-			results.push('*'+answer.length+'* Invoices Yesterday\n');
+			results.push('*'+answer.length+'* Invoices Yesterday\n')
 			line=""
 			TotAmountPaid=0
 			TotAmount=0
@@ -57,5 +57,5 @@ module.exports = {
 			AvgSizeInvoice = TotAmount/answer.length
 			InvoiceSummary = "Total value of invoices: *"+numeral(TotAmount).format('$0,0.00')+"* Paid:"+numeral(TotAmountPaid).format('$0,0.00')+" Average size: "+numeral(AvgSizeInvoice).format('$0,0.00')
 			results.push(InvoiceSummary)
-		return results;
+		return results
 }
