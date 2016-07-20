@@ -39,7 +39,7 @@ module.exports = (robot) ->
             "image_url": "http://img.labnol.org/di/facebook-messenger.png",
             "thumb_url": "http://img.labnol.org/di/facebook-messenger.png",
             "footer": "Shelfco FB Messenger",
-            "footer_icon": "https://platform.slack-edge.com/img/default_application_icon.png",
+            "footer_icon": "https://platform.slack-edge.com/img/default_application_icon.png"
         }
     ]
     res.reply(attachments)    #these are blatant plugs for my business that you can remove!
