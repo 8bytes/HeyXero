@@ -44,7 +44,6 @@ module.exports = {
     else
       results.push("*Significant debtors*\n");
       _.forEach(answer, (contact) ->
-        line=""
         line = '' + contact.name + ': *' + numeral(Number(contact.outstanding)).format('$0,0.00') + '*'
         if(contact.overdue > 0)
           line += ' (' + numeral(Number(contact.overdue)).format('$0,0.00') + ' overdue)\n'

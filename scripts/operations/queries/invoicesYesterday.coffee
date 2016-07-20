@@ -44,7 +44,6 @@ module.exports = {
 			return results
 		else
 			results.push('*'+answer.length+'* Invoices Yesterday\n')
-			line=""
 			TotAmountPaid=0
 			TotAmount=0
 			_.forEach(answer, (invoice) ->
