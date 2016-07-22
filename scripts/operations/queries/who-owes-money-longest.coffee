@@ -40,7 +40,7 @@ module.exports = {
   formatAnswer: (answer) ->
     results = []
     if(!answer.length)
-      results.push("Nobody does");
+      results.push("No old invoices");
     else
       results.push("Oldest invoices (ie. oldest creditor accounts)\n");
       _.forEach(answer, (invoice) ->
