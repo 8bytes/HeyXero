@@ -3,6 +3,7 @@
 #
 # Commands:
 #   hubot Xero> who owes money - list top contact who owe the most
+#   hubot Xero> oldest debts - list invoices that have been outstanding for the longest time
 #   hubot Xero> how much money do I have - lists bank summaries
 #   hubot Xero> what bills are coming up - lists upcoming bills
 #   hubot Xero> what bills are overdue - lists 5 bills most past due date

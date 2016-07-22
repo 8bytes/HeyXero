@@ -45,7 +45,7 @@ module.exports = {
     if(!answer.length)
       results.push("No old invoices");
     else
-      results.push("Outstanding invoices (ie. oldest creditor accounts)\n");
+      results.push("*Outstanding invoices* (ie. oldest creditor accounts)\n");
       _.forEach(answer, (invoice) ->
         line =invoice.name + ' for '+invoice.Reference+' No:'+invoice.invoiceNumber+" dated "+ moment(invoice.overdue).format('DD/MM/YYYY')+': *' + numeral(Number(invoice.outstanding)).format('$0,0.00') + '*\n'
         results.push(line)
