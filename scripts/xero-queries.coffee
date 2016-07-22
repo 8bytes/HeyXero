@@ -67,7 +67,7 @@ module.exports = (robot) ->
         res.reply("I'm not sure, how about you ask who owes money again later?")
     )
 # Debtors - who owes me money - longest debtors
-  robot.respond(/oldest( debts)?( invoices)?\??/i, (res) ->
+  robot.respond(/(oldest debts|oustanding invoices)\??/i, (res) ->
     console.log('about to ask event, who owes money longest?')
     robot.emit 'whooweslong', (res)
   )

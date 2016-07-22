@@ -29,6 +29,7 @@ module.exports = {
 		_.forEach(_.take(response.Invoices.Invoice, 5), (invoice) ->
 			results.push({
 				invoiceNumber: invoice.InvoiceNumber
+				Reference: invoice.Reference
 				name: invoice.Contact.Name
 				dueDate: moment(invoice.DueDate)
 				amountDue: Number(invoice.AmountDue)
