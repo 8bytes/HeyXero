@@ -3,7 +3,7 @@ XeroConnection = require('./../../xero-connection');
 _ = require('lodash');
 numeral = require('numeral');
 
-GetContactsOwingMoney = '/contacts?where=(Balances+!%3d+null+%26%26+Balances.AccountsReceivable+!%3d+null+%26%26+Balances.AccountsReceivable.Outstanding+%3e+0)&order=(Balances.AccountsReceivable.Outstanding)+DESC&page=1'
+GetOldInvoices = 'invoices?where=AmountDue%3e0&order=DueDate&page=1'
 
 
 module.exports = {
@@ -12,7 +12,7 @@ module.exports = {
     console.log('doRequest()')
     promise = new Promise((resolve, reject) ->
       console.log('sending...')
-      XeroConnection().call('GET', GetContactsOwingMoney, null, (err, json) ->
+      XeroConnection().call('GET', GetOldInvoices, null, (err, json) ->
         if(err)
           console.log("error calling WhoOwesMoney: #{JSON.stringify(err)}")
           reject()
@@ -23,16 +23,16 @@ module.exports = {
     return promise;
 
   createAnswer: (response) ->
-#console.log("Parsing who owes me money response: #{JSON.stringify(response)}")
-    if(!response || !response.Contacts || !response.Contacts.Contact || !response.Contacts.Contact.length)
+#console.log("Parsing oldest invoices response: #{JSON.stringify(response)}")
+    if(!response || !response.Invoices || !response.Invoices.Invoice || !response.Invoices.Invoice.length)
       return [];
 
     results = [];
-    _.forEach(_.take(response.Contacts.Contact, 5), (contact) ->
+    _.forEach(_.take(response.Invoices.Invoice, 5), (invoice) ->
       results.push({
-        name: contact.Name
-        outstanding: contact.Balances.AccountsReceivable.Outstanding
-        overdue: contact.Balances.AccountsReceivable.Overdue
+        name: invoice.Name
+        outstanding: invoice.AmountDue
+        overdue: invoice.DueDate
       })
     );
     return results
@@ -42,11 +42,9 @@ module.exports = {
     if(!answer.length)
       results.push("Nobody does");
     else
-      results.push("Largest debtors\n");
-      _.forEach(answer, (contact) ->
-        line = '' + contact.name + ': *' + numeral(Number(contact.outstanding)).format('$0,0.00') + '*'
-        if(contact.overdue > 0)
-          line += ' (' + numeral(Number(contact.overdue)).format('$0,0.00') + ' overdue)\n'
+      results.push("Oldest invoices (ie. oldest creditor accounts)\n");
+      _.forEach(answer, (invoice) ->
+        line = '' + invoice.name + " dated "+ invoice.overdue+': *' + numeral(Number(invoice.outstanding)).format('$0,0.00') + '*'
         results.push(line)
       )
     return results;

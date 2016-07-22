@@ -114,7 +114,7 @@ module.exports = (robot) ->
         res.reply("I'm not sure, how about you ask about bills due later?")
     )
 # Creditors - people I owe money overdue
-  robot.respond(/(overdue|late)( debts)?( bills)?\??/i, (res) ->
+  robot.respond(/(overdue bills|late bills)?\??/i, (res) ->
     console.log('about to ask event, what bills are overdue?')
     robot.emit 'whatbillsoverdue', (res)
   )  
