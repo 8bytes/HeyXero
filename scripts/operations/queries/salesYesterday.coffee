@@ -6,12 +6,13 @@ today = new Date # Dates better to get from xero-dates if possible
 dd = today.getDate()
 if dd < 10
   dd = '0' + dd
+yd=dd-1
 #The value returned by getMonth is an integer between 0 and 11, referring 0 to January, 1 to February, and so on. 
 mm = today.getMonth() + 1
 if mm < 10
   mm = '0' + mm
 yyyy = today.getFullYear()
-yesterdayXero = yyyy + '-' + mm + '-' + (dd-1)
+yesterdayXero = yyyy + '-' + mm + '-' + yd
 
 module.exports = {
 
