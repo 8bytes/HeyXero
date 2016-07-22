@@ -3,7 +3,7 @@ XeroConnection = require('./../../xero-connection');
 _ = require('lodash');
 numeral = require('numeral');
 
-GetOldInvoices = 'invoices?where=AmountDue%3e0&order=DueDate&page=1'
+GetOldInvoices = '/invoices?where=AmountDue%3e0&order=DueDate&page=1'
 
 
 module.exports = {
