@@ -1,6 +1,5 @@
 # Description:
 #   Allows access to date formats used by Xero so that API calls can be made
-#   NOT YET BEING USED
 #
 # Dependencies:
 #
@@ -29,7 +28,7 @@ lastDayOfTheMonth = lastDayOfTheMonthDate.getDate()             #how many days i
 todayDate = dd + '-' + mm + '-' + yyyy
 yd = dd-3                                                     #yesterday in date format
 
-#now make some formats for Xero to use
+#now make some formats for Xero to use - note will now be global variables for use by other scripts
 (->@)().todayXero = yyyy + '-' + mm + '-' + dd
 (->@)().yesterdayXero = yyyy + '-' + mm + '-' + yd
 (->@)().endOfMonthXero=yyyy + '-' + mm + '-' + lastDayOfTheMonth
