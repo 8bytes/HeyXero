@@ -31,7 +31,7 @@ module.exports = {
     _.forEach(_.take(response.Invoices.Invoice, 5), (invoice) ->
       results.push({
         name: invoice.Contact.Name
-        outstanding: number(invoice.AmountDue)
+        outstanding: Number(invoice.AmountDue)
         overdue: invoice.DueDate
       })
     );
