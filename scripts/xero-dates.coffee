@@ -31,6 +31,6 @@ if mm < 10
 #now make some formats for Xero to use 
 (->@)().todayXero = yyyy + '-' + mm + '-' + dd
 (->@)().yesterdayXero = yyyy + '-' + mm + '-' + yd
-(->@)().endOfMonthXero=yyyy + '-' + mm + '-' + lastDayOfTheMonth
-(->@)().percentOfMonth=dd/lastDayOfTheMonth
+(->@)().endOfMonthXero = yyyy + '-' + mm + '-' + lastDayOfTheMonth
+(->@)().percentOfMonth = dd/lastDayOfTheMonth
  
