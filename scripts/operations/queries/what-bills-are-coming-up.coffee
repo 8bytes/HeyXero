@@ -4,7 +4,7 @@ _ = require('lodash');
 moment = require('moment');
 numeral = require('numeral');
 
-GetBillsComingUp = '/invoices?where=Type%3d%22ACCPAY%22%26%26Status%3d%22AUTHORISED%22%26%26DueDate%3e%3dDateTime.Today%26%26DueDate%3c%3dDateTime.Today.AddDays(7)&order=-AmountDue&page=1'
+GetBillsComingUp = '/invoices?where=Type%3d%22ACCPAY%22%26%26Status%3d%22AUTHORISED%22%26%26DueDate%3e%3dDateTime.Today%26%26DueDate%3c%3dDateTime.Today.AddDays(7)&order=DueDate&page=1'
 
 module.exports = {
 	doRequest: () ->
@@ -26,7 +26,7 @@ module.exports = {
 			return [];
 
 		results = [];
-		_.forEach(_.take(response.Invoices.Invoice, 5), (invoice) ->
+		_.forEach(_.take(response.Invoices.Invoice, response.Invoices.Invoice.length), (invoice) ->
 			results.push({
 				invoiceNumber: invoice.InvoiceNumber
 				name: invoice.Contact.Name

@@ -30,8 +30,8 @@ todayDate = dd + '-' + mm + '-' + yyyy
 yd = dd-3                                                     #yesterday in date format
 
 #now make some formats for Xero to use
-todayXero = yyyy + '-' + mm + '-' + dd
-yesterdayXero = yyyy + '-' + mm + '-' + yd
-endOfMonthXero=yyyy + '-' + mm + '-' + lastDayOfTheMonth
-percentOfMonth=dd/lastDayOfTheMonth
+(->@)().todayXero = yyyy + '-' + mm + '-' + dd
+(->@)().yesterdayXero = yyyy + '-' + mm + '-' + yd
+(->@)().endOfMonthXero=yyyy + '-' + mm + '-' + lastDayOfTheMonth
+(->@)().percentOfMonth=dd/lastDayOfTheMonth
  

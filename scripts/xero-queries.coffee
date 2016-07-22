@@ -8,7 +8,7 @@
 #   hubot Xero> what bills are overdue - lists 5 bills most past due date
 #   hubot Xero> Sales MTD - for the month to date
 #   hubot Xero> Sales yesterday - for the last day
-#   hubot Xero> Budget - Sales vs. the months budget ***TBA***
+#   hubot Xero> Budget - Sales vs. the months budget 
 #   hubot Xero> Top 5 Sales - list of top 5 sales in last day
 #   hubot Xero> Cashflow - summary of cash for month so far
 #   hubot Xero> Margins - gross profit and net profit margins
@@ -32,7 +32,7 @@ module.exports = (robot) ->
     robot.emit 'summary', (res)
   )
 # Summary event - comment out ones you don't want in the report. Note you could wait for each response to ensure in order - otherwise they will just come when ready!
-# this would be better done with a separate code to turn on and off through bot then just cycle through here
+# this would be better done with a separate code to turn on and off and choose order through bot then just cycle through here
   robot.on 'summary', (res) ->
     console.log('about to ask operator for a summary')
     res.reply('*Summary*') 
