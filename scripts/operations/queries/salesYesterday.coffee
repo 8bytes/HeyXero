@@ -2,7 +2,7 @@ Promise = require("bluebird");
 XeroConnection = require('./../../xero-connection');
 numeral = require('numeral');
 
-yyyy = today.getFullYear()
+yyyy = today.getFullYear()  # Dates better to get from xero-dates if possible
 yesterdayXero = yyyy + '-' + mm + '-' + (dd-1)
 
 module.exports = {
