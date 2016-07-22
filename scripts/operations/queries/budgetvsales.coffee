@@ -1,7 +1,7 @@
 Promise = require("bluebird");
 XeroConnection = require('./../../xero-connection');
 numeral = require('numeral');
-dates = require('xero-dates');
+dates = require('./../../xero-dates');
     
 module.exports = {
 
