@@ -4,7 +4,7 @@ _ = require('lodash');
 moment = require('moment');
 numeral = require('numeral');
 
-GetInvoicesYesterday = '/invoices?where=date%3dDateTime.Today.AddDays(-1)&order=-total'
+GetInvoicesYesterday = '/invoices?where=Type%3d%22ACCREC%22%26%26date%3dDateTime.Today.AddDays(-1)&order=-total'
 
 module.exports = {
 	doRequest: () ->
