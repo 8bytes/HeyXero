@@ -34,12 +34,11 @@ module.exports = {
 #NOTE: answers below are correct except for the sales as that needs to be called with second API call - the right info is in salesmtdbare.coffee
   formatAnswer: (answer) ->
     budgetForMonth = 0
-    salesForMonth=salesmtd  #note drawing in from global variable created in salesmtdbare
     heading = "*Budget v Sales*\n"
     answer.forEach((row) -> budgetForMonth = "#{row.ThisMonthValue}")
     budgetInfo = "Budget this month: "+numeral(budgetForMonth).format('$0,0.00')+" with "+ numeral(percentOfMonth).format('00.0%') + " of Month past so Budget to date: *"+numeral(budgetForMonth*percentOfMonth).format('$0,0.00')+"*\n"
-    salesInfo="Sales to date: "+numeral(salesForMonth).format('$0,0.00')+" Sales to date as % of budget: "+numeral(salesForMonth/(budgetForMonth*percentOfMonth)).format('00.0%')+" avg daily sales "+numeral(salesForMonth/dd).format('$0,0.00')+"\n"
-    toHitTarget = "Sales per day needed to hit budget = "+numeral((budgetForMonth-salesForMonth)/(lastDayOfTheMonth-dd)).format('$0,0.00')+"\n"
+    salesInfo="Sales to date: "+numeral(salesmtd).format('$0,0.00')+" Sales to date as % of budget: "+numeral(salesmtd/(budgetForMonth*percentOfMonth)).format('00.0%')+" avg daily sales "+numeral(salesmtd/dd).format('$0,0.00')+"\n"
+    toHitTarget = "Sales per day needed to hit budget = "+numeral((budgetForMonth-salesmtd)/(lastDayOfTheMonth-dd)).format('$0,0.00')+"\n"
     formattedAnswer = heading+budgetInfo+salesInfo+toHitTarget
     formattedAnswer
 
