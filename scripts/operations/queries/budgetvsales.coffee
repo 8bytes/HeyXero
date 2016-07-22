@@ -34,7 +34,7 @@ module.exports = {
 #NOTE:  sales variable comes from salesmtdbare.coffee
   formatAnswer: (answer) ->
     budgetForMonth = 0
-    console.log(percentOfMonth+' '+lastDayOfTheMonth+' '+yd+yyyy+mm+' '+yesterdayXero+' '+lastDayOfTheMonthDate+' '+todayXero)
+    console.log(dates.percentOfMonth+' '+dates.lastDayOfTheMonth+' '+yd+yyyy+mm+' '+yesterdayXero+' '+lastDayOfTheMonthDate+' '+todayXero)
     heading = "*Budget v Sales*\n"
     answer.forEach((row) -> budgetForMonth = "#{row.ThisMonthValue}")
     budgetInfo = "Budget this month: "+numeral(budgetForMonth).format('$0,0.00')+" with "+ numeral(percentOfMonth).format('00.0%') + " of Month past so Budget to date: *"+numeral(budgetForMonth*percentOfMonth).format('$0,0.00')+"*\n"
