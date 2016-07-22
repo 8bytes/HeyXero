@@ -31,9 +31,10 @@ module.exports = {
           ThisMonthValue: cellRow.slice(-1)[0].Value
         }
       )
-#NOTE: answers below are correct except for the sales as that needs to be called with second API call - the right info is in salesmtdbare.coffee
+#NOTE:  sales variable comes from salesmtdbare.coffee
   formatAnswer: (answer) ->
     budgetForMonth = 0
+    console.log(percentOfMonth+' '+lastDayOfTheMonth+' '+dd+' '+salesmtd)
     heading = "*Budget v Sales*\n"
     answer.forEach((row) -> budgetForMonth = "#{row.ThisMonthValue}")
     budgetInfo = "Budget this month: "+numeral(budgetForMonth).format('$0,0.00')+" with "+ numeral(percentOfMonth).format('00.0%') + " of Month past so Budget to date: *"+numeral(budgetForMonth*percentOfMonth).format('$0,0.00')+"*\n"
