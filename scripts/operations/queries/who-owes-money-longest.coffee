@@ -30,8 +30,8 @@ module.exports = {
     results = [];
     _.forEach(_.take(response.Invoices.Invoice, 5), (invoice) ->
       results.push({
-        name: invoice.Name
-        outstanding: invoice.AmountDue
+        name: invoice.Contact.Name
+        outstanding: number(invoice.AmountDue)
         overdue: invoice.DueDate
       })
     );
@@ -44,7 +44,7 @@ module.exports = {
     else
       results.push("Oldest invoices (ie. oldest creditor accounts)\n");
       _.forEach(answer, (invoice) ->
-        line = '' + invoice.name + " dated "+ invoice.overdue+': *' + numeral(Number(invoice.outstanding)).format('$0,0.00') + '*'
+        line = '' + invoice.name + " dated "+ numeral(invoice.overdue).format('DD/MM/YYYY')+': *' + numeral(Number(invoice.outstanding)).format('$0,0.00') + '*'
         results.push(line)
       )
     return results;
