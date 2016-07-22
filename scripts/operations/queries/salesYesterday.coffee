@@ -2,6 +2,8 @@ Promise = require("bluebird");
 XeroConnection = require('./../../xero-connection');
 numeral = require('numeral');
 
+yesterdayXero = yyyy + '-' + mm + '-' + (dd-1)
+
 module.exports = {
 
   doRequest: () ->
