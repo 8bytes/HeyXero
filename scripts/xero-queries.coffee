@@ -66,7 +66,22 @@ module.exports = (robot) ->
         console.log('Something has gone wrong :( ' + r)
         res.reply("I'm not sure, how about you ask who owes money again later?")
     )
-  
+# Debtors - who owes me money - longest debtors
+  robot.respond(/overdue debts( the most)?( money)?\??/i, (res) ->
+    console.log('about to ask event, who owes money longest?')
+    robot.emit 'whooweslong', (res)
+  )
+# Debtors - who owes me money event
+  robot.on 'whooweslong', (res) ->
+    console.log('about to ask operator, who owes money longest?')
+    Operator.whoOwesMoneyLongest().then(
+      (result) ->
+        console.log('about to ask operator, who owes money longest?')
+        res.reply(result)
+      (r) ->
+        console.log('Something has gone wrong :( ' + r)
+        res.reply("I'm not sure, how about you ask who owes money longest again later?")
+    )  
 # Bank Balances - of all active accounts
   robot.respond(/how much( money)?( do I have)?( cash)?/i, (res) ->
     console.log('about to ask event, how much money do i have?')
