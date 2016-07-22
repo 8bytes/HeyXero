@@ -67,7 +67,7 @@ module.exports = (robot) ->
         res.reply("I'm not sure, how about you ask who owes money again later?")
     )
 # Debtors - who owes me money - longest debtors
-  robot.respond(/overdue debts( the most)?( money)?\??/i, (res) ->
+  robot.respond(/oldest( debts)?( invoices)?\??/i, (res) ->
     console.log('about to ask event, who owes money longest?')
     robot.emit 'whooweslong', (res)
   )
@@ -114,7 +114,7 @@ module.exports = (robot) ->
         res.reply("I'm not sure, how about you ask about bills due later?")
     )
 # Creditors - people I owe money overdue
-  robot.respond(/(overdue bills|late bills)?\??/i, (res) ->
+  robot.respond(/(overdue bills|late bills)\??/i, (res) ->
     console.log('about to ask event, what bills are overdue?')
     robot.emit 'whatbillsoverdue', (res)
   )  
