@@ -23,7 +23,7 @@ module.exports = {
     return promise;
 
   createAnswer: (response) ->
-#console.log("Parsing who owes me money response: #{JSON.stringify(response)}")
+console.log("Parsing who owes me money response: #{JSON.stringify(response)}")
     if(!response || !response.Contacts || !response.Contacts.Contact || !response.Contacts.Contact.length)
       return [];
 
