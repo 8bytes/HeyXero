@@ -33,7 +33,7 @@ module.exports = {
     # Filter and map to array of array
     rowsSection = jsonResponse.Response.Reports.Report.Rows.Row.filter((row) -> row.RowType == "Section" && row.Title == "Income" && row.Rows.Row[0].RowType == "Row")[0]
     #try
-    cellRows = rowsSection.Rows.Row.filter((row) -> row.RowType == "SummaryRow").map((row) -> row.Cells.Cell)
+    cellRows = rowsSection.Rows.Row.filter((row) -> row.Cells.Cell.Value == "Total Income").map((row) -> row.Cells.Cell)
     console.log("Received: #{JSON.stringify(cellRows)}") 
     #catch error                      # this just catches days when no summary row exists in report
       
