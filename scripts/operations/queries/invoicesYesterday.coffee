@@ -4,7 +4,7 @@ _ = require('lodash');
 moment = require('moment');
 numeral = require('numeral');
 
-GetInvoicesYesterday = '/invoices?where=Type%3d%22ACCREC%22%26%26date%3dDateTime.Today.AddDays(-4)&order=-total'
+GetInvoicesYesterday = '/invoices?where=Type%3d%22ACCREC%22%26%26date%3dDateTime.Today.AddDays(-1)&order=-total'
 
 module.exports = {
 	doRequest: () ->
@@ -24,7 +24,7 @@ module.exports = {
     	
 		if(!response || !response.Invoices || !response.Invoices.Invoice || !response.Invoices.Invoice.length)
 			return [];
-		console.log("Received: #{JSON.stringify(response)}")
+		#console.log("Received: #{JSON.stringify(response)}")    #note: uncomment if you need a test reponse for this
 		results = [];
 		_.forEach(_.take(response.Invoices.Invoice, response.Invoices.Invoice.length), (invoice) ->
 			results.push({
