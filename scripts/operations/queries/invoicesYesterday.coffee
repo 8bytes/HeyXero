@@ -21,10 +21,10 @@ module.exports = {
 		return promise;
 
 	createAnswer:  (response) ->
-    	console.log("Received: #{JSON.stringify(response)}")
+    	
 		if(!response || !response.Invoices || !response.Invoices.Invoice || !response.Invoices.Invoice.length)
 			return [];
-
+		console.log("Received: #{JSON.stringify(response)}")
 		results = [];
 		_.forEach(_.take(response.Invoices.Invoice, response.Invoices.Invoice.length), (invoice) ->
 			results.push({
