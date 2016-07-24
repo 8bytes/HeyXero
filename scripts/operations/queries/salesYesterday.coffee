@@ -6,7 +6,7 @@ today = new Date # Dates better to get from xero-dates if possible
 dd = today.getDate()
 if dd < 10
   dd = '0' + dd
-yd=dd-4
+yd=dd-1
 #The value returned by getMonth is an integer between 0 and 11, referring 0 to January, 1 to February, and so on. 
 mm = today.getMonth() + 1
 if mm < 10
@@ -32,10 +32,9 @@ module.exports = {
 
     # Filter and map to array of array
     rowsSection = jsonResponse.Response.Reports.Report.Rows.Row.filter((row) -> row.RowType == "Section" && row.Title == "Income" && row.Rows.Row[0].RowType == "Row")[0]
-    console.log(rowsSection) 
-    #try
-    cellRows = rowsSection.Rows.Row.filter((row) -> row.Cells.Cell.Value == "Total Income").map((row) -> row.Cells.Cell)
-    #catch error                      # this just catches days when no summary row exists in report
+    try
+      cellRows = rowsSection.Rows.Row.filter((row) -> row.RowType == "SummaryRow").map((row) -> row.Cells.Cell)
+    catch error                      # this just catches days when no summary row exists in report
       
     if (cellRows.length > 0)
       cellRows.map( (cellRow) ->
