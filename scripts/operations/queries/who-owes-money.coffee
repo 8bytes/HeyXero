@@ -23,7 +23,7 @@ module.exports = {
     return promise;
 
   createAnswer: (response) ->
-    console.log("Received: #{JSON.stringify(jsonResponse)}")
+    console.log("Received: #{JSON.stringify(response)}")
     if(!response || !response.Contacts || !response.Contacts.Contact || !response.Contacts.Contact.length)
       return [];
 
