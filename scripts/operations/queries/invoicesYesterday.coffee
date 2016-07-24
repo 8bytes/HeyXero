@@ -21,7 +21,7 @@ module.exports = {
 		return promise;
 
 	createAnswer:  (response) ->
-		#console.log("Parsing invoices response: #{JSON.stringify(response)}")
+    	console.log("Received: #{JSON.stringify(response)}")
 		if(!response || !response.Invoices || !response.Invoices.Invoice || !response.Invoices.Invoice.length)
 			return [];
 
