@@ -48,7 +48,7 @@ module.exports = {
 				line = moment(invoice.dueDate).format('DD/MM/YYYY');
 				if(invoice.invoiceNumber)
 					line += (' ' + invoice.invoiceNumber + '')
-				line += (' ' + invoice.name + ': *' + numeral(invoice.amountDue).format('$0,0.00') + '*\n');
+				line += (' ' + invoice.name + ': *' + numeral(invoice.amountDue).format('€0,0.00') + '*\n');
 				results.push(line);
 			)
 		return results;

@@ -48,7 +48,7 @@ module.exports = {
 				if(invoice.invoiceNumber)
 					line += (' ' + invoice.invoiceNumber + ' ')
 					console.log(invoice.Total)
-				line += (' ' + numeral(invoice.Total).format('$0,0.00')  + ' \n');
+				line += (' ' + numeral(invoice.Total).format('€0,0.00')  + ' \n');
 				results.push(line);
 			)
 		return results;

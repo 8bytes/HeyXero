@@ -21,7 +21,7 @@ module.exports = {
 		return promise;
 
 	createAnswer:  (response) ->
-    	
+
 		if(!response || !response.Invoices || !response.Invoices.Invoice || !response.Invoices.Invoice.length)
 			return [];
 		#console.log("Received: #{JSON.stringify(response)}")    #note: uncomment if you need a test reponse for this
@@ -50,11 +50,11 @@ module.exports = {
 				TotAmountPaid += invoice.amountPaid
 				TotAmount += invoice.Total
 				line = ('*'+invoice.Reference+'* by '+invoice.Contactname);
-				line += (' *' + numeral(invoice.Total).format('$0,0.00') + '* Paid:' + numeral(invoice.amountPaid).format('$0,0.00') + ' \n');
+				line += (' *' + numeral(invoice.Total).format('€0,0.00') + '* Paid:' + numeral(invoice.amountPaid).format('€0,0.00') + ' \n');
 				results.push(line);
 			)
 			AvgSizeInvoice = TotAmount/answer.length
-			InvoiceSummary = "Total value of invoices: *"+numeral(TotAmount).format('$0,0.00')+"* Paid:"+numeral(TotAmountPaid).format('$0,0.00')+" Average size: "+numeral(AvgSizeInvoice).format('$0,0.00')
+			InvoiceSummary = "Total value of invoices: *"+numeral(TotAmount).format('€0,0.00')+"* Paid:"+numeral(TotAmountPaid).format('€0,0.00')+" Average size: "+numeral(AvgSizeInvoice).format('€0,0.00')
 			results.push(InvoiceSummary)
 		return results
 }

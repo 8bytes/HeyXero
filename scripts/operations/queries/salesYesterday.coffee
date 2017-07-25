@@ -7,7 +7,7 @@ dd = today.getDate()
 if dd < 10
   dd = '0' + dd
 yd=dd-1
-#The value returned by getMonth is an integer between 0 and 11, referring 0 to January, 1 to February, and so on. 
+#The value returned by getMonth is an integer between 0 and 11, referring 0 to January, 1 to February, and so on.
 mm = today.getMonth() + 1
 if mm < 10
   mm = '0' + mm
@@ -35,7 +35,7 @@ module.exports = {
     try
       cellRows = rowsSection.Rows.Row.filter((row) -> row.RowType == "SummaryRow").map((row) -> row.Cells.Cell)
     catch error                      # this just catches days when no summary row exists in report
-      
+
     if (cellRows.length > 0)
       cellRows.map( (cellRow) ->
         {
@@ -43,7 +43,7 @@ module.exports = {
           KPIName: cellRow[0].Value
           # Last cell
           ThisMonthValue: cellRow.slice(-1)[0].Value
-        }  
+        }
       )
 
   formatAnswer: (answer) ->
@@ -53,7 +53,7 @@ module.exports = {
       return results;
     else
       formattedAnswer = "*Total Income yesterday*\n";
-      answer.forEach((row) -> formattedAnswer = formattedAnswer + "#{row.KPIName}: #{numeral(row.ThisMonthValue).format('$0,0.00')}\n");
+      answer.forEach((row) -> formattedAnswer = formattedAnswer + "#{row.KPIName}: #{numeral(row.ThisMonthValue).format('€0,0.00')}\n");
       results.push(formattedAnswer);
     return results;
 
